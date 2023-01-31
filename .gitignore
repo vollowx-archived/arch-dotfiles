@@ -56,3 +56,5 @@
 !.gitconfig
 !.gitignore
 !.npmrc
+
+!README.md
