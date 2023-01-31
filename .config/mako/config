@@ -1,4 +1,5 @@
-font=JetBrainsMono Nerd Font 12
+# font=JetBrainsMono Nerd Font 12
+font=MonoLisa Nerd Font 12
 
 default-timeout=10000
 

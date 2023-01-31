@@ -1,7 +1,8 @@
 @import './mocha.css';
 
 * {
-  font-family: JetBrainsMono Nerd Font;
+  /* font-family: JetBrainsMono Nerd Font; */
+  font-family: MonoLisa Nerd Font;
   font-size: 12pt;
   font-weight: bold;
 }

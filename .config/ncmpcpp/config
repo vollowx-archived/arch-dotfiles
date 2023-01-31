@@ -20,7 +20,6 @@ visualizer_look      = ﱣﱣ
 visualizer_type      = "ellipse"
 # visualizer_type = "spectrum"
 
-
 ### Appearance ###
 playlist_display_mode = "columns"
 colors_enabled       = "yes"
@@ -68,7 +67,7 @@ color2 = "red"
 startup_screen = visualizer
 startup_slave_screen = playlist  
 startup_slave_screen_focus = yes
-locked_screen_width_part = 30
+locked_screen_width_part = 41
 
 ### Misc ###
 default_place_to_search_in = "database"

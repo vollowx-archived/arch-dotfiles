@@ -52,6 +52,8 @@
 # LiveWallpaperPC.com-SaiiKa-3840x2160.mp4
 !.local/share/fcitx5/
 !.local/share/fcitx5/**/*
+!.local/share/fonts/
+!.local/share/fonts/**/*
 
 !.gitconfig
 !.gitignore

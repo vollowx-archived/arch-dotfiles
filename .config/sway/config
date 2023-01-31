@@ -32,7 +32,8 @@ exec_always {
   gsettings set $gnome-schema gtk-theme 'Catppuccin-Mocha-Standard-Rosewater-Dark'
   gsettings set $gnome-schema icon-theme 'Papirus-Dark'
   gsettings set $gnome-schema cursor-theme 'Catppuccin-Mocha-Dark-Cursors'
-  gsettings set $gnome-schema font-name 'JetBrainsMono Nerd Font 12'
+  # gsettings set $gnome-schema font-name 'JetBrainsMono Nerd Font 12'
+  gsettings set $gnome-schema font-name 'MonoLisa Nerd Font 12'
 }
 
 
