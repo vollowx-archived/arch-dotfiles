@@ -30,9 +30,9 @@
     "tooltip": false
   },
   "mpd": {
-    "format": "{stateIcon}{consumeIcon} {randomIcon}{repeatIcon}{singleIcon}{title}({elapsedTime:%M:%S}/{totalTime:%M:%S}) 󰝚",
+    "format": "{stateIcon}{consumeIcon} {randomIcon}{repeatIcon}{singleIcon}{title}({elapsedTime:%M:%S}/{totalTime:%M:%S}) 󰝚 ",
     "format-disconnected": "󰝛 ",
-    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped 󰝚",
+    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped 󰝚 ",
     "title-len": 20,
     "interval": 10,
     "consume-icons": {
