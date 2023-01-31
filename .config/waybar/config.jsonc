@@ -1,0 +1,106 @@
+// some of these icons maybe look small,
+// but display normally, so just ignore this
+{
+  "position": "top",
+  "modules-left": ["sway/workspaces", "cpu", "memory", "temperature"],
+  "modules-center": ["custom/cava", "mpd"],
+  "modules-right": [
+    "tray",
+    "network",
+    "pulseaudio",
+    "backlight",
+    "battery",
+    "clock"
+  ],
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "sort-by-name": true
+  },
+  "cpu": {
+    "format": "󰻠 {usage}%"
+  },
+  "memory": {
+    "format": "󰍛 {}%"
+  },
+  "temperature": {
+    "format": "󰔏 {temperatureC}°C"
+  },
+  "custom/cava": {
+    "exec": "~/.config/waybar/cava.sh",
+    "tooltip": false
+  },
+  "mpd": {
+    "format": "{stateIcon}{consumeIcon} {randomIcon}{repeatIcon}{singleIcon}{title}({elapsedTime:%M:%S}/{totalTime:%M:%S}) 󰝚",
+    "format-disconnected": "󰝛 ",
+    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped 󰝚",
+    "title-len": 20,
+    "interval": 10,
+    "consume-icons": {
+      "on": " 󰆐" // Icon shows only when "consume" is on
+    },
+    "random-icons": {
+      "off": "<span foreground='#a6adc8'>󰒝</span> ",
+      "on": "<span foreground='#f5c2e7'>󰒝</span> "
+    },
+    "repeat-icons": {
+      "off": "<span foreground='#a6adc8'>󰑖</span> ",
+      "on": "<span foreground='#f5c2e7'>󰑖</span> "
+    },
+    "single-icons": {
+      "off": "<span foreground='#a6adc8'>󰑘</span> ",
+      "on": "<span foreground='#f5c2e7'>󰑘</span> "
+    },
+    "state-icons": {
+      "paused": "󰐊",
+      "playing": "󰏤"
+    },
+    "on-scroll-up": "mpc seek +1",
+    "on-scroll-down": "mpc seek -1",
+    "on-click": "mpc toggle",
+    "on-click-middle": "mpc prev",
+    "on-click-right": "mpc next",
+    "tooltip-format": "{artist} - {album} - {title}",
+    "tooltip-format-disconnected": "MPD (disconnected)"
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 10
+  },
+  "network": {
+    "format-wifi": "󰤨 {essid}",
+    "format-ethernet": "󰈀 {essid}",
+    "format-disconnected": "󰤮 ",
+    "tooltip-format-wifi": "󰤢 {signalStrength}% 󰁅 {bandwidthDownBits} 󰁝 {bandwidthUpBits}"
+  },
+  "pulseaudio": {
+    "on-click": "pactl set-sink-mute 45 toggle",
+    "format": "{icon} {volume}%",
+    "format-muted": "󰖁 Muted",
+    "format-icons": {
+      "headphone": "󰋋",
+      "phone": "󰏲",
+      "portable": "󰏲",
+      "car": "󰄋",
+      "default": ["󰕿", "󰖀", "󰕾"]
+    }
+  },
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"]
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{icon} {time}",
+    "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
+  },
+  "clock": {
+    "format": "󰥔 {:%H:%M} ",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  }
+}

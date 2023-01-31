@@ -1,0 +1,86 @@
+@import './mocha.css';
+
+* {
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+window#waybar {
+  /* background-color: @base; */
+  background-color: transparent;
+  color: @text;
+}
+
+tooltip {
+  background-color: @surface1;
+  border-radius: 12px;
+}
+
+#workspaces,
+#cpu,
+#memory,
+#temperature,
+#custom-cava,
+#mpd,
+#tray,
+#network,
+#pulseaudio,
+#backlight,
+#battery,
+#clock {
+  padding: 5px 10px;
+  margin: 5px 5px;
+  background-color: @surface0;
+  border-radius: 12px;
+}
+
+/* the first element */
+#workspaces {
+  margin-left: 14px;
+  padding: 0;
+}
+#workspaces button {
+  padding: 0;
+  color: @subtext0;
+  border-radius: 12px;
+}
+#workspaces button.focused {
+  color: @rosewater;
+}
+#workspaces button.urgent {
+  color: @red;
+}
+#workspaces button:hover {
+  color: @flamingo;
+}
+
+#network {
+  color: @blue;
+}
+#cpu,
+#pulseaudio {
+  color: @red;
+}
+#memory,
+#backlight {
+  color: @yellow;
+}
+#temperature,
+#battery {
+  color: @teal;
+}
+#battery.charging {
+  color: @green;
+}
+#battery.warning:not(.charging),
+#battery.critical:not(.charging) {
+  background-color: @red;
+  color: @base;
+}
+
+/* the last element */
+#clock {
+  margin-right: 14px;
+  padding-right: 0;
+}
