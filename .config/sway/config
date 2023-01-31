@@ -12,7 +12,7 @@ include catppuccin-mocha
 client.focused           $pink     $base $text  $rosewater $pink
 client.focused_inactive  $mauve    $base $text  $rosewater $overlay2
 client.unfocused         $mauve    $base $text  $rosewater $overlay0
-client.urgent            $peach    $base $peach $overlay0  $mauve
+client.urgent            $red      $base $red   $overlay0  $red
 client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
 
