@@ -33,7 +33,7 @@ tooltip {
 #clock {
   padding: 5px 10px;
   margin: 5px 5px;
-  background-color: shade(alpha(@surface0, 0.9), 1.25);
+  background-color: alpha(@base, 0.9);
   border-radius: 12px;
 }
 
@@ -43,10 +43,11 @@ tooltip {
   padding: 0;
 }
 #workspaces button {
-  padding: 0;
+  padding: 0 5px;
   color: @subtext0;
   border-radius: 12px;
 }
+#workspaces button.active,
 #workspaces button.focused {
   color: @sky;
 }

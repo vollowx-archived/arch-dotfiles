@@ -6,6 +6,9 @@ default-timeout=10000
 layer=top
 anchor=top-right
 margin=10,10,10
+padding=12,0,12,0
+width=400
+border-radius=12
 
 background-color=#1e1e2e
 text-color=#cdd6f4

@@ -2,7 +2,7 @@
 // but display normally, so just ignore this
 {
   "position": "top",
-  "modules-left": ["sway/workspaces", "cpu", "memory", "temperature"],
+  "modules-left": ["wlr/workspaces", "cpu", "memory", "temperature"],
   "modules-center": ["custom/cava", "mpd"],
   "modules-right": [
     "tray",
@@ -12,7 +12,7 @@
     "battery",
     "clock"
   ],
-  "sway/workspaces": {
+  "wlr/workspaces": {
     "disable-scroll": true,
     "sort-by-name": true
   },
