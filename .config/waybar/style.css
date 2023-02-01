@@ -10,7 +10,7 @@
 
 window#waybar {
   /* background-color: @base; */
-  background-color: transparent;
+  background-color: alpha(@base, 0.9);
   color: @text;
 }
 
