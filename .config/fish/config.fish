@@ -1,7 +1,7 @@
 source ~/.env
 
 if status --is-login
-  exec dbus-run-session Hyprland
+  exec Hyprland
 end
 
 alias ls="exa $argv"

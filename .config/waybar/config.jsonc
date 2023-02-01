@@ -25,10 +25,10 @@
   "temperature": {
     "format": "󰔏 {temperatureC}°C"
   },
-  "custom/cava": {
-    "exec": "~/.config/waybar/cava.sh",
-    "tooltip": false
-  },
+  // "custom/cava": {
+    // "exec": "~/.config/waybar/cava.sh",
+    // "tooltip": false
+  // },
   "mpd": {
     "format": "{stateIcon}{consumeIcon} {randomIcon}{repeatIcon}{singleIcon}{title}({elapsedTime:%M:%S}/{totalTime:%M:%S}) 󰝚 ",
     "format-disconnected": "󰝛 ",
