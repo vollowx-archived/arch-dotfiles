@@ -32,8 +32,9 @@
 !.config/nvim/
 !.config/nvim/**/**
 .config/nvim/plugin
-!.config/omf/
-!.config/omf/**/**
+!.config/obs-studio/
+!.config/obs-studio/themes
+!.config/obs-studio/themes/**/*
 !.config/qt5ct/
 !.config/qt5ct/**/*
 !.config/ranger/
