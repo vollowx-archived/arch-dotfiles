@@ -11,6 +11,8 @@
 !.config/gtk3.0/**/*
 !.config/gtk4.0/
 !.config/gtk4.0/**/*
+!.config/hypr/
+!.config/hypr/**/*
 !.config/kitty/
 !.config/kitty/**/*
 !.config/lazygit/
