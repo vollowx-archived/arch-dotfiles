@@ -5,12 +5,14 @@
 !.config/btop/**/*
 !.config/cava/
 !.config/cava/**/*
+!.config/fish/
+!.config/fish/**/*
 !.config/fontconfig/
 !.config/fontconfig/**/*
-!.config/gtk3.0/
-!.config/gtk3.0/**/*
-!.config/gtk4.0/
-!.config/gtk4.0/**/*
+!.config/gtk-3.0/
+!.config/gtk-3.0/settings.ini
+!.config/gtk-4.0/
+!.config/gtk-4.0/settings.ini
 !.config/hypr/
 !.config/hypr/**/*
 !.config/kitty/
@@ -30,6 +32,8 @@
 !.config/nvim/
 !.config/nvim/**/**
 .config/nvim/plugin
+!.config/omf/
+!.config/omf/**/**
 !.config/qt5ct/
 !.config/qt5ct/**/*
 !.config/ranger/
@@ -57,6 +61,7 @@
 !.local/share/fonts/
 !.local/share/fonts/**/*
 
+!.env
 !.gitconfig
 !.gitignore
 !.npmrc
