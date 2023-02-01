@@ -9,7 +9,7 @@ include @sysconfdir@/sway/config.d/*
 include catppuccin-mocha
 
 # target                 title     bg    text   indicator  border
-client.focused           $pink     $base $text  $rosewater $pink
+client.focused           $sky      $base $text  $rosewater $sky
 client.focused_inactive  $mauve    $base $text  $rosewater $overlay2
 client.unfocused         $mauve    $base $text  $rosewater $overlay0
 client.urgent            $red      $base $red   $overlay0  $red
@@ -22,16 +22,18 @@ default_floating_border pixel 4
 gaps inner 8
 gaps outer 2
 
-# output * bg /home/pancak/.local/share/backgrounds/nacho.jpg fill
-output * bg /home/pancak/.local/share/backgrounds/Street.jpg fill
+# output * bg /home/pancak/.local/share/backgrounds/NachoNeko.jpg fill
+# output * bg /home/pancak/.local/share/backgrounds/Street.jpg fill
 
 # font JetBrainsMono Nerd Font 10
 
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
-  gsettings set $gnome-schema gtk-theme 'Catppuccin-Mocha-Standard-Rosewater-Dark'
+  gsettings set $gnome-schema gtk-theme 'Catppuccin-Mocha-Standard-Sky-Dark'
+  # gsettings set $gnome-schema gtk-theme 'Catppuccin-Latte-Standard-Sky-Light'
   gsettings set $gnome-schema icon-theme 'Papirus-Dark'
   gsettings set $gnome-schema cursor-theme 'Catppuccin-Mocha-Dark-Cursors'
+  # gsettings set $gnome-schema cursor-theme 'Catppuccin-Latte-Dark-Cursors'
   # gsettings set $gnome-schema font-name 'JetBrainsMono Nerd Font 12'
   gsettings set $gnome-schema font-name 'MonoLisa Nerd Font 12'
 }
