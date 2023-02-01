@@ -1,39 +1,45 @@
 # the t key isn't used and it's easier to press than /, so lets use it
 def_key "t"
-    find
+  find
 def_key "t"
-    find_item_forward
+  find_item_forward
 
 def_key "+"
-    show_clock
+  show_clock
 def_key "="
-    volume_up
+  volume_up
 
 def_key "j"
-    scroll_down
+  scroll_down
 def_key "k"
-    scroll_up
+  scroll_up
 
 def_key "ctrl-u"
-    page_up
+  page_up
 def_key "ctrl-d"
-    page_down
+  page_down
+
+def_key "g"
+  move_home
+
+def_key "G"
+  move_end
 
 def_key "h"
-    previous_column
+  previous_column
 def_key "l"
-    next_column
+  next_column
 
 def_key "."
-    show_lyrics
+  show_lyrics
 
 def_key "n"
-    next_found_item
+  next_found_item
 def_key "N"
-    previous_found_item
+  previous_found_item
 
 # not used but bound
 def_key "J"
-    move_sort_order_down
+  move_sort_order_down
 def_key "K"
-    move_sort_order_up
+  move_sort_order_up
