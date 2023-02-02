@@ -4,7 +4,7 @@
 * {
   /* font-family: JetBrainsMono Nerd Font; */
   font-family: MonoLisa Nerd Font;
-  font-size: 12pt;
+  font-size: 10pt;
   font-weight: bold;
 }
 
@@ -55,7 +55,7 @@ tooltip {
   color: @red;
 }
 #workspaces button:hover {
-  color: @flamingo;
+  color: @blue;
 }
 
 #network {
