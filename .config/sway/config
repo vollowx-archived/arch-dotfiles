@@ -16,7 +16,7 @@ client.urgent            $red      $base $red   $overlay0  $red
 client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
 
-smart_borders on
+# smart_borders on
 default_border pixel 4
 default_floating_border pixel 4
 gaps inner 8
@@ -126,7 +126,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+b splith
 bindsym $mod+v splitv
 bindsym $mod+Shift+v exec clipman pick -t wofi
-bindsym $mod+Shift+c, exec hyprpicker -n -a
+bindsym $mod+Shift+c exec hyprpicker -n -a
 bindsym $mod+Shift+o exec killall -SIGUSR1 waybar
 
 bindsym $mod+a focus parent
