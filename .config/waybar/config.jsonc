@@ -48,15 +48,15 @@
     },
     "random-icons": {
       "off": "<span foreground='#a6adc8'>󰒝</span> ",
-      "on": "<span foreground='#f5c2e7'>󰒝</span> "
+      "on": "<span foreground='#89dceb'>󰒝</span> "
     },
     "repeat-icons": {
       "off": "<span foreground='#a6adc8'>󰑖</span> ",
-      "on": "<span foreground='#f5c2e7'>󰑖</span> "
+      "on": "<span foreground='#89dceb'>󰑖</span> "
     },
     "single-icons": {
       "off": "<span foreground='#a6adc8'>󰑘</span> ",
-      "on": "<span foreground='#f5c2e7'>󰑘</span> "
+      "on": "<span foreground='#89dceb'>󰑘</span> "
     },
     "state-icons": {
       "paused": "󰐊",
