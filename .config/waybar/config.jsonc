@@ -81,7 +81,7 @@
     "tooltip-format-wifi": "󰤢 {signalStrength}% 󰁅 {bandwidthDownBits} 󰁝 {bandwidthUpBits}"
   },
   "pulseaudio": {
-    "on-click": "pactl set-sink-mute 45 toggle",
+    "on-click": "pamixer -t",
     "format": "{icon} {volume}%",
     "format-muted": "󰖁 Muted",
     "format-icons": {
@@ -108,7 +108,8 @@
     "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
   },
   "clock": {
-    "format": "󰥔 {:%H:%M} ",
+    "on-click": "kitty --class='termfloat' tty-clock -c -s",
+    "format": "󰥔 {:%m/%d/%H:%M} ",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   }
 }

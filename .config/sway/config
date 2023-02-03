@@ -112,7 +112,7 @@ for_window [app_id="mpv"]            resize set width 800
 #-------------#
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec $term --class="termfloat"
-bindsym $mod+d exec pkill wofi || wofi --show run
+bindsym $mod+space exec pkill wofi || wofi --show run
 bindsym $mod+q kill
 bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 bindsym $mod+Shift+r reload
@@ -128,6 +128,8 @@ bindsym $mod+v splitv
 bindsym $mod+Shift+v exec clipman pick -t wofi
 bindsym $mod+Shift+c exec hyprpicker -n -a
 bindsym $mod+Shift+o exec killall -SIGUSR1 waybar
+bindsym --locked $mod+d exec sh -c "notify-send '󰪑 Do Not Disturb' 'Turning on Do Not Disturb Mode' && sleep 2 && makoctl set-mode do-not-disturb"
+bindsym --locked $mod+Shift+d exec sh -c "makoctl set-mode default && notify-send '󰂜 Do Not Disturb' 'Do Not Disturb Mode disabled'"
 
 bindsym $mod+a focus parent
 bindsym $mod+Shift+minus move scratchpad
@@ -180,13 +182,13 @@ bindsym $mod+r mode "resize"
 #---------------------#
 # special keybindings #
 #---------------------#
-bindsym XF86AudioRaiseVolume exec pamixer -i 2
-bindsym XF86AudioLowerVolume exec pamixer -d 2
-bindsym XF86AudioMute exec pamixer -t
+bindsym XF86AudioRaiseVolume exec pamixer -i 2 && notify-send "󰕾 Volume" "Volume: $(pamixer --get-volume)%" --hint="int:value:$(pamixer --get-volume)"
+bindsym XF86AudioLowerVolume exec pamixer -d 2 && notify-send "󰕾 Volume" "Volume: $(pamixer --get-volume)%" --hint="int:value:$(pamixer --get-volume)"
+bindsym XF86AudioMute exec pamixer -t && notify-send "󰕾 Volume" "Volume: $(pamixer --get-volume)%" --hint="int:value:$(pamixer --get-volume)"
 
 # This needs `sudo chmod +s /usr/bin/light`
-bindsym XF86MonBrightnessDown exec light -U 5
-bindsym XF86MonBrightnessUp exec light -A 5
+bindsym XF86MonBrightnessDown exec light -U 5 && notify-send "󰃠 Light" "Brightness: $(light)%" --hint="int:value:$(light)"
+bindsym XF86MonBrightnessUp exec light -A 5 && notify-send "󰃠 Light" "Brightness: $(light)%" --hint="int:value:$(light)"
 
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next

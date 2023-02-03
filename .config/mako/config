@@ -2,9 +2,15 @@
 font=MonoLisa Nerd Font 12
 
 default-timeout=10000
+group-by=summary
 
 layer=top
+markup=1
 anchor=top-right
+icon-location=right
+width=450
+height=200
+max-icon-size=96
 margin=8,8,8
 padding=12,0,12,0
 width=400
@@ -18,3 +24,6 @@ progress-color=over #313244
 
 [urgency=high]
 border-color=#fab387
+
+[mode=do-not-disturb]
+invisible=1

@@ -1,8 +1,8 @@
 ignore-empty-password
 disable-caps-lock-text
 image=/home/pancak/.local/share/backgrounds/Street.jpg
+font=MonoLisa Nerd Font
 
-# swaylock-effects
 text-ver-color=00000000
 text-wrong-color=00000000
 text-clear-color=00000000
@@ -24,14 +24,14 @@ caps-lock-bs-hl-color=00000000
 caps-lock-key-hl-color=00000000
 separator-color=00000000
 
-grace=2
-
+scaling=fill
 indicator
 clock
 timestr=%I:%M %p
 datestr=%A, %d %B
 indicator-x-position=300
-indicator-y-position=840
-indicator-radius=200
-
+indicator-y-position=875
+indicator-radius=150
 text-color=cdd6f4
+
+grace=0
