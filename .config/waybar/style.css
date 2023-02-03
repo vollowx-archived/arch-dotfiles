@@ -1,5 +1,4 @@
 @import './mocha.css';
-/* @import './latte.css'; */
 
 * {
   /* font-family: JetBrainsMono Nerd Font; */
@@ -9,7 +8,6 @@
 }
 
 window#waybar {
-  /* background-color: @base; */
   background-color: alpha(@base, 0.95);
   color: @text;
 }

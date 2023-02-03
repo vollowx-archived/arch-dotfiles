@@ -5,10 +5,11 @@ default-timeout=10000
 
 layer=top
 anchor=top-right
-margin=10,10,10
+margin=5,5,5
 padding=12,0,12,0
 width=400
 border-radius=12
+border-size=5
 
 background-color=#1e1e2e
 text-color=#cdd6f4
