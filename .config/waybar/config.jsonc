@@ -3,15 +3,17 @@
 {
   "position": "top",
   "layer": "top",
-  "modules-left": ["sway/workspaces", "wlr/workspaces", "cpu", "memory", "temperature"],
-  "modules-center": ["custom/cava", "mpd"],
+  "modules-left": ["sway/workspaces", "wlr/workspaces", "mpd", "custom/cava"],
+  "modules-center": ["clock"],
   "modules-right": [
     "tray",
+    "cpu",
+    "memory",
+    "temperature",
     "network",
     "pulseaudio",
     "backlight",
-    "battery",
-    "clock"
+    "battery"
   ],
   "sway/workspaces": {
     "disable-scroll": true,
@@ -34,8 +36,8 @@
     "format": "󰔏 {temperatureC}°C"
   },
   "custom/cava": {
-  "exec": "~/.config/waybar/cava.sh",
-  "tooltip": false
+    "exec": "~/.config/waybar/cava.sh",
+    "tooltip": false
   },
   "mpd": {
     "format": "{stateIcon}{consumeIcon} {randomIcon}{repeatIcon}{singleIcon}{title}({elapsedTime:%M:%S}/{totalTime:%M:%S}) 󰝚 ",
@@ -109,7 +111,7 @@
   },
   "clock": {
     "on-click": "kitty --class='termfloat' tty-clock -c -s",
-    "format": "󰥔 {:%m/%d/%H:%M} ",
+    "format": "󰥔 {:%m/%d/%H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   }
 }

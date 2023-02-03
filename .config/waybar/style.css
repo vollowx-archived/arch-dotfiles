@@ -18,17 +18,17 @@ tooltip {
 }
 
 #workspaces,
+#clock,
+#tray,
 #cpu,
 #memory,
 #temperature,
 #custom-cava,
 #mpd,
-#tray,
 #network,
 #pulseaudio,
 #backlight,
-#battery,
-#clock {
+#battery {
   padding: 5px 10px;
   margin: 5px 5px;
   background-color: alpha(@text, 0.16);
@@ -56,21 +56,15 @@ tooltip {
   color: @blue;
 }
 
-#network {
-  color: @blue;
-}
-#cpu,
-#pulseaudio {
-  color: @red;
-}
-#memory,
-#backlight {
-  color: @yellow;
-}
-#temperature,
-#battery {
-  color: @teal;
-}
+#clock { color: @text; }
+
+#cpu { color: @blue; }
+#memory { color: @sapphire; }
+#temperature { color: @sky; }
+#network { color: @teal; }
+#pulseaudio { color: @green; }
+#backlight { color: @yellow; }
+#battery { color: @red; }
 #battery.charging {
   color: @green;
 }
@@ -81,7 +75,6 @@ tooltip {
 }
 
 /* the last element */
-#clock {
+#battery {
   margin-right: 14px;
-  padding-right: 0;
 }
