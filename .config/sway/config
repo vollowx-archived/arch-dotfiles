@@ -22,20 +22,14 @@ default_floating_border pixel 4
 gaps inner 8
 gaps outer 2
 
-# output * bg /home/pancak/.local/share/backgrounds/NachoNeko.jpg fill
+# Electron apps have some problems with this, so scale font
+output eDP-1 scale 1
+output * bg /home/pancak/.local/share/backgrounds/wallhaven-dgv23j.png fill
 # output * bg /home/pancak/.local/share/backgrounds/Street.jpg fill
 
 # font JetBrainsMono Nerd Font 10
 
-set $gnome-schema org.gnome.desktop.interface
-exec_always {
-  gsettings set $gnome-schema gtk-theme 'Catppuccin-Mocha-Standard-Sky-Dark'
-  # gsettings set $gnome-schema gtk-theme 'Catppuccin-Latte-Standard-Sky-Light'
-  gsettings set $gnome-schema icon-theme 'Papirus-Dark'
-  gsettings set $gnome-schema cursor-theme 'Adwaita'
-  # gsettings set $gnome-schema font-name 'JetBrainsMono Nerd Font 12'
-  gsettings set $gnome-schema font-name 'MonoLisa Nerd Font 12'
-}
+# change GTK themes in gnome-tweaks
 
 
 #-------------#
@@ -118,11 +112,26 @@ for_window [app_id="mpv"]            resize set width 800
 #-------------#
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec $term --class="termfloat"
+bindsym $mod+d exec pkill wofi || wofi --show run
 bindsym $mod+q kill
-bindsym $mod+d exec $menu --class="menufloat"
-bindsym $mod+Shift+v exec clipman pick -t wofi
-bindsym $mod+Shift+r reload
 bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+Shift+r reload
+bindsym $mod+x exec swaylock
+bindsym $mod+Escape exec wlogout
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+f fullscreen
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+b splith
+bindsym $mod+v splitv
+bindsym $mod+Shift+v exec clipman pick -t wofi
+bindsym $mod+Shift+c, exec hyprpicker -n -a
+bindsym $mod+Shift+o exec killall -SIGUSR1 waybar
+
+bindsym $mod+a focus parent
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
 floating_modifier $mod normal
 
 bindsym $mod+$left focus left
@@ -157,19 +166,6 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
-bindsym $mod+b splith
-bindsym $mod+v splitv
-
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-bindsym $mod+f fullscreen
-bindsym $mod+Shift+space floating toggle
-
-bindsym $mod+a focus parent
-bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+minus scratchpad show
-
 mode "resize" {
   bindsym $left resize shrink width 10px
   bindsym $down resize grow height 10px
@@ -179,9 +175,6 @@ mode "resize" {
   bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
-
-bindsym $mod+Escape exec wlogout
-bindsym $mod+x exec swaylock
 
 
 #---------------------#
@@ -199,8 +192,9 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-bindsym Print exec grim $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png && wl-copy < $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
-bindsym $mod+Print exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png && wl-copy < $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
+bindsym Print exec grimblast copy area
+bindsym $mod+Ctrl+Print exec grimblast copysave screen $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
+bindsym $mod+Shift+Print exec grimblast copysave area $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png 
 
 
 #----------------------#
@@ -209,4 +203,3 @@ bindsym $mod+Print exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/Screenshots/
 bar {
   swaybar_command waybar
 }
-bindsym $mod+o exec killall -SIGUSR1 waybar

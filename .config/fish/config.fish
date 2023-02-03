@@ -1,8 +1,8 @@
 source ~/.env
 
-if status --is-login
-  exec Hyprland
-end
+# if status --is-login
+#   exec Hyprland
+# end
 
 alias ls="exa $argv"
 alias l="ls -a -l $argv"

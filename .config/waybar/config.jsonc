@@ -3,7 +3,7 @@
 {
   "position": "top",
   "layer": "top",
-  "modules-left": ["wlr/workspaces", "cpu", "memory", "temperature"],
+  "modules-left": ["sway/workspaces", "wlr/workspaces", "cpu", "memory", "temperature"],
   "modules-center": ["custom/cava", "mpd"],
   "modules-right": [
     "tray",
@@ -13,10 +13,13 @@
     "battery",
     "clock"
   ],
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "sort-by-name": true
+  },
   "wlr/workspaces": {
     "disable-scroll": true,
     "sort-by-name": true,
-    // Hypeland
     "on-click": "activate",
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1"
