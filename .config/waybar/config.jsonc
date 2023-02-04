@@ -4,12 +4,12 @@
   "position": "top",
   "layer": "top",
   "modules-left": [
-    // "sway/workspaces",
+    "hyprland/submap",
     "wlr/workspaces",
     "mpd",
     "custom/cava"
   ],
-  "modules-center": ["clock"],
+  "modules-center": ["hyprland/window"],
   "modules-right": [
     "tray",
     "cpu",
@@ -18,31 +18,18 @@
     "network",
     "pulseaudio",
     "backlight",
-    "battery"
+    "battery",
+    "clock"
   ],
-  "sway/workspaces": {
-    "disable-scroll": true,
-    "sort-by-name": true
-  },
   "wlr/workspaces": {
-    "disable-scroll": true,
+    "format": "{icon}",
     "sort-by-name": true,
     "on-click": "activate",
     "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1"
-  },
-  "cpu": {
-    "format": "󰻠 {usage}%"
-  },
-  "memory": {
-    "format": "󰍛 {}%"
-  },
-  "temperature": {
-    "format": "󰔏 {temperatureC}°C"
-  },
-  "custom/cava": {
-    "exec": "~/.config/waybar/cava.sh",
-    "tooltip": false
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "format-icons": {
+      "10": "0"
+    }
   },
   "mpd": {
     "format": "{stateIcon}{consumeIcon} {randomIcon}{repeatIcon}{singleIcon}{title}({elapsedTime:%M:%S}/{totalTime:%M:%S}) 󰝚 ",
@@ -77,15 +64,33 @@
     "tooltip-format": "{artist} - {album} - {title}",
     "tooltip-format-disconnected": "MPD (disconnected)"
   },
+  "custom/cava": {
+    "exec": "~/.config/waybar/cava.sh",
+    "tooltip": false
+  },
+  "hyprland/window": {
+    "max-length": 40
+  },
   "tray": {
     "icon-size": 16,
     "spacing": 10
   },
+  "cpu": {
+    "format": "󰻠 {usage}%"
+  },
+  "memory": {
+    "format": "󰍛 {}%"
+  },
+  "temperature": {
+    "format": "󰔏 {temperatureC}°C"
+  },
   "network": {
-    "format-wifi": "󰤨 {essid}",
-    "format-ethernet": "󰈀 {essid}",
+    "format-wifi": "󰤨 {signalStrength}%",
+    "format-alt": "󰤨 {essid}",
+    "format-ethernet": "󰈀 {signalStrength}",
     "format-disconnected": "󰤮 ",
-    "tooltip-format-wifi": "󰤢 {signalStrength}% 󰁅 {bandwidthDownBits} 󰁝 {bandwidthUpBits}"
+    "tooltip-format-wifi": "󰤢 {essid} 󰁅 {bandwidthDownBits} 󰁝 {bandwidthUpBits}",
+    "tooltip-format-ethernet": "󰈀 {essid} 󰁅 {bandwidthDownBits} 󰁝 {bandwidthUpBits}"
   },
   "pulseaudio": {
     "on-click": "pamixer -t",
@@ -111,7 +116,6 @@
     "format": "{icon} {capacity}%",
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
-    "format-alt": "{icon} {time}",
     "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
   },
   "clock": {

@@ -17,6 +17,7 @@ tooltip {
   border-radius: 12px;
 }
 
+#submap,
 #workspaces,
 #clock,
 #tray,
@@ -33,6 +34,34 @@ tooltip {
   margin: 5px 5px;
   background-color: alpha(@text, 0.16);
   border-radius: 12px;
+}
+
+#cpu,
+#network {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-right: 0;
+  padding-right: 0;
+}
+#memory,
+#pulseaudio {
+  margin-left: 0;
+  margin-right: 0;
+  padding-right: 0;
+  border-radius: 0;
+}
+#temperature,
+#backlight {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: 0;
+}
+
+#submap {
+  margin-left: 14px;
+  margin-right: -4px;
+  background-color: @sky;
+  color: @base;
 }
 
 /* the first element */
@@ -56,15 +85,13 @@ tooltip {
   color: @blue;
 }
 
-#clock { color: @rosewater; }
-
-#cpu { color: @blue; }
-#memory { color: @green; }
-#temperature { color: @yellow; }
-#network { color: @maroon; }
+#cpu { color: @green; }
+#memory { color: @yellow; }
+#temperature { color: @peach; }
+#network { color: @red; }
 #pulseaudio { color: @mauve; }
 #backlight { color: @pink; }
-#battery { color: @rosewater; }
+#battery { color: @flamingo; }
 #battery.charging {
   background-color: @green;
   color: @base;
@@ -76,6 +103,7 @@ tooltip {
 }
 
 /* the last element */
-#battery {
+#clock {
+  color: @rosewater;
   margin-right: 14px;
 }
