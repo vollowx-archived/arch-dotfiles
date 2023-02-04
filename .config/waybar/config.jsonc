@@ -3,7 +3,12 @@
 {
   "position": "top",
   "layer": "top",
-  "modules-left": ["sway/workspaces", "wlr/workspaces", "mpd", "custom/cava"],
+  "modules-left": [
+    "sway/workspaces",
+    // "wlr/workspaces",
+    "mpd",
+    "custom/cava"
+  ],
   "modules-center": ["clock"],
   "modules-right": [
     "tray",

@@ -35,8 +35,8 @@ output * bg /home/pancak/.local/share/backgrounds/wallhaven-dgv23j.png fill
 #-------------#
 # startup env #
 #-------------#
-exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
-exec hash dbus-update-activation-environment 2>/dev/null && dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK
 xwayland enabled
 
 
@@ -127,7 +127,7 @@ bindsym $mod+b splith
 bindsym $mod+v splitv
 bindsym $mod+Shift+v exec clipman pick -t wofi
 bindsym $mod+Shift+c exec hyprpicker -n -a
-bindsym $mod+Shift+o exec killall -SIGUSR1 waybar
+bindsym $mod+o exec pkill --signal USR1 waybar
 bindsym --locked $mod+delete exec sh -c "notify-send '󰪑 Do Not Disturb' 'Turning on Do Not Disturb Mode' && sleep 2 && makoctl set-mode do-not-disturb"
 bindsym --locked $mod+Shift+delete exec sh -c "makoctl set-mode default && notify-send '󰂜 Do Not Disturb' 'Do Not Disturb Mode disabled'"
 
