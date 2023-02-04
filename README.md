@@ -5,7 +5,7 @@
 ### Desktop
 
 ```
-paru -S hyprland waybar-hyprland-git
+paru -S hyprland hyprpaper-git hyprpicker-git waybar-hyprland-git swayidle mako
 ```
 
 ### Music
