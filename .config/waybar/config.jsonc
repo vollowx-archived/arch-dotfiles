@@ -4,8 +4,8 @@
   "position": "top",
   "layer": "top",
   "modules-left": [
-    "sway/workspaces",
-    // "wlr/workspaces",
+    // "sway/workspaces",
+    "wlr/workspaces",
     "mpd",
     "custom/cava"
   ],

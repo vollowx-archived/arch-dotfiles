@@ -38,7 +38,7 @@ tooltip {
 /* the first element */
 #workspaces {
   margin-left: 14px;
-  padding: 0;
+  padding: 0 10px;
 }
 #workspaces button {
   padding: 0;
@@ -56,17 +56,18 @@ tooltip {
   color: @blue;
 }
 
-#clock { color: @text; }
+#clock { color: @rosewater; }
 
 #cpu { color: @blue; }
-#memory { color: @sapphire; }
-#temperature { color: @sky; }
-#network { color: @teal; }
-#pulseaudio { color: @green; }
-#backlight { color: @yellow; }
-#battery { color: @red; }
+#memory { color: @green; }
+#temperature { color: @yellow; }
+#network { color: @maroon; }
+#pulseaudio { color: @mauve; }
+#backlight { color: @pink; }
+#battery { color: @rosewater; }
 #battery.charging {
-  color: @green;
+  background-color: @green;
+  color: @base;
 }
 #battery.warning:not(.charging),
 #battery.critical:not(.charging) {

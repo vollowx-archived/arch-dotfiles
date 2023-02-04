@@ -43,7 +43,7 @@ xwayland enabled
 #-----------#
 # autostart #
 #-----------#
-exec --no-startup-id fcitx5 -d --replace
+exec fcitx5 -d --replace
 exec wl-paste -t text --watch clipman store
 exec mako
 
@@ -194,14 +194,14 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-bindsym Print exec grimblast copy area
-bindsym $mod+Ctrl+Print exec grimblast copysave screen $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
-bindsym $mod+Shift+Print exec grimblast copysave area $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png 
+bindsym Print exec grimblast copy area && notify-send '󰹑 Screenshot' 'Area copied'
+bindsym $mod+Ctrl+Print exec grimblast copysave screen $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png && notify-send '󰹑 Screenshot' 'Screen copied and saved'
+bindsym $mod+Shift+Print exec grimblast copysave area $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png && notify-send '󰹑 Screenshot' 'Area copied and saved'
 
 
-#----------------------#
-# waybar & keybindings #
-#----------------------#
+#--------#
+# waybar #
+#--------#
 bar {
   swaybar_command waybar
 }

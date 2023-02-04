@@ -1,6 +1,8 @@
 ignore-empty-password
 disable-caps-lock-text
-image=/home/pancak/.local/share/backgrounds/Street.jpg
+image=/home/pancak/.local/share/backgrounds/wallhaven-dgv23j.png
+# screenshot
+effect-blur=40x10
 font=MonoLisa Nerd Font
 
 text-ver-color=00000000
@@ -30,8 +32,6 @@ clock
 timestr=%I:%M %p
 datestr=%A, %d %B
 indicator-x-position=300
-indicator-y-position=875
+indicator-y-position=880
 indicator-radius=150
 text-color=cdd6f4
-
-grace=0
