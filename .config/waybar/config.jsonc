@@ -69,7 +69,7 @@
     "tooltip": false
   },
   "hyprland/window": {
-    "max-length": 40
+    "max-length": 50
   },
   "tray": {
     "icon-size": 16,
