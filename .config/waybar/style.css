@@ -85,12 +85,14 @@ tooltip {
   color: @blue;
 }
 
-#cpu { color: @green; }
-#memory { color: @yellow; }
-#temperature { color: @peach; }
-#network { color: @red; }
-#pulseaudio { color: @mauve; }
-#backlight { color: @pink; }
+#cpu { color: @red; }
+#memory { color: @mauve; }
+#temperature { color: @pink; }
+
+#network { color: @green; }
+#pulseaudio { color: @yellow; }
+#backlight { color: @peach; }
+
 #battery { color: @flamingo; }
 #battery.charging {
   background-color: @green;

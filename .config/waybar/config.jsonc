@@ -12,12 +12,12 @@
   "modules-center": ["hyprland/window"],
   "modules-right": [
     "tray",
-    "cpu",
-    "memory",
-    "temperature",
     "network",
     "pulseaudio",
     "backlight",
+    "cpu",
+    "memory",
+    "temperature",
     "battery",
     "clock"
   ],
