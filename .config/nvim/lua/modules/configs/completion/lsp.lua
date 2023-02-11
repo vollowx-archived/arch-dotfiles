@@ -36,10 +36,16 @@ return function()
 		ensure_installed = {
 			"bashls",
 			"clangd",
+			"cssls",
 			"efm",
 			"gopls",
+			"html",
+			"jsonls",
 			"pyright",
+			"rust_analyzer",
 			"sumneko_lua",
+			"tsserver",
+			"volar",
 		},
 	})
 

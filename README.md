@@ -1,22 +1,8 @@
 # arch-dotfiles
 
-## Softwares
-
-### Desktop
-
 ```
-paru -S hyprland hyprpaper-git hyprpicker-git waybar-hyprland-git swayidle mako
-```
-
-### Music
-
-```
-sudo pacman -S mpd mpc ncmpcpp cava
-```
-
-### Shell
-
-```
-sudo pacman -S fish
-chsh -s /bin/fish
+- desktop - Hyprland - sudo pacman -S mako swayidle && paru -S hyprland hyprpaper-git hyprpicker-git waybar-hyprland-git
+- editor  - Neovim   - sudo pacman -S neovim unzip wget
+- music   - MPD      - sudo pacman -S mpd mpc ncmpcpp cava
+- shell   - Fish     - sudo pacman -S fish && chsh -s /bin/fish
 ```

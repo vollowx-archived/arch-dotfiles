@@ -3,7 +3,6 @@ disable-caps-lock-text
 image=/home/pancak/.local/share/backgrounds/wallhaven-dgv23j.png
 # screenshot
 effect-blur=40x10
-font=MonoLisa Nerd Font
 
 text-ver-color=00000000
 text-wrong-color=00000000
