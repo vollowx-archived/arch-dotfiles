@@ -1,9 +1,9 @@
 @import './mocha.css';
 
 * {
-  /* font-family: JetBrainsMono Nerd Font; */
-  font-family: MonoLisa Nerd Font;
-  font-size: 10pt;
+  font-family: JetBrainsMono Nerd Font;
+  /* font-family: MonoLisa Nerd Font; */
+  font-size: 11pt;
   font-weight: bold;
 }
 
@@ -31,9 +31,9 @@ tooltip {
 #backlight,
 #battery {
   padding: 5px 10px;
-  margin: 5px 5px;
+  margin: 5px 2.5px;
   background-color: alpha(@text, 0.16);
-  border-radius: 12px;
+  border-radius: 14px;
 }
 
 #cpu,
