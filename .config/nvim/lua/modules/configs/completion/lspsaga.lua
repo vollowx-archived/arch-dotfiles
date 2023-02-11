@@ -30,8 +30,8 @@ return function()
 			lines_below = 17,
 		},
 		scroll_preview = {
-			scroll_down = "<C-j>",
-			scroll_up = "<C-k>",
+			scroll_down = "<C-d>",
+			scroll_up = "<C-u>",
 		},
 		request_timeout = 3000,
 		finder = {
