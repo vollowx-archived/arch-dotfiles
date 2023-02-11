@@ -1,8 +1,11 @@
 local settings = {}
 
 settings["useSsh"] = true
-settings["format_on_save"] = true
+settings["formatOnSave"] = true
 settings["colorscheme"] = "catppuccin"
 settings["background"] = "dark"
+settings["paletteOverwrite"] = {}
+settings["loadBigFilesFaster"] = true
+settings["formatDisabledDirs"] = {}
 
 return settings

@@ -1,27 +1,3 @@
-require 'user.impatient'
-require 'user.options'
-require 'user.mappings'
-require 'user.plugins'
-require 'user.colorscheme'
-require 'user.autocommands'
-
-require 'user.alpha'
-require 'user.bufferline'
-require 'user.catppuccin'
-require 'user.comment'
-require 'user.fidget'
-require 'user.gitsigns'
-require 'user.lualine'
-require 'user.symbol-outline'
-require 'user.nvim-autopairs'
-require 'user.nvim-notify'
-require 'user.nvim-tree'
-require 'user.nvim-treesitter'
-require 'user.project'
-require 'user.telescope'
-require 'user.toggleterm'
-require 'user.trouble'
-require 'user.whichkey'
-
-require 'user.cmp'
-require 'user.lsp'
+if not vim.g.vscode then
+	require("core")
+end
