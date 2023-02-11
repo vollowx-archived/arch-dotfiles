@@ -10,7 +10,8 @@ notify.setup {
   on_open = nil,
   on_close = nil,
   render = 'default',
-  timeout = 200,
+  fps = 30,
+  timeout = 2000,
   background_colour = 'Normal',
   minimum_width = 10,
 

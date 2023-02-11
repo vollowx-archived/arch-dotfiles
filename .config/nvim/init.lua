@@ -7,6 +7,7 @@ require 'user.autocommands'
 
 require 'user.alpha'
 require 'user.bufferline'
+require 'user.catppuccin'
 require 'user.comment'
 require 'user.fidget'
 require 'user.gitsigns'
