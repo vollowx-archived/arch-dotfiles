@@ -178,5 +178,5 @@ return function()
 		-- rust = {formatter = rustfmt},
 	})
 
-	formatting.configure_formatOnSave()
+	formatting.configure_format_on_save()
 end

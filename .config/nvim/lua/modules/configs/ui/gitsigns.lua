@@ -33,7 +33,7 @@ return function()
 			},
 		},
 		on_attach = function(bufnr)
-			local bind = require("keymaps.bind")
+			local bind = require("keymap.bind")
 
 			bind.nvim_load_mapping({
 				["n|]g"] = bind.map_callback(function()

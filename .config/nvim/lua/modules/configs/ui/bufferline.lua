@@ -24,9 +24,6 @@ return function()
 			persist_buffer_sort = true,
 			always_show_bufferline = true,
 			separator_style = "thin",
-			indicator = {
-				style = "icon", -- can also be 'underline'|'none',
-			},
 			diagnostics = "nvim_lsp",
 			diagnostics_indicator = function(count, level, diagnostics_dict, context)
 				local s = " "

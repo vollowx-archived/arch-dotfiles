@@ -96,10 +96,10 @@ local load_core = function()
 	neovide_config()
 
 	require("core.options")
-	require("core.mappings")
-	require("keymaps")
-	require("core.events")
-	require("core.plugins")
+	require("core.mapping")
+	require("keymap")
+	require("core.event")
+	require("core.pack")
 
 	local colorscheme = require("core.settings").colorscheme
 	local background = require("core.settings").background

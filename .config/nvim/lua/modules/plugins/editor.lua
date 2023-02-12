@@ -18,7 +18,7 @@ editor["max397574/better-escape.nvim"] = {
 editor["LunarVim/bigfile.nvim"] = {
 	lazy = false,
 	config = require("editor.bigfile"),
-	cond = require("core.settings").loadBigFilesFaster,
+	cond = require("core.settings").load_big_files_faster,
 }
 editor["ojroques/nvim-bufdel"] = {
 	lazy = true,
@@ -67,7 +67,11 @@ editor["romainl/vim-cool"] = {
 ----------------------------------------------------------------------
 editor["nvim-treesitter/nvim-treesitter"] = {
 	lazy = true,
-	build = ":TSUpdate",
+	build = function()
+		if #vim.api.nvim_list_uis() ~= 0 then
+			vim.api.nvim_command("TSUpdate")
+		end
+	end,
 	event = { "CursorHold", "CursorHoldI" },
 	config = require("editor.treesitter"),
 	dependencies = {

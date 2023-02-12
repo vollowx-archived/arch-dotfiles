@@ -1,11 +1,11 @@
 local M = {}
 
 local settings = require("core.settings")
-local disabled_workspaces = settings.formatDisabledDirs
-local formatOnSave = settings.formatOnSave
+local disabled_workspaces = settings.format_disabled_dirs
+local format_on_save = settings.format_on_save
 
 vim.api.nvim_create_user_command("FormatToggle", function()
-	M.toggle_formatOnSave()
+	M.toggle_format_on_save()
 end, {})
 
 local block_list = {}
@@ -52,11 +52,11 @@ end, {
 	end,
 })
 
-function M.enable_formatOnSave(is_configured)
+function M.enable_format_on_save(is_configured)
 	local opts = { pattern = "*", timeout = 1000 }
-	vim.api.nvim_create_augroup("formatOnSave", {})
+	vim.api.nvim_create_augroup("format_on_save", {})
 	vim.api.nvim_create_autocmd("BufWritePre", {
-		group = "formatOnSave",
+		group = "format_on_save",
 		pattern = opts.pattern,
 		callback = function()
 			require("completion.formatting").format({ timeout_ms = opts.timeout, filter = M.format_filter })
@@ -71,30 +71,30 @@ function M.enable_formatOnSave(is_configured)
 	end
 end
 
-function M.disable_formatOnSave()
-	pcall(vim.api.nvim_del_augroup_by_name, "formatOnSave")
-	if formatOnSave then
+function M.disable_format_on_save()
+	pcall(vim.api.nvim_del_augroup_by_name, "format_on_save")
+	if format_on_save then
 		vim.notify("Disabled format-on-save", vim.log.levels.INFO, { title = "Settings modification success!" })
 	end
 end
 
-function M.configure_formatOnSave()
-	if formatOnSave then
-		M.enable_formatOnSave(true)
+function M.configure_format_on_save()
+	if format_on_save then
+		M.enable_format_on_save(true)
 	else
-		M.disable_formatOnSave()
+		M.disable_format_on_save()
 	end
 end
 
-function M.toggle_formatOnSave()
+function M.toggle_format_on_save()
 	local status = pcall(vim.api.nvim_get_autocmds, {
-		group = "formatOnSave",
+		group = "format_on_save",
 		event = "BufWritePre",
 	})
 	if not status then
-		M.enable_formatOnSave(false)
+		M.enable_format_on_save(false)
 	else
-		M.disable_formatOnSave()
+		M.disable_format_on_save()
 	end
 end
 

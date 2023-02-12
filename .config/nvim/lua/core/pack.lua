@@ -7,7 +7,7 @@ local lazy_path = data_dir .. "lazy/lazy.nvim"
 local modules_dir = vim_path .. "/lua/modules"
 
 local settings = require("core.settings")
-local useSsh = settings.useSsh
+local use_ssh = settings.use_ssh
 
 local icons = {
 	kind = require("modules.utils.icons").get("kind"),
@@ -57,12 +57,12 @@ end
 
 function Lazy:load_lazy()
 	if not vim.loop.fs_stat(lazy_path) then
-		local lazy_repo = useSsh and "git@github.com:folke/lazy.nvim.git " or "https://github.com/folke/lazy.nvim.git "
+		local lazy_repo = use_ssh and "git@github.com:folke/lazy.nvim.git " or "https://github.com/folke/lazy.nvim.git "
 		api.nvim_command("!git clone --filter=blob:none --branch=stable " .. lazy_repo .. lazy_path)
 	end
 	self:load_plugins()
 
-	local clone_prefix = useSsh and "git@github.com:%s.git" or "https://github.com/%s.git"
+	local clone_prefix = use_ssh and "git@github.com:%s.git" or "https://github.com/%s.git"
 	local lazy_settings = {
 		root = data_dir .. "lazy", -- directory where plugins will be installed
 		git = {
