@@ -31,7 +31,6 @@
 !.config/ncmpcpp/**/*
 !.config/nvim/
 !.config/nvim/**/**
-.config/nvim/plugin
 !.config/obs-studio/
 !.config/obs-studio/themes
 !.config/obs-studio/themes/**/*
@@ -55,9 +54,6 @@
 !.local/share/backgrounds/wallhaven-dgv23j.png
 !.local/share/backgrounds/NachoNeko.jpg
 !.local/share/backgrounds/Street.jpg
-# LiveWallpaperPC.com-City-1920x1080.mp4               LiveWallpaperPC.com-Scared-Yet-III-2560x1440.mp4
-# LiveWallpaperPC.com-NachoNeko-Shizuku-2560x1440.mp4  LiveWallpaperPC.com-Wedding-Dress-3840x2160.mp4
-# LiveWallpaperPC.com-SaiiKa-3840x2160.mp4
 !.local/share/fcitx5/
 !.local/share/fcitx5/**/*
 !.local/share/fonts/
