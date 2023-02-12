@@ -1,6 +1,7 @@
 ignore-empty-password
 disable-caps-lock-text
-image=/home/pancak/.local/share/backgrounds/wallhaven-dgv23j.png
+image=/home/pancak/.local/share/backgrounds/Bridge.jpg
+font=JetBrains Mono Nerd Font
 # screenshot
 effect-blur=40x10
 
