@@ -8,7 +8,7 @@
 }
 
 window#waybar {
-  background-color: alpha(@base, 0.7);
+  background-color: alpha(@base, 0.9);
   color: @text;
 }
 
@@ -76,13 +76,13 @@ tooltip {
 }
 #workspaces button.active,
 #workspaces button.focused {
-  color: @sky;
+  color: @rosewater;
 }
 #workspaces button.urgent {
-  color: @red;
+  color: @peach;
 }
 #workspaces button:hover {
-  color: @blue;
+  color: @mauve;
 }
 
 #cpu {

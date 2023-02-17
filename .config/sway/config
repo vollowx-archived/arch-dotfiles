@@ -9,16 +9,16 @@ include @sysconfdir@/sway/config.d/*
 include catppuccin-mocha
 
 # target                 title     bg    text   indicator  border
-client.focused           $sky      $base $text  $rosewater $sky
-client.focused_inactive  $mauve    $base $text  $rosewater $overlay2
-client.unfocused         $mauve    $base $text  $rosewater $overlay0
-client.urgent            $red      $base $red   $overlay0  $red
+client.focused           $pink     $base $text  $rosewater $pink
+client.focused_inactive  $mauve    $base $text  $rosewater $mauve
+client.unfocused         $mauve    $base $text  $rosewater $mauve
+client.urgent            $peach    $base $peach $overlay0  $peach
 client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
 
 # smart_borders on
-default_border pixel 4
-default_floating_border pixel 4
+default_border pixel 3
+default_floating_border pixel 3
 gaps inner 8
 gaps outer 2
 
@@ -45,7 +45,7 @@ xwayland enabled
 #-----------#
 exec fcitx5 -d --replace
 exec wl-paste -t text --watch clipman store
-exec mako
+exec ~/.config/mako/launch.sh
 
 
 #-----------#

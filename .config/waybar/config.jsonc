@@ -42,15 +42,15 @@
     },
     "random-icons": {
       "off": "<span foreground='#a6adc8'>󰒝</span> ",
-      "on": "<span foreground='#89dceb'>󰒝</span> "
+      "on": "<span foreground='#f5e0dc'>󰒝</span> "
     },
     "repeat-icons": {
       "off": "<span foreground='#a6adc8'>󰑖</span> ",
-      "on": "<span foreground='#89dceb'>󰑖</span> "
+      "on": "<span foreground='#f5e0dc'>󰑖</span> "
     },
     "single-icons": {
       "off": "<span foreground='#a6adc8'>󰑘</span> ",
-      "on": "<span foreground='#89dceb'>󰑘</span> "
+      "on": "<span foreground='#f5e0dc'>󰑘</span> "
     },
     "state-icons": {
       "paused": "󰐊",
