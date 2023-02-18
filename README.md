@@ -1,15 +1,14 @@
 # arch-dotfiles
 
+## Softwares
+
 ```
-cursor       - Catppuccin   - paru -S catppuccin-cursors-mocha
-gtk          - Catppuccin   - paru -S catppuccin-gtk-theme-mocha
-qt           - lightly      - paru -S lightly-qt
-               // this sometimes can not work... but looks nice
-desktop      - Hyprland     - paru -S hyprland hyprpaper-git hyprpicker-git waybar-hyprland-git mako swayidle wlogout grimblast
-             - sway         - paru -S sway swaybg swayidle mako waybar-hyprland-git hyprpicker-git
-               // I am not using sway, the config for it may be broken, try Hyprland!
+desktop      - Hyprland     - paru -S hyprland hyprpaper swayidle swaylock-effects
+             - sway         - paru -S sway swaybg swayidle swaylock-effects
+               // I am mainly using Hyprland, the config for it may be broken, try Hyprland!
 notification - mako         - paru -S mako
 bar          - waybar       - paru -S waybar-hyprland-git
+locker       - swaylock     - paru -S swaylock-effects
 editor       - Neovim       - paru -S neovim
                // you probably also need to install something like wget, npm, etc, see the error log and install them if you need
              - VSCode       - paru -S visual-studio-code-bin
@@ -22,6 +21,22 @@ music        - MPD          - paru -S mpd mpc ncmpcpp cava mpdscribble && system
                // a 3rd party netease music which can connect to last.fm inside and looks beautiful
 shell        - Fish         - paru -S fish && chsh -s /bin/fish
                // a easy and powerful shell
+hot reload   - inotify      - paru -S inotify-tools
+color        - hyprpicker   - paru -S hyprpicker
+screenshot   - grimblast    - paru -S grimblast
+log manager  - wlogout      - paru -S wlogout
 control      - light        - paru -S light && sudo chmod +s /bin/light
              - pamixer      - paru -S pamixer
+ime          - fcitx5       - paru -S fcitx5
+             - fcitx5 (zh)  - paru -S fcitx5-chinese-addons
+```
+
+## Others
+
+```
+cursor       - Catppuccin   - paru -S catppuccin-cursors-mocha
+gtk          - Catppuccin   - paru -S catppuccin-gtk-theme-mocha
+qt           - lightly      - paru -S qt5ct lightly-qt
+               // lightly sometimes can not work... but looks nice
+dark mode    - gtk4         - gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 ```
