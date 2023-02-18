@@ -10,7 +10,7 @@ desktop      - Hyprland     - paru -S hyprland hyprpaper-git hyprpicker-git wayb
                // I am not using sway, the config for it may be broken, try Hyprland!
 notification - mako         - paru -S mako
 bar          - waybar       - paru -S waybar-hyprland-git
-editor       - Neovim       - paru -S Neovim
+editor       - Neovim       - paru -S neovim
                // you probably also need to install something like wget, npm, etc, see the error log and install them if you need
              - VSCode       - paru -S visual-studio-code-bin
                // if you want to use the Microsoft-branded release that support settings sync (important for me)
