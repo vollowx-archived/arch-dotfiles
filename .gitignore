@@ -5,6 +5,8 @@
 !.config/btop/**/*
 !.config/cava/
 !.config/cava/**/*
+!.config/dconf/
+!.config/dconf/**/*
 !.config/fish/
 !.config/fish/**/*
 !.config/fontconfig/
@@ -56,8 +58,6 @@
 !.local/share/backgrounds/Street.jpg
 !.local/share/fcitx5/
 !.local/share/fcitx5/**/*
-!.local/share/fonts/
-!.local/share/fonts/**/*
 
 !.env
 !.gitconfig

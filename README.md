@@ -5,7 +5,7 @@ cursor       - Catppuccin   - paru -S catppuccin-cursors-mocha
 gtk          - Catppuccin   - paru -S catppuccin-gtk-theme-mocha
 qt           - lightly      - paru -S lightly-qt
                // this sometimes can not work... but looks nice
-desktop      - Hyprland     - paru -S hyprland hyprpaper-git hyprpicker-git waybar-hyprland-git mako swayidle
+desktop      - Hyprland     - paru -S hyprland hyprpaper-git hyprpicker-git waybar-hyprland-git mako swayidle wlogout grimblast
              - sway         - paru -S sway swaybg swayidle mako waybar-hyprland-git hyprpicker-git
                // I am not using sway, the config for it may be broken, try Hyprland!
 notification - mako         - paru -S mako
@@ -22,4 +22,6 @@ music        - MPD          - paru -S mpd mpc ncmpcpp cava mpdscribble && system
                // a 3rd party netease music which can connect to last.fm inside and looks beautiful
 shell        - Fish         - paru -S fish && chsh -s /bin/fish
                // a easy and powerful shell
+control      - light        - paru -S light && sudo chmod +s /bin/light
+             - pamixer      - paru -S pamixer
 ```
