@@ -38,8 +38,6 @@
 !.config/qt5ct/**/*
 !.config/ranger/
 !.config/ranger/**/*
-!.config/sway/
-!.config/sway/**/*
 !.config/swaylock/
 !.config/swaylock/**/*
 !.config/waybar/

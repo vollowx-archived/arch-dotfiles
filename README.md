@@ -8,8 +8,6 @@ See huge-pancake/nvimdots.
 
 ```
 desktop      - Hyprland     - paru -S hyprland hyprpaper swayidle swaylock-effects
-             - sway         - paru -S sway swaybg swayidle swaylock-effects
-               // I am mainly using Hyprland, the config for it may be broken, try Hyprland!
 notification - mako         - paru -S mako
 bar          - waybar       - paru -S waybar-hyprland-git
 locker       - swaylock     - paru -S swaylock-effects
