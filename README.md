@@ -1,5 +1,12 @@
 # arch-dotfiles
 
+## After clone
+
+```
+git submodule update --init --recursive
+# to sync submodules
+```
+
 ## Softwares
 
 ```
