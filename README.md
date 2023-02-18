@@ -1,11 +1,8 @@
 # arch-dotfiles
 
-## After clone
+## Where's Neovim config?
 
-```
-git submodule update --init --recursive
-# to sync submodules
-```
+See huge-pancake/nvimdots.
 
 ## Softwares
 

@@ -31,8 +31,6 @@
 !.config/mpv/**/*
 !.config/ncmpcpp/
 !.config/ncmpcpp/**/*
-!.config/nvim/
-!.config/nvim/**/**
 !.config/obs-studio/
 !.config/obs-studio/themes
 !.config/obs-studio/themes/**/*
