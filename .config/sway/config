@@ -24,8 +24,7 @@ gaps outer 2
 
 # Electron apps have some problems with this, so scale font
 output eDP-1 scale 1
-output * bg /home/pancak/.local/share/backgrounds/wallhaven-dgv23j.png fill
-# output * bg /home/pancak/.local/share/backgrounds/Street.jpg fill
+output * bg /home/pancak/.local/share/backgrounds/wallhaven-z8dg9y.png fill
 
 # font JetBrainsMono Nerd Font 10
 
