@@ -7,6 +7,8 @@
 !.config/cava/**/*
 !.config/dconf/
 !.config/dconf/**/*
+!.config/fcitx5/
+!.config/fcitx5/**/*
 !.config/fish/
 !.config/fish/**/*
 !.config/fontconfig/
