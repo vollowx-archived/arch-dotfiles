@@ -38,7 +38,7 @@ file manager - ranger       - paru -S ranger python-pillow
 ## Others
 
 ```
-cursor       - Catppuccin   - paru -S catppuccin-cursors-mocha
+cursor       - apple_cursor - paru -S apple_cursor
 gtk          - Catppuccin   - paru -S catppuccin-gtk-theme-mocha
 qt           - lightly      - paru -S qt5ct lightly-qt
                // lightly sometimes can not work... but looks nice
