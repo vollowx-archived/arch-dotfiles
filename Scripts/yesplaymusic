@@ -1,1 +1,2 @@
+#!/bin/bash
 /opt/YesPlayMusic/yesplaymusic & disown
