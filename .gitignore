@@ -64,4 +64,7 @@
 !.gitmodules
 !.npmrc
 
+!Scripts/
+!Scripts/**/*
+
 !README.md
