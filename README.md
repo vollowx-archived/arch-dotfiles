@@ -1,9 +1,5 @@
 # arch-dotfiles
 
-## Where's Neovim config?
-
-See huge-pancake/nvimdots.
-
 ## Softwares
 
 ```
@@ -11,7 +7,7 @@ desktop      - Hyprland     - paru -S hyprland hyprpaper swayidle swaylock-effec
 notification - mako         - paru -S mako
 bar          - waybar       - paru -S waybar-hyprland-git
 locker       - swaylock     - paru -S swaylock-effects
-editor       - Neovim       - paru -S neovim
+editor       - Neovim       - paru -S neovim go npm unzip
                // you probably also need to install something like wget, npm, etc, see the error log and install them if you need
              - VSCode       - paru -S visual-studio-code-bin
                // if you want to use the Microsoft-branded release that support settings sync (important for me)
