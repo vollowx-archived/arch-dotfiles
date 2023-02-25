@@ -22,7 +22,8 @@ shell        - Fish         - paru -S fish && chsh -s /bin/fish
 hot reload   - inotify      - paru -S inotify-tools
 color        - hyprpicker   - paru -S hyprpicker
 screenshot   - grimblast    - paru -S grimblast
-log manager  - wlogout      - paru -S wlogout
+launcher     - rofi         - paru -S rofi-lbonn-wayland-git rofi-calc rofi-emoji
+  & log manager & some applet
 control      - light        - paru -S light && sudo chmod +s /bin/light
              - pamixer      - paru -S pamixer
 ime          - fcitx5       - paru -S fcitx5

@@ -40,6 +40,8 @@
 !.config/qt5ct/**/*
 !.config/ranger/
 !.config/ranger/**/*
+!.config/rofi/
+!.config/rofi/**/*
 !.config/swaylock/
 !.config/swaylock/**/*
 !.config/waybar/

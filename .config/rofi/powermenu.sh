@@ -1,0 +1,111 @@
+#!/bin/bash
+
+# CMDs
+uptime="$(uptime -p | sed -e 's/up //g')"
+host=$(hostname)
+
+# Options
+shutdown='󰤂'
+reboot='󰜉'
+lock='󰌾'
+sleep='󰤄'
+suspend='󰍛'
+hibernate='󰾶'
+logout='󰍃'
+yes='󰄬'
+no='󰅖'
+
+# Rofi CMD
+rofi_cmd() {
+	rofi -dmenu \
+		-p "Uptime: $uptime" \
+		-mesg "Uptime: $uptime" \
+		-theme ~/.config/rofi/powermenu.rasi
+}
+
+# Confirmation CMD
+confirm_cmd() {
+	rofi -dmenu \
+		-p 'Confirmation' \
+		-mesg 'Are you Sure?' \
+		-theme ~/.config/rofi/confirm.rasi
+}
+
+# Sleep CMD
+sleep_cmd() {
+	rofi -dmenu \
+		-p 'Sleeping' \
+		-mesg 'Where to Sleep?' \
+		-theme ~/.config/rofi/confirm.rasi
+}
+
+# Ask for confirmation
+confirm_exit() {
+	echo -e "$yes\n$no" | confirm_cmd
+}
+
+# Ask for where to sleep
+sleep_to() {
+	echo -e "$suspend\n$hibernate" | sleep_cmd
+}
+
+# Pass variables to rofi dmenu
+run_rofi() {
+	echo -e "$lock\n$sleep\n$logout\n$reboot\n$shutdown" | rofi_cmd
+}
+
+# Execute Command
+run_cmd() {
+	selected="$(confirm_exit)"
+	if [[ "$selected" == "$yes" ]]; then
+		if [[ $1 == '--shutdown' ]]; then
+			systemctl poweroff
+		elif [[ $1 == '--reboot' ]]; then
+			systemctl reboot
+		elif [[ $1 == '--suspend' ]]; then
+			mpc -q pause
+			amixer set Master mute
+			systemctl suspend
+		elif [[ $1 == '--hibernate' ]]; then
+			mpc -q pause
+			amixer set Master mute
+			systemctl hibernate
+		elif [[ $1 == '--logout' ]]; then
+      session=$(loginctl session-status | head -n 1 | awk '{print $1}')
+      loginctl terminate-session "$session"
+		fi
+	else
+		exit 0
+	fi
+}
+
+run_sleep_cmd() {
+  selected="$(sleep_to)"
+  if [[ "$selected" == "$suspend" ]]; then
+    run_cmd --suspend
+  elif [[ "$selected" == "$hibernate" ]]; then
+    run_cmd --hibernate
+  else
+    exit 0
+  fi
+}
+
+# Actions
+chosen="$(run_rofi)"
+case ${chosen} in
+    $shutdown)
+		run_cmd --shutdown
+        ;;
+    $reboot)
+		run_cmd --reboot
+        ;;
+    $lock)
+    swaylock
+        ;;
+    $sleep)
+		run_sleep_cmd
+        ;;
+    $logout)
+		run_cmd --logout
+        ;;
+esac
