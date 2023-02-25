@@ -1,2 +1,3 @@
 #!/bin/bash
-java -jar ~/Softwares/minecraft/hmcl.jar
+cd ~/Softwares/minecraft/ || exit
+java -jar ./hmcl.jar
