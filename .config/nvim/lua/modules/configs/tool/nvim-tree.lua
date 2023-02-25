@@ -6,6 +6,9 @@ return function()
 		ui = require("modules.utils.icons").get("ui"),
 	}
 
+	local nvim_tree_config = require("nvim-tree.config")
+	local tree_cb = nvim_tree_config.nvim_tree_callback
+
 	require("nvim-tree").setup({
 		auto_reload_on_write = true,
 		create_in_closed_folder = false,
@@ -21,7 +24,7 @@ return function()
 		sort_by = "name",
 		sync_root_with_cwd = true,
 		view = {
-			adaptive_size = false,
+			adaptive_size = true,
 			centralize_selection = false,
 			width = 30,
 			side = "left",
@@ -31,7 +34,7 @@ return function()
 			signcolumn = "yes",
 			hide_root_folder = false,
 			float = {
-				enable = true,
+				enable = false,
 				open_win_config = {
 					relative = "editor",
 					border = "rounded",
@@ -39,6 +42,13 @@ return function()
 					height = 30,
 					row = 1,
 					col = 1,
+				},
+			},
+			mappings = {
+				list = {
+					{ key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
+					{ key = "h", cb = tree_cb("close_node") },
+					{ key = "v", cb = tree_cb("vsplit") },
 				},
 			},
 		},
@@ -51,7 +61,7 @@ return function()
 			special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md", "CMakeLists.txt" },
 			symlink_destination = true,
 			indent_markers = {
-				enable = true,
+				enable = false,
 				icons = {
 					corner = "└ ",
 					edge = "│ ",

@@ -106,7 +106,7 @@ local data = {
 		Bug = "",
 		Calendar = "",
 		Check = "",
-		ChevronRight = "",
+		ChevronRight = "",
 		Circle = "",
 		Close = "",
 		Close_alt = "",
@@ -145,8 +145,8 @@ local data = {
 		Right = "",
 		RootFolderOpened = "",
 		Search = "",
-		Separator = "󰿟",
-		DoubleSeparator = "󰿟󰿟",
+		Separator = "",
+		DoubleSeparator = "",
 		SignIn = "",
 		SignOut = "",
 		Sort = "",
@@ -212,7 +212,7 @@ local data = {
 		StepOver = "",
 		Stopped = "",
 		Terminate = "",
-  }
+	},
 }
 
 ---Get a specific icon set.

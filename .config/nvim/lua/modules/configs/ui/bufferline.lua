@@ -1,5 +1,8 @@
 return function()
-	local icons = { ui = require("modules.utils.icons").get("ui") }
+	local icons = {
+		ui = require("modules.utils.icons").get("ui"),
+		diagnostics = require("modules.utils.icons").get("diagnostics", true),
+	}
 
 	local opts = {
 		options = {
@@ -20,10 +23,19 @@ return function()
 			enforce_regular_tabs = true,
 			persist_buffer_sort = true,
 			always_show_bufferline = true,
-			separator_style = "thin",
+			separator_style = "slant",
 			diagnostics = "nvim_lsp",
-			diagnostics_indicator = function(count)
-				return "(" .. count .. ")"
+			diagnostics_indicator = function(count, level, diagnostics_dict, context)
+				local str = " "
+				for is, num in pairs(diagnostics_dict) do
+					local sym = is == "error" and icons.diagnostics.Error
+						or (is == "warning" and icons.diagnostics.Warning or icons.diagnostics.Hint)
+					str = str .. sym .. num .. " "
+				end
+				return str
+			end,
+			numbers = function(opts)
+				return string.format("%s", opts.raise(opts.ordinal))
 			end,
 			offsets = {
 				{
