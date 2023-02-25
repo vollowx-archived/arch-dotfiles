@@ -36,6 +36,7 @@ file manager - ranger       - paru -S ranger python-pillow
 ```
 cursor       - apple_cursor - paru -S apple_cursor
 gtk          - Catppuccin   - paru -S catppuccin-gtk-theme-mocha
+icons        - WhiteSur     - paru -S whitesur-icon-theme
 qt           - lightly      - paru -S qt5ct lightly-qt
                // lightly sometimes can not work... but looks nice
 dark mode    - gtk4         - gsettings set org.gnome.desktop.interface color-scheme prefer-dark

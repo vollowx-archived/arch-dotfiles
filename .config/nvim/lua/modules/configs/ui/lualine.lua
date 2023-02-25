@@ -110,7 +110,7 @@ return function()
 			section_separators = { left = "", right = "" },
 		},
 		sections = {
-			lualine_a = { { "mode", separator = { left = "" } } },
+			lualine_a = { { "mode" } },
 			lualine_b = { { "branch" }, { "diff", source = diff_source } },
 			lualine_c = { lspsaga_symbols },
 			lualine_x = {
@@ -140,7 +140,7 @@ return function()
 					},
 				},
 			},
-			lualine_z = { "progress", { "location", separator = { right = "" } } },
+			lualine_z = { "progress", "location" },
 		},
 		inactive_sections = {
 			lualine_a = {},
