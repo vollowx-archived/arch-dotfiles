@@ -9,8 +9,6 @@
 !.config/dconf/**/*
 !.config/fcitx5/
 !.config/fcitx5/**/*
-!.config/fish/
-!.config/fish/**/*
 !.config/fontconfig/
 !.config/fontconfig/**/*
 !.config/gtk-3.0/
@@ -66,6 +64,11 @@
 !.gitignore
 !.gitmodules
 !.npmrc
+
+!.zshrc
+!.zimrc
+!.zsh/
+!.zsh/**/*
 
 !Scripts/
 !Scripts/**/*
