@@ -278,14 +278,13 @@ alias gru='git reset --'
 alias grup='git remote update'
 alias grv='git remote --verbose'
 
-alias gsb='git status --short --branch'
+alias gs='git status'
+alias gsb='git status --branch'
 alias gsd='git svn dcommit'
 alias gsh='git show'
 alias gsi='git submodule init'
 alias gsps='git show --pretty=short --show-signature'
 alias gsr='git svn rebase'
-alias gss='git status --short'
-alias gst='git status'
 
 # use the default stash push on git 2.13 and newer
 is-at-least 2.13 "$git_version" \
