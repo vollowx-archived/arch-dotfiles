@@ -104,11 +104,4 @@ return function()
 		},
 		opts = { margin = 5 },
 	})
-
-	--[[ vim.api.nvim_create_autocmd("User", {
-		pattern = "LazyVimStarted",
-		callback = function()
-			pcall(vim.cmd.AlphaRedraw)
-		end,
-	}) ]]
 end
