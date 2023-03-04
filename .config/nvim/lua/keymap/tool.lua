@@ -83,6 +83,7 @@ local plug_map = {
 
 	-- Plugin: trouble
 	["n|gt"] = map_cr("TroubleToggle"):with_noremap():with_silent():with_desc("lsp: Toggle trouble list"),
+	["n|gT"] = map_cr("TodoTrouble"):with_noremap():with_silent():with_desc("lsp: Toggle todo trouble list"),
 	["n|<leader>tr"] = map_cr("TroubleToggle lsp_references")
 		:with_noremap()
 		:with_silent()
@@ -149,6 +150,7 @@ local plug_map = {
 		:with_desc("edit: Change current direrctory by zoxide"),
 	["n|<leader>fb"] = map_cu("Telescope buffers"):with_noremap():with_silent():with_desc("find: Buffer opened"),
 	["n|<leader>fs"] = map_cu("Telescope grep_string"):with_noremap():with_silent():with_desc("find: Current word"),
+	["n|<leader>ft"] = map_cu("TodoTelescope"):with_noremap():with_silent():with_desc("find: todos"),
 
 	-- Plugin: dap
 	["n|<F6>"] = map_callback(function()
