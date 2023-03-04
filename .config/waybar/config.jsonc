@@ -9,7 +9,9 @@
     "mpd",
     "custom/cava"
   ],
-  "modules-center": ["hyprland/window"],
+  "modules-center": [
+    "hyprland/window"
+  ],
   "modules-right": [
     "tray",
     "network",
@@ -101,12 +103,24 @@
       "phone": "󰏲",
       "portable": "󰏲",
       "car": "󰄋",
-      "default": ["󰕿", "󰖀", "󰕾"]
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ]
     }
   },
   "backlight": {
     "format": "{icon} {percent}%",
-    "format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"]
+    "format-icons": [
+      "󰃚",
+      "󰃛",
+      "󰃜",
+      "󰃝",
+      "󰃞",
+      "󰃟",
+      "󰃠"
+    ]
   },
   "battery": {
     "states": {
@@ -116,7 +130,19 @@
     "format": "{icon} {capacity}%",
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
-    "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
   },
   "clock": {
     "on-click": "kitty --class='termfloat' tty-clock -c -s",
