@@ -2,6 +2,8 @@ return function()
 	local icons = { ui = require("modules.utils.icons").get("ui", true) }
 	local lga_actions = require("telescope-live-grep-args.actions")
 
+	local actions = require("telescope.actions")
+
 	require("telescope").setup({
 		defaults = {
 			initial_mode = "insert",
@@ -22,6 +24,16 @@ return function()
 			qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
 			file_sorter = require("telescope.sorters").get_fuzzy_file,
 			generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
+			mappings = { -- extend mappings
+				i = {
+					["<Down>"] = actions.cycle_history_next,
+					["<Up>"] = actions.cycle_history_prev,
+					["<C-j>"] = actions.move_selection_next,
+					["<C-k>"] = actions.move_selection_previous,
+					-- 	["<C-k>"] = lga_actions.quote_prompt(),
+					-- 	["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+				},
+			},
 		},
 		pickers = {
 			keymaps = {
@@ -44,10 +56,10 @@ return function()
 				auto_quoting = true, -- enable/disable auto-quoting
 				-- define mappings, e.g.
 				mappings = { -- extend mappings
-					i = {
-						["<C-k>"] = lga_actions.quote_prompt(),
-						["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
-					},
+					-- i = {
+					-- 	["<C-k>"] = lga_actions.quote_prompt(),
+					-- 	["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+					-- },
 				},
 			},
 			undo = {

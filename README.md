@@ -7,7 +7,7 @@ desktop      - Hyprland     - paru -S hyprland hyprpaper swayidle swaylock
 notification - mako         - paru -S mako
 bar          - waybar       - paru -S waybar-hyprland-git
 locker       - swaylock     - paru -S swaylock
-editor       - Neovim       - paru -S neovim go npm unzip
+editor       - Neovim       - paru -S neovim go npm unzip ripgrep fd
                // you probably also need to install something like wget, npm, etc, see the error log and install them if you need
              - VSCode       - paru -S visual-studio-code-bin
 music        - MPD          - paru -S mpd mpc ncmpcpp cava mpdscribble && systemctl enable --user mpdscribble.service mpd.service
