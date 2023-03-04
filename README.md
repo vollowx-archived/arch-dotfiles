@@ -10,15 +10,11 @@ locker       - swaylock     - paru -S swaylock
 editor       - Neovim       - paru -S neovim go npm unzip
                // you probably also need to install something like wget, npm, etc, see the error log and install them if you need
              - VSCode       - paru -S visual-studio-code-bin
-               // if you want to use the Microsoft-branded release that support settings sync (important for me)
-             - Code - OSS   - paru -S code
-               // if you want to use the official open-source build of VSCode for Arch
 music        - MPD          - paru -S mpd mpc ncmpcpp cava mpdscribble && systemctl enable --user mpdscribble.service mpd.service
                // if you're using mpdscribble to connect to last.fm or other similar service, don't upload the config (password in config file)
              - yesplaymusic - paru -S yesplaymusic
                // a 3rd party netease music which can connect to last.fm inside and looks beautiful
-shell        - Fish         - paru -S fish && chsh -s /bin/fish
-               // a easy and powerful shell
+shell        - zsh          - paru -S zsh && chsh -s /bin/zsh
 hot reload   - inotify      - paru -S inotify-tools
 color        - hyprpicker   - paru -S hyprpicker
 screenshot   - grimblast    - paru -S grimblast
