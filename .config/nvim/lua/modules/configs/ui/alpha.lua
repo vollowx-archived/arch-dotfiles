@@ -11,45 +11,66 @@ return function()
 		[[   █████████ ██████████ █████████ █████ █████ ████ █████  ]],
 		[[ ███████████ ███    ███ █████████ █████ █████ ████ █████ ]],
 		[[██████  █████████████████████ ████ █████ █████ ████ ██████]],
+		-- [[███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗]],
+		-- [[████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║]],
+		-- [[██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║]],
+		-- [[██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║]],
+		-- [[██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║]],
+		-- [[╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝]],
+		-- [[  ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣿⣶⣿⣦⣼⣆         ]],
+		-- [[   ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦      ]],
+		-- [[         ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷    ⠻⠿⢿⣿⣧⣄    ]],
+		-- [[          ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀⠄⠢⣀⡀⠈⠙⠿⠄   ]],
+		-- [[         ⢠⣿⣿⣿⠈    ⣻⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀  ]],
+		-- [[  ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘  ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄ ]],
+		-- [[ ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾⠄  ]],
+		-- [[⣠⣿⠿⠛ ⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄ ]],
+		-- [[⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇ ⠛⠻⢷⣄]],
+		-- [[     ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆    ]],
+		-- [[      ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃    ]],
 	}
 
+	dashboard.section.header.type = "text"
+	dashboard.section.header.val = header
+	dashboard.section.header.opts.hl = "AlphaHeader"
+
 	-- Make the header a bit more fun with some color!
-	local function colorize_header()
-		local catppuccin = require("catppuccin.palettes").get_palette()
-		local colors = {
-			catppuccin.red,
-			catppuccin.red,
-			catppuccin.peach,
-			catppuccin.yellow,
-			catppuccin.green,
-			catppuccin.sky,
-			catppuccin.blue,
-			catppuccin.mauve,
-			catppuccin.overlay0,
-		}
-		for i, color in pairs(colors) do
-			local cmd = "hi StartLogo" .. i .. " guifg=" .. color
-			vim.cmd(cmd)
-		end
+	-- local function colorize_header()
+	-- 	local catppuccin = require("catppuccin.palettes").get_palette()
+	-- 	local colors = {
+	-- 		catppuccin.red,
+	-- 		catppuccin.red,
+	-- 		catppuccin.peach,
+	-- 		catppuccin.yellow,
+	-- 		catppuccin.green,
+	-- 		catppuccin.sky,
+	-- 		catppuccin.blue,
+	-- 		catppuccin.mauve,
+	-- 		catppuccin.overlay0,
+	-- 	}
+	-- 	for i, color in pairs(colors) do
+	-- 		local cmd = "hi StartLogo" .. i .. " guifg=" .. color
+	-- 		vim.cmd(cmd)
+	-- 	end
 
-		local lines = {}
+	-- 	local lines = {}
 
-		for i, chars in pairs(header) do
-			local line = {
-				type = "text",
-				val = chars,
-				opts = {
-					hl = "StartLogo" .. i,
-					shrink_margin = false,
-					position = "center",
-				},
-			}
+	-- 	for i, chars in pairs(header) do
+	-- 		local line = {
+	-- 			type = "text",
+	-- 			val = chars,
+	-- 			opts = {
+	-- 				hl = "StartLogo" .. i,
+	-- 				shrink_margin = false,
+	-- 				position = "center",
+	-- 			},
+	-- 		}
 
-			table.insert(lines, line)
-		end
+	-- 		table.insert(lines, line)
+	-- 	end
 
-		return lines
-	end
+	-- 	return lines
+	-- end
 
 	dashboard.section.buttons.val = {
 		dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"),
@@ -65,7 +86,24 @@ return function()
 		dashboard.button("q", " " .. " Quit", ":qa<CR>"),
 	}
 
-	dashboard.section.footer.val = "pancak/nvim"
+	local function footer()
+		local stats = require("lazy").stats()
+		local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+		return "v"
+			.. vim.version().major
+			.. "."
+			.. vim.version().minor
+			.. "."
+			.. vim.version().patch
+			.. " with "
+			.. stats.count
+			.. " plugins in "
+			.. ms
+			.. "ms"
+	end
+
+	dashboard.section.footer.val = footer()
+	dashboard.section.footer.opts.hl = "Function"
 
 	local group = vim.api.nvim_create_augroup("CleanDashboard", {})
 
@@ -96,12 +134,21 @@ return function()
 	alpha.setup({
 		layout = {
 			{ type = "padding", val = 8 },
-			{ type = "group", val = colorize_header() },
+			-- { type = "group", val = colorize_header() },
+			dashboard.section.header,
 			{ type = "padding", val = 3 },
 			dashboard.section.buttons,
 			{ type = "padding", val = 1 },
 			dashboard.section.footer,
 		},
 		opts = { margin = 5 },
+	})
+
+	vim.api.nvim_create_autocmd("User", {
+		pattern = "LazyVimStarted",
+		callback = function()
+			dashboard.section.footer.val = footer()
+			pcall(vim.cmd.AlphaRedraw)
+		end,
 	})
 end
