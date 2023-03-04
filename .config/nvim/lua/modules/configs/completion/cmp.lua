@@ -133,5 +133,8 @@ return function()
 			-- { name = "codeium" },
 			-- { name = "cmp_tabnine" },
 		},
+		experimental = {
+			ghost_text = true,
+		},
 	})
 end
