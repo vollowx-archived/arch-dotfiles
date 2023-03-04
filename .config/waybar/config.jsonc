@@ -3,6 +3,7 @@
 {
   "position": "top",
   "layer": "top",
+  "height": 48,
   "modules-left": [
     "hyprland/submap",
     "wlr/workspaces",
@@ -146,7 +147,7 @@
   },
   "clock": {
     "on-click": "kitty --class='termfloat' tty-clock -c -s",
-    "format": "󰥔 {:%m/%d/%H:%M}",
+    "format": "󰥔 {:%m.%d.%H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   }
 }

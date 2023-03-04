@@ -9,6 +9,7 @@
 window#waybar {
   background-color: alpha(@base, 0.9);
   color: @text;
+  border-bottom: 2px solid @surface1;
 }
 
 tooltip {
@@ -30,7 +31,7 @@ tooltip {
 #backlight,
 #battery {
   padding: 5px 10px;
-  margin: 5px 2.5px;
+  margin: 5px 2.5px 7px 2.5px;
   background-color: alpha(@text, 0.16);
   border-radius: 14px;
 }
