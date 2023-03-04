@@ -42,7 +42,7 @@ settings["lsp"] = {
 	"html",
 	"jsonls",
 	"lua_ls",
-	"pyright",
+	"volar",
 }
 
 -- Set the desired non-LSP sources here.
@@ -51,7 +51,6 @@ settings["lsp"] = {
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins
 settings["null_ls"] = {
 	-- formatting
-	"black",
 	"clang_format",
 	"eslint_d",
 	"jq",
