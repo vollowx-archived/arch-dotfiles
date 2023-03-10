@@ -1,2 +1,2 @@
 #!/bin/bash
-google-chrome-unstable --enable-features=WebUIDarkMode --force-dark-mode --gtk-version=4 & disown
+chromium --enable-features=WebUIDarkMode --force-dark-mode --gtk-version=4 & disown
