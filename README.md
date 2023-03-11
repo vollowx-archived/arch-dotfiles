@@ -24,6 +24,7 @@ control      - light        - paru -S light && sudo chmod +s /bin/light
              - pamixer      - paru -S pamixer
 ime          - fcitx5       - paru -S fcitx5 fcitx5-gtk
              - fcitx5 (zh)  - paru -S fcitx5-chinese-addons
+             - fcitx5 (jp)  - paru -S fcitx5-anthy
 file manager - ranger       - paru -S ranger python-pillow
                // pillow for image preview in kitty
 ```
