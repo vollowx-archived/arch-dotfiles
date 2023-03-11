@@ -1,2 +1,0 @@
-#!/bin/bash
-chromium --enable-features=WebUIDarkMode --force-dark-mode --gtk-version=4 & disown
