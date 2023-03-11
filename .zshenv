@@ -7,6 +7,7 @@ export CLUTTER_BACKEND=wayland
 export SDL_VIDEODRIVER=wayland
 export MOZ_ENABLE_WAYLAND=1
 export MOZ_WEBRENDER=1
+export KITTY_ENABLE_WAYLAND=1
 
 # Desktop
 export XDG_SESSION_TYPE=wayland
@@ -42,4 +43,4 @@ export PATH="$HOME/Scripts:$PATH"
 export EDITOR="nvim"
 export LANG="en_US.UTF-8"
 export BAT_THEME="Catppuccin"
-export EXA_ICON_SPACING=1
+export EXA_ICON_SPACING=2
