@@ -5,13 +5,13 @@ uptime="$(uptime -p | sed -e 's/up //g')"
 host=$(hostname)
 
 # Options
-shutdown='󰤂'
-reboot='󰜉'
-lock='󰌾'
-sleep='󰤄'
+shutdown='󰤂 Shutdown'
+reboot='󰜉 Reboot'
+lock='󰌾 Lock'
+sleep='󰤄 Sleep'
 suspend='󰍛'
 hibernate='󰾶'
-logout='󰍃'
+logout='󰍃 Logout'
 yes='󰄬'
 no='󰅖'
 
@@ -71,8 +71,8 @@ run_cmd() {
 			amixer set Master mute
 			systemctl hibernate
 		elif [[ $1 == '--logout' ]]; then
-      session=$(loginctl session-status | head -n 1 | awk '{print $1}')
-      loginctl terminate-session "$session"
+			session=$(loginctl session-status | head -n 1 | awk '{print $1}')
+			loginctl terminate-session "$session"
 		fi
 	else
 		exit 0
@@ -80,32 +80,33 @@ run_cmd() {
 }
 
 run_sleep_cmd() {
-  selected="$(sleep_to)"
-  if [[ "$selected" == "$suspend" ]]; then
-    run_cmd --suspend
-  elif [[ "$selected" == "$hibernate" ]]; then
-    run_cmd --hibernate
-  else
-    exit 0
-  fi
+	selected="$(sleep_to)"
+	if [[ "$selected" == "$suspend" ]]; then
+		run_cmd --suspend
+	elif [[ "$selected" == "$hibernate" ]]; then
+		run_cmd --hibernate
+	else
+		exit 0
+	fi
 }
 
 # Actions
 chosen="$(run_rofi)"
 case ${chosen} in
-    $shutdown)
-		run_cmd --shutdown
-        ;;
-    $reboot)
-		run_cmd --reboot
-        ;;
-    $lock)
-    swaylock
-        ;;
-    $sleep)
-		run_sleep_cmd
-        ;;
-    $logout)
-		run_cmd --logout
-        ;;
+$shutdown)
+	run_cmd --shutdown
+	;;
+$reboot)
+	run_cmd --reboot
+	;;
+$lock)
+	sleep 0.05
+	swaylock
+	;;
+$sleep)
+	run_sleep_cmd
+	;;
+$logout)
+	run_cmd --logout
+	;;
 esac
