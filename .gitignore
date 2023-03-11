@@ -10,6 +10,8 @@
 !.config/dconf/**/*
 !.config/fcitx5/
 !.config/fcitx5/**/*
+!.config/firefox-chrome/
+!.config/firefox-chrome/**/*
 !.config/fontconfig/
 !.config/fontconfig/**/*
 !.config/gtk-3.0/
