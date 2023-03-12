@@ -10,19 +10,19 @@
 }
 
 @-moz-document url-prefix(about:home), url-prefix(about:newtab) {
-  /* show nightly logo instead of default firefox logo in newtabpage */
-  .search-wrapper .logo-and-wordmark .logo {
-    background: url("${./logo.png}") no-repeat center !important;
-    background-size: auto !important;
-    background-size: 82px !important;
-    display: inline-block !important;
-    height: 82px !important;
-    width: 82px !important;
+  /* a cat is enough :D */
+  .logo-and-wordmark {
+    display: none !important;
+  }
+  .search-inner-wrapper {
+    display: none !important;
   }
   body {
-    background-color: #000000 !important;
-    background: url("${./bg.png}") no-repeat fixed !important;
-    background-size: cover !important;
+    background-color: #1f1e2e !important;
+    background-image: url("./bg.png") !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    background-position: center;
     --newtab-background-color: #000000 !important;
     --newtab-background-color-secondary: #101010 !important;
   }
