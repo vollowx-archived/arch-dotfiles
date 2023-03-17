@@ -11,9 +11,7 @@ zmodule utility
 # Prompt
 #
 
-zmodule duration-info
-zmodule git-info
-zmodule prompt-pwd
+zmodule sindresorhus/pure --source async.zsh --source pure.zsh
 
 #
 # Completion
