@@ -5,6 +5,7 @@ alias ls="exa --git --icons $@"
 alias l="ls -a -l $@"
 alias cat="bat $@"
 alias dig="dog $@"
+alias sudo="doas $@"
 
 alias gaa="git add --all $@"
 alias gca="git commit --all $@"
