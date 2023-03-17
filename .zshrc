@@ -1,5 +1,3 @@
-source ~/.zsh/aliases.zsh
-
 # ------------------
 # Initialize modules
 # ------------------
@@ -61,3 +59,5 @@ source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 # See https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters/main.md#how-to-tweak-it
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[comment]='fg=242'
+
+source ~/.zsh/aliases.zsh

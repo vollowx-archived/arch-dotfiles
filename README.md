@@ -10,7 +10,7 @@ locker       - swaylock     - paru -S swaylock
 editor       - Neovim       - paru -S neovim go npm unzip ripgrep fd
                // you probably also need to install something like wget, npm, etc, see the error log and install them if you need
              - VSCode       - paru -S visual-studio-code-bin
-music        - MPD          - paru -S mpd mpc ncmpcpp cava mpdscribble && systemctl enable --user mpdscribble.service mpd.service
+music        - MPD          - paru -S mpd mpc ncmpcpp cava mpdscribble && systemctl enable --user --now mpdscribble.service mpd.service
                // if you're using mpdscribble to connect to last.fm or other similar service, don't upload the config (password in config file)
              - yesplaymusic - paru -S yesplaymusic
                // a 3rd party netease music which can connect to last.fm inside and looks beautiful
