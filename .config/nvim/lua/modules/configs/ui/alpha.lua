@@ -1,6 +1,7 @@
 return function()
 	local alpha = require("alpha")
 	local dashboard = require("alpha.themes.dashboard")
+	local fortune = require("alpha.fortune")
 
 	local header = {
 		[[                                                                   ]],
@@ -11,12 +12,6 @@ return function()
 		[[   █████████ ██████████ █████████ █████ █████ ████ █████  ]],
 		[[ ███████████ ███    ███ █████████ █████ █████ ████ █████ ]],
 		[[██████  █████████████████████ ████ █████ █████ ████ ██████]],
-		-- [[███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗]],
-		-- [[████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║]],
-		-- [[██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║]],
-		-- [[██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║]],
-		-- [[██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║]],
-		-- [[╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝]],
 		-- [[  ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣿⣶⣿⣦⣼⣆         ]],
 		-- [[   ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦      ]],
 		-- [[         ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷    ⠻⠿⢿⣿⣧⣄    ]],
@@ -86,24 +81,8 @@ return function()
 		dashboard.button("q", " " .. " Quit", ":qa<CR>"),
 	}
 
-	local function footer()
-		local stats = require("lazy").stats()
-		local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-		return "v"
-			.. vim.version().major
-			.. "."
-			.. vim.version().minor
-			.. "."
-			.. vim.version().patch
-			.. " with "
-			.. stats.count
-			.. " plugins in "
-			.. ms
-			.. "ms"
-	end
-
-	dashboard.section.footer.val = footer()
-	dashboard.section.footer.opts.hl = "Function"
+	dashboard.section.footer.val = fortune()
+	dashboard.section.footer.opts.hl = "StartLogo9"
 
 	local group = vim.api.nvim_create_augroup("CleanDashboard", {})
 
@@ -142,13 +121,5 @@ return function()
 			dashboard.section.footer,
 		},
 		opts = { margin = 5 },
-	})
-
-	vim.api.nvim_create_autocmd("User", {
-		pattern = "LazyVimStarted",
-		callback = function()
-			dashboard.section.footer.val = footer()
-			pcall(vim.cmd.AlphaRedraw)
-		end,
 	})
 end
