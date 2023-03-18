@@ -20,7 +20,7 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 
 # X
-export XCURSOR_THEME=macOS-BigSur
+export XCURSOR_THEME=Catppuccin-Mocha-Dark-Cursors
 export XCURSOR_SIZE=32
 
 # Java

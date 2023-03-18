@@ -32,7 +32,7 @@ file manager - ranger       - paru -S ranger python-pillow
 ## Others
 
 ```
-cursor       - apple_cursor - paru -S apple_cursor
+cursor       - Catppuccin   - paru -S catppuccin-cursors-mocha
 gtk          - Catppuccin   - paru -S catppuccin-gtk-theme-mocha
 icons        - WhiteSur     - paru -S whitesur-icon-theme
 qt           - lightly      - paru -S qt5ct qt5-wayland qt6-wayland lightly-qt
