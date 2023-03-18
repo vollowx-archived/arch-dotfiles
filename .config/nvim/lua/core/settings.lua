@@ -50,6 +50,7 @@ settings["server_formatting_block_list"] = {
 	lua_ls = true,
 	tsserver = true,
 	clangd = true,
+	volar = true,
 }
 
 -- Set the language servers that will be installed during bootstrap here
