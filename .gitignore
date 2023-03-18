@@ -62,7 +62,6 @@
 !.local/share/fcitx5/themes/
 !.local/share/fcitx5/themes/**/*
 
-!.env
 !.gitconfig
 !.gitignore
 !.gitmodules
