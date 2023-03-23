@@ -23,6 +23,11 @@ lang["iamcco/markdown-preview.nvim"] = {
 	ft = "markdown",
 	build = ":call mkdp#util#install()",
 }
+lang["lukas-reineke/headlines.nvim"] = {
+	lazy = true,
+	ft = "markdown",
+	config = require("lang.headlines"),
+}
 lang["chrisbra/csv.vim"] = {
 	lazy = true,
 	ft = "csv",
