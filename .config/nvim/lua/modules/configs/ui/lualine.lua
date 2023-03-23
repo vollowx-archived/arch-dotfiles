@@ -7,7 +7,7 @@ return function()
 		ui = require("modules.utils.icons").get("ui", true),
 	}
 	local hide_in_width = function()
-		return vim.fn.winwidth(0) > 80
+		return vim.fn.winwidth(0) > 120
 	end
 
 	local mini_sections = {
@@ -33,12 +33,33 @@ return function()
 			theme = "catppuccin",
 			disabled_filetypes = { "alpha", "dashboard" },
 			component_separators = "|",
-			section_separators = { left = "", right = "" },
+			section_separators = { left = "", right = "" },
 		},
 		sections = {
-			lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
-			lualine_b = { "branch" },
+			lualine_a = { "mode" },
+			lualine_b = {
+				-- work folder
+				{
+					function()
+						return vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+					end,
+					cond = hide_in_width,
+				},
+				"filename",
+			},
 			lualine_c = {
+				{ "branch", icon = " " },
+				{
+					"diff",
+					symbols = {
+						added = icons.git.Add,
+						modified = icons.git.Mod,
+						removed = icons.git.Remove,
+					},
+					cond = hide_in_width,
+				},
+			},
+			lualine_x = {
 				{
 					"diagnostics",
 					sources = { "nvim_diagnostic" },
@@ -49,25 +70,23 @@ return function()
 					},
 					always_visible = true,
 				},
-				"filename",
-			},
-			lualine_x = {
+				-- lsps
 				{
-					"diff",
-					colored = false,
-					symbols = {
-						added = icons.git.Add,
-						modified = icons.git.Mod,
-						removed = icons.git.Remove,
-					}, -- changes diff symbols
+					function()
+						local client_names = {}
+						for _, client in ipairs(vim.lsp.get_active_clients()) do
+							table.insert(client_names, client.name)
+						end
+						return "[" .. table.concat(client_names, "] [") .. "]"
+					end,
 					cond = hide_in_width,
 				},
-				{ "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth") },
+			},
+			lualine_y = {
 				"encoding",
 				"filetype",
 			},
-			lualine_y = { "progress" },
-			lualine_z = { { "location", separator = { right = "" }, left_padding = 2 } },
+			lualine_z = { "progress", "location" },
 		},
 		inactive_sections = {
 			lualine_a = {},
