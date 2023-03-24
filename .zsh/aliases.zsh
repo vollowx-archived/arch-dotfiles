@@ -17,6 +17,8 @@ alias gsa="git status $@"
 alias gp="git push $@"
 alias gpl="git pull $@"
 
+alias n="nvim $@"
+
 alias pp="pnpm $@"
 alias ppi="pnpm install $@"
 alias ppii="pnpm init $@"
