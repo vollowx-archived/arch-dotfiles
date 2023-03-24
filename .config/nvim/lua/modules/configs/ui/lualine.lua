@@ -2,7 +2,7 @@ return function()
 	local colors = require("modules.utils").get_palette()
 	local icons = {
 		diagnostics = require("modules.utils.icons").get("diagnostics", true),
-		misc = require("modules.utils.icons").get("misc", true),
+		misc = require("modules.utils.icons").get("misc", false),
 		git = require("modules.utils.icons").get("git", true),
 		ui = require("modules.utils.icons").get("ui", true),
 	}
@@ -36,7 +36,7 @@ return function()
 			section_separators = { left = "", right = "" },
 		},
 		sections = {
-			lualine_a = { "mode" },
+			lualine_a = { { "mode", icon = icons.misc.Vim } },
 			lualine_b = {
 				-- work folder
 				{
@@ -86,7 +86,7 @@ return function()
 				"encoding",
 				"filetype",
 			},
-			lualine_z = { "progress", "location" },
+			lualine_z = { "location" },
 		},
 		inactive_sections = {
 			lualine_a = {},
