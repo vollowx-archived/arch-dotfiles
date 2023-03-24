@@ -22,6 +22,7 @@
 !.config/kitty/**/*
 !.config/lazygit/
 !.config/lazygit/**/*
+.config/lazygit/state.yml
 !.config/mako/
 !.config/mako/**/*
 !.config/mpd/
