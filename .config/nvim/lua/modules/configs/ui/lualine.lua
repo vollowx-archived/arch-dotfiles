@@ -10,6 +10,15 @@ return function()
 		return vim.fn.winwidth(0) > 120
 	end
 
+	local has_value = function(arr, val)
+		for _, value in ipairs(arr) do
+			if value == val then
+				return true
+			end
+		end
+		return false
+	end
+
 	local mini_sections = {
 		lualine_a = { "filetype" },
 		lualine_b = {},
@@ -32,23 +41,36 @@ return function()
 			icons_enabled = true,
 			theme = "catppuccin",
 			disabled_filetypes = { "alpha", "dashboard" },
-			component_separators = "|",
+			component_separators = "",
 			section_separators = { left = "", right = "" },
 		},
 		sections = {
-			lualine_a = { { "mode", icon = icons.misc.Vim } },
-			lualine_b = {
-				-- work folder
+			lualine_a = {
 				{
-					function()
-						return vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
-					end,
-					cond = hide_in_width,
+					"mode",
+					icon = icons.misc.Vim,
+				},
+			},
+			lualine_b = {
+				{
+					"filetype",
+					icon_only = true,
+					padding = {
+						left = 1,
+						right = 0,
+					},
 				},
 				"filename",
 			},
 			lualine_c = {
-				{ "branch", icon = " " },
+				{
+					"branch",
+					icon = " ",
+					padding = {
+						left = 1,
+						right = 0,
+					},
+				},
 				{
 					"diff",
 					symbols = {
@@ -69,22 +91,36 @@ return function()
 						warn = icons.diagnostics.Warning,
 					},
 					always_visible = true,
+					padding = {
+						right = 0,
+					},
 				},
-				-- lsps
+				-- lsp
 				{
 					function()
-						local client_names = {}
-						for _, client in ipairs(vim.lsp.get_active_clients()) do
-							table.insert(client_names, client.name)
+						local msg = "No Active Lsp"
+						local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
+						local clients = vim.lsp.get_active_clients()
+						if next(clients) == nil then
+							return msg
 						end
-						return "[" .. table.concat(client_names, "] [") .. "]"
+						for _, client in ipairs(clients) do
+							local filetypes = client.config.filetypes
+							if
+								filetypes
+								and vim.fn.index(filetypes, buf_ft) ~= -1
+								and not has_value({ "copilot", "null-ls" }, client.name)
+							then
+								return "[" .. client.name .. "]"
+							end
+						end
+						return msg
 					end,
 					cond = hide_in_width,
 				},
 			},
 			lualine_y = {
 				"encoding",
-				"filetype",
 			},
 			lualine_z = { "location" },
 		},
