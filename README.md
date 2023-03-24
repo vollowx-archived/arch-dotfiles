@@ -15,7 +15,6 @@ music        - MPD          - paru -S mpd mpc ncmpcpp cava mpdscribble && system
              - yesplaymusic - paru -S yesplaymusic
                // a 3rd party netease music which can connect to last.fm inside and looks beautiful
 shell        - zsh          - paru -S zsh && chsh -s /bin/zsh
-hot reload   - inotify      - paru -S inotify-tools
 color        - hyprpicker   - paru -S hyprpicker
 screenshot   - grimblast    - paru -S grimblast
 launcher     - rofi         - paru -S rofi-lbonn-wayland-git rofi-calc rofi-emoji
