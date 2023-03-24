@@ -61,7 +61,7 @@ return function()
 			special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md", "CMakeLists.txt" },
 			symlink_destination = true,
 			indent_markers = {
-				enable = true,
+				enable = false,
 				icons = {
 					corner = "└ ",
 					edge = "│ ",
@@ -76,7 +76,7 @@ return function()
 				show = {
 					file = true,
 					folder = true,
-					folder_arrow = false,
+					folder_arrow = true,
 					git = true,
 				},
 				padding = " ",
