@@ -1,7 +1,7 @@
 // some of these icons maybe look small,
 // but display normally, so just ignore this
 {
-  "position": "bottom",
+  "position": "top",
   "layer": "top",
   "height": 48,
   "modules-left": [
