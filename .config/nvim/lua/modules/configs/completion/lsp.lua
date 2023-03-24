@@ -31,7 +31,7 @@ return function()
 		},
 	})
 	mason_lspconfig.setup({
-		ensure_installed = require("core.settings").lsp,
+		ensure_installed = require("core.settings").lsp_deps,
 	})
 
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
