@@ -9,7 +9,6 @@
 window#waybar {
   background-color: alpha(@base, 0.9);
   color: @text;
-  border-bottom: 2px solid @surface1;
 }
 
 tooltip {
