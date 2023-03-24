@@ -139,6 +139,9 @@ return function()
 					CmpBorder = { fg = cp.surface2 },
 					CmpPmenu = { fg = cp.none },
 					PmenuSel = { bg = cp.green, fg = cp.base },
+					CmpItemAbbr = { fg = cp.white },
+					CmpItemAbbrMatch = { fg = cp.blue, bold = true },
+					CmpSel = { link = "PmenuSel", bold = true },
 
 					-- For native lsp configs.
 					DiagnosticVirtualTextError = { bg = cp.none },

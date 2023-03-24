@@ -106,7 +106,7 @@ return function()
 							if
 								filetypes
 								and vim.fn.index(filetypes, buf_ft) ~= -1
-								and not has_value({ "copilot", "null-ls" }, client.name)
+								and not has_value({ "null-ls" }, client.name)
 							then
 								return "[" .. client.name .. "]"
 							end
