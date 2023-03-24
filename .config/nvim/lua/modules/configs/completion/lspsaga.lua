@@ -113,7 +113,7 @@ return function()
 			frequency = 12,
 		},
 		ui = {
-			border = "single", -- Can be single, double, rounded, solid, shadow.
+			border = "rounded", -- Can be single, double, rounded, solid, shadow.
 			winblend = 0,
 			expand = icons.ui.ArrowClosed,
 			collapse = icons.ui.ArrowOpen,
