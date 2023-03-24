@@ -9,7 +9,7 @@ notification - mako         - paru -S mako
 bar          - waybar       - paru -S waybar-hyprland-git
 idle         - swayidle     - paru -S swayidle
 locker       - swaylock     - paru -S swaylock
-editor       - Neovim       - paru -S neovim-nightly-bin lazygit zoxide ripgrep sqlite fd yarn nerd-fonts-jetbrains-mono lldb nvm make unzip
+editor       - Neovim       - paru -S neovim-nightly-bin lazygit zoxide ripgrep sqlite fd yarn lldb make unzip
              - VSCode       - paru -S visual-studio-code-bin
 node pkg mgr - pnpm         - paru -S npm && sudo npm i -g pnpm && pnpm i -g pnpm && npm uninstall -g pnpm
 music        - MPD          - paru -S mpd mpc ncmpcpp cava mpdscribble && systemctl enable --user --now mpdscribble.service mpd.service
