@@ -10,7 +10,6 @@
 }
 
 @-moz-document url-prefix(about:home), url-prefix(about:newtab) {
-  /* a cat is enough :D */
   .logo-and-wordmark {
     display: none !important;
   }

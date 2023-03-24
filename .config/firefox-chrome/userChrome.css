@@ -1,22 +1,17 @@
+:root {
+  --toolbarbutton-border-radius: 16px !important;
+}
+
+* {
+  font-family: JetBrainsMono Nerd Font Mono, sans-serif;
+  font-size: 12pt;
+}
+
 /*================== SIDEBAR ==================*/
 #sidebar-box,
 .sidebar-panel[lwt-sidebar-brighttext] {
   background-color: var(--base_color1) !important;
 }
-/* The default sidebar width. */
-/* #sidebar-box { */
-/*   overflow: hidden!important; */
-/*   position: relative!important; */
-/*   transition: all 300ms!important; */
-/*   min-width: 60px !important; */
-/*   max-width: 60px !important; */
-/* } */
-/* The sidebar width when hovered. */
-/* #sidebar-box #sidebar,#sidebar-box:hover { */
-/*   transition: all 300ms!important; */
-/*   min-width: 60px !important; */
-/*   max-width: 200px !important; */
-/* } */
 /* only remove TST headers */
 #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]
   #sidebar-header {
@@ -36,11 +31,7 @@
 }
 /*================== URL BAR ==================*/
 #urlbar .urlbar-input-box {
-  text-align: center !important;
-}
-* {
-  font-family: JetBrainsMono Nerd Font Mono, sans-serif !important;
-  font-size: 12pt !important;
+  text-align: center;
 }
 /* #nav-bar { visibility: collapse !important; } */
 /* hide horizontal tabs at the top of the window */
@@ -53,5 +44,5 @@
   margin-top: -45px;
 }
 #navigator-toolbox {
-  transition: 0.2s margin-top ease-out;
+  transition: 300ms margin-top ease;
 }
