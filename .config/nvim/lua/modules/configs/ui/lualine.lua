@@ -91,9 +91,6 @@ return function()
 						warn = icons.diagnostics.Warning,
 					},
 					always_visible = true,
-					padding = {
-						right = 0,
-					},
 				},
 				-- lsp
 				{
@@ -116,6 +113,10 @@ return function()
 						end
 						return msg
 					end,
+					padding = {
+						left = 0,
+						right = 1,
+					},
 					cond = hide_in_width,
 				},
 			},

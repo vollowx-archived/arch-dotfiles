@@ -185,7 +185,7 @@ local data = {
 		Added = "",
 		Ghost = "󱙝",
 		ManUp = "󰙌",
-		Vim = "",
+		Vim = "",
 	},
 	cmp = {
 		Copilot = "",
