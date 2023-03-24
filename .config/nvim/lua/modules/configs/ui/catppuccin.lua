@@ -1,5 +1,5 @@
 return function()
-	local transparent_background = true -- Set background transparency here!
+	local transparent_background = false -- Set background transparency here!
 
 	require("catppuccin").setup({
 		flavour = "mocha", -- Can be one of: latte, frappe, macchiato, mocha
@@ -79,7 +79,7 @@ return function()
 			overseer = false,
 			pounce = false,
 			semantic_tokens = false,
-			symbols_outline = true,
+			symbols_outline = false,
 			telekasten = false,
 			telescope = true,
 			treesitter_context = false,

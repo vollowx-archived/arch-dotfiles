@@ -54,6 +54,7 @@ return function()
 			lualine_b = {
 				{
 					"filetype",
+					colored = false,
 					icon_only = true,
 					padding = {
 						left = 1,
@@ -85,12 +86,13 @@ return function()
 				{
 					"diagnostics",
 					sources = { "nvim_diagnostic" },
-					sections = { "error", "warn" },
+					sections = { "error", "warn", "info", "hint" },
 					symbols = {
 						error = icons.diagnostics.Error,
 						warn = icons.diagnostics.Warning,
+						info = icons.diagnostics.Information,
+						hint = icons.diagnostics.Hint,
 					},
-					always_visible = true,
 				},
 				-- lsp
 				{
@@ -121,7 +123,21 @@ return function()
 				},
 			},
 			lualine_y = {
-				"encoding",
+				{
+					"fileformat",
+					symbols = {
+						unix = "", -- e712
+						dos = "", -- e70f
+						mac = "", -- e711
+					},
+				},
+				{
+					"encoding",
+					padding = {
+						left = 0,
+						right = 1,
+					},
+				},
 			},
 			lualine_z = { "location" },
 		},

@@ -29,7 +29,10 @@ return function()
 				local str = " "
 				for is, num in pairs(diagnostics_dict) do
 					local sym = is == "error" and icons.diagnostics.Error
-						or (is == "warning" and icons.diagnostics.Warning or icons.diagnostics.Hint)
+						or (
+							is == "warning" and icons.diagnostics.Warning
+							or (is == "info" and icons.diagnostics.Information or icons.diagnostics.Hint)
+						)
 					str = str .. sym .. num .. " "
 				end
 				return str
@@ -40,13 +43,13 @@ return function()
 			offsets = {
 				{
 					filetype = "NvimTree",
-					text = "File Explorer",
+					text = "",
 					text_align = "center",
 					padding = 1,
 				},
 				{
 					filetype = "lspsagaoutline",
-					text = "Lspsaga Outline",
+					text = "",
 					text_align = "center",
 					padding = 1,
 				},
