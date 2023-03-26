@@ -11,7 +11,7 @@
     "custom/cava"
   ],
   "modules-center": [
-    "hyprland/window"
+    "clock"
   ],
   "modules-right": [
     "tray",
@@ -22,7 +22,6 @@
     "memory",
     "temperature",
     "battery",
-    "clock"
   ],
   "wlr/workspaces": {
     "format": "{icon}",
@@ -71,8 +70,9 @@
     "exec": "~/.config/waybar/cava.sh",
     "tooltip": false
   },
-  "hyprland/window": {
-    "max-length": 50
+  "clock": {
+    "format": "󰥔 {:%m.%d/%H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "tray": {
     "icon-size": 16,
@@ -144,10 +144,5 @@
       "",
       ""
     ]
-  },
-  "clock": {
-    "on-click": "kitty --class='termfloat' tty-clock -c -s",
-    "format": "󰥔 {:%m.%d.%H:%M}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   }
 }

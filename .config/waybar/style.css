@@ -84,6 +84,10 @@ tooltip {
   color: @mauve;
 }
 
+#clock {
+  color: @rosewater;
+}
+
 #cpu {
   color: @red;
 }
@@ -104,8 +108,10 @@ tooltip {
   color: @peach;
 }
 
+/* the last element */
 #battery {
   color: @flamingo;
+  margin-right: 8px;
 }
 #battery.charging {
   background-color: @green;
@@ -115,10 +121,4 @@ tooltip {
 #battery.critical:not(.charging) {
   background-color: @red;
   color: @base;
-}
-
-/* the last element */
-#clock {
-  color: @rosewater;
-  margin-right: 8px;
 }

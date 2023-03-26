@@ -41,6 +41,8 @@ export PATH="$HOME/Scripts:$PATH"
 
 # Others
 export EDITOR="nvim"
+export BROWSER="firefox-developer-edition"
+export TERMINAL="kitty"
 export LANG="en_US.UTF-8"
 export BAT_THEME="Catppuccin"
 export EXA_ICON_SPACING=2
