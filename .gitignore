@@ -52,13 +52,11 @@
 !.local/
 !.local/share/
 !.local/share/backgrounds/
-!.local/share/backgrounds/arch-black-4k.png
-!.local/share/backgrounds/dark-cat.png
 !.local/share/backgrounds/Bridge.jpg
 !.local/share/backgrounds/Street.jpg
 !.local/share/backgrounds/spooky_spill.jpg
+!.local/share/backgrounds/waifu.png
 !.local/share/backgrounds/wallhaven-dgv23j.png
-!.local/share/backgrounds/wallhaven-z8dg9y.png
 !.local/share/fcitx5/
 !.local/share/fcitx5/themes/
 !.local/share/fcitx5/themes/**/*
