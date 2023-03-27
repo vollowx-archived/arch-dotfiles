@@ -31,6 +31,8 @@
 .config/mpd/state
 !.config/mpv/
 !.config/mpv/**/*
+!.config/neofetch/
+!.config/neofetch/**/*
 !.config/ncmpcpp/
 !.config/ncmpcpp/**/*
 !.config/nvim/
