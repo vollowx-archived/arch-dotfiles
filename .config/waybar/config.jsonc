@@ -7,8 +7,7 @@
   "modules-left": [
     "hyprland/submap",
     "wlr/workspaces",
-    "mpd",
-    "custom/cava"
+    "mpd"
   ],
   "modules-center": [
     "clock"
@@ -65,10 +64,6 @@
     "on-click-right": "mpc next",
     "tooltip-format": "{artist} - {album} - {title}",
     "tooltip-format-disconnected": "MPD (disconnected)"
-  },
-  "custom/cava": {
-    "exec": "~/.config/waybar/cava.sh",
-    "tooltip": false
   },
   "clock": {
     "format": "󰥔 {:%m.%d/%H:%M}",
