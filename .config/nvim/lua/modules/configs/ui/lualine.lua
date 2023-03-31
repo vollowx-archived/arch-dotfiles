@@ -7,7 +7,7 @@ return function()
 		ui = require("modules.utils.icons").get("ui", true),
 	}
 	local hide_in_width = function()
-		return vim.fn.winwidth(0) > 120
+		return vim.fn.winwidth(0) > 80
 	end
 
 	local has_value = function(arr, val)
@@ -71,6 +71,7 @@ return function()
 						left = 1,
 						right = 0,
 					},
+					cond = hide_in_width,
 				},
 				{
 					"diff",
@@ -79,7 +80,6 @@ return function()
 						modified = icons.git.Mod,
 						removed = icons.git.Remove,
 					},
-					cond = hide_in_width,
 				},
 			},
 			lualine_x = {
@@ -119,7 +119,6 @@ return function()
 						left = 0,
 						right = 1,
 					},
-					cond = hide_in_width,
 				},
 			},
 			lualine_y = {
