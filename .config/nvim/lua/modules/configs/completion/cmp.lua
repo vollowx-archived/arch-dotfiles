@@ -90,7 +90,7 @@ return function()
 			["<C-j>"] = cmp.mapping.select_next_item(),
 			["<C-u>"] = cmp.mapping.scroll_docs(-4),
 			["<C-d>"] = cmp.mapping.scroll_docs(4),
-			["<C-e>"] = cmp.mapping.close(),
+			["<C-w>"] = cmp.mapping.close(),
 			["<Tab>"] = cmp.mapping(function(fallback)
 				if cmp.visible() then
 					cmp.select_next_item()
