@@ -70,7 +70,7 @@ return function()
 			},
 		},
 		formatting = {
-			fields = { "menu", "abbr", "kind" },
+			fields = { "kind", "abbr", "menu" },
 			format = function(entry, vim_item)
 				local kind = lspkind.cmp_format({
 					mode = "symbol_text",
@@ -78,8 +78,8 @@ return function()
 					symbol_map = vim.tbl_deep_extend("force", icons.kind, icons.type, icons.cmp),
 				})(entry, vim_item)
 				local strings = vim.split(kind.kind, "%s", { trimempty = true })
-				kind.kind = strings[1] .. "  " .. strings[2] .. "  "
-
+				kind.kind = " " .. strings[1] .. " "
+				kind.menu = "    (" .. strings[2] .. ")"
 				return kind
 			end,
 		},
