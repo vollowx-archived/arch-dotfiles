@@ -131,7 +131,7 @@ element-text {
 
 element normal.normal,
 element alternate.normal {
-    background-color:            var(background);
+    background-color:            transparent;
     text-color:                  var(foreground);
 }
 element normal.urgent,
