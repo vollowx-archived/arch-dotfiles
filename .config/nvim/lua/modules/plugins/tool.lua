@@ -84,7 +84,7 @@ tool["nvim-telescope/telescope.nvim"] = {
 		{ "debugloop/telescope-undo.nvim" },
 		{
 			"ahmedkhalf/project.nvim",
-			event = "User",
+			event = "VeryLazy",
 			config = require("tool.project"),
 		},
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
