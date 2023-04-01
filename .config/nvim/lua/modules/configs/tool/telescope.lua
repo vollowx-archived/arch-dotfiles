@@ -28,8 +28,8 @@ return function()
 				i = {
 					["<Down>"] = actions.cycle_history_next,
 					["<Up>"] = actions.cycle_history_prev,
-					["<C-j>"] = actions.move_selection_next,
-					["<C-k>"] = actions.move_selection_previous,
+					["<C-n>"] = actions.move_selection_next,
+					["<C-p>"] = actions.move_selection_previous,
 					-- 	["<C-k>"] = lga_actions.quote_prompt(),
 					-- 	["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
 				},
