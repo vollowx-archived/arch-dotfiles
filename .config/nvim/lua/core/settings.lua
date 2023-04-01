@@ -61,14 +61,15 @@ settings["server_formatting_block_list"] = {
 -- Set the language servers that will be installed during bootstrap here
 -- check the below link for all the supported LSPs:
 -- https://github.com/neovim/nvim-lspconfig/tree/master/lua/lspconfig/server_configurations
---@type string[]
+---@type string[]
 settings["lsp_deps"] = {
 	"bashls",
 	"clangd",
-	"gopls",
+	"cssls",
 	"html",
 	"jsonls",
 	"lua_ls",
+	"rust_analyzer",
 	"volar",
 }
 
@@ -78,14 +79,13 @@ settings["lsp_deps"] = {
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins
 ---@type string[]
 settings["null_ls_deps"] = {
-	"black",
 	"clang_format",
 	"editorconfig_checker",
 	"prettier",
+	"prettierd",
 	"rustfmt",
 	"shfmt",
 	"stylua",
-	"vint",
 }
 
 return settings
