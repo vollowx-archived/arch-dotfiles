@@ -254,5 +254,12 @@ return function()
 				}
 			end,
 		},
+		custom_highlights = function(cp)
+			return {
+				AlphaHeader = { fg = cp.subtext0 },
+				AlphaButtons = { link = "String" },
+				AlphaKeys = { link = "Keyword" },
+			}
+		end,
 	})
 end

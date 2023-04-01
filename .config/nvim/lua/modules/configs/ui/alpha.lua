@@ -1,99 +1,149 @@
 return function()
 	local alpha = require("alpha")
 	local dashboard = require("alpha.themes.dashboard")
-	local fortune = require("alpha.fortune")
 
-	local header = {
-		[[                                                                   ]],
-		[[      ████ ██████           █████      ██                    ]],
-		[[     ███████████             █████                            ]],
-		[[     █████████ ███████████████████ ███   ███████████  ]],
-		[[    █████████  ███    █████████████ █████ ██████████████  ]],
-		[[   █████████ ██████████ █████████ █████ █████ ████ █████  ]],
-		[[ ███████████ ███    ███ █████████ █████ █████ ████ █████ ]],
-		[[██████  █████████████████████ ████ █████ █████ ████ ██████]],
-		-- [[  ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣿⣶⣿⣦⣼⣆         ]],
-		-- [[   ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦      ]],
-		-- [[         ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷    ⠻⠿⢿⣿⣧⣄    ]],
-		-- [[          ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀⠄⠢⣀⡀⠈⠙⠿⠄   ]],
-		-- [[         ⢠⣿⣿⣿⠈    ⣻⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀  ]],
-		-- [[  ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘  ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄ ]],
-		-- [[ ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾⠄  ]],
-		-- [[⣠⣿⠿⠛ ⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄ ]],
-		-- [[⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇ ⠛⠻⢷⣄]],
-		-- [[     ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆    ]],
-		-- [[      ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃    ]],
+	local fn = vim.fn
+	local marginTopPercent = 0.3
+	local headerPadding = fn.max({ 2, fn.floor(fn.winheight(0) * marginTopPercent) })
+
+	dashboard.section.header.val = {
+		[[  ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣿⣶⣿⣦⣼⣆         ]],
+		[[   ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦      ]],
+		[[         ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷    ⠻⠿⢿⣿⣧⣄    ]],
+		[[          ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀⠄⠢⣀⡀⠈⠙⠿⠄   ]],
+		[[         ⢠⣿⣿⣿⠈    ⣻⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀  ]],
+		[[  ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘  ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄ ]],
+		[[ ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾⠄  ]],
+		[[⣠⣿⠿⠛ ⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄ ]],
+		[[⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇ ⠛⠻⢷⣄]],
+		[[     ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆    ]],
+		[[      ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃    ]],
 	}
-
-	dashboard.section.header.type = "text"
-	dashboard.section.header.val = header
 	dashboard.section.header.opts.hl = "AlphaHeader"
 
-	-- Make the header a bit more fun with some color!
-	local function colorize_header()
-		local catppuccin = require("catppuccin.palettes").get_palette()
-		local colors = {
-			catppuccin.red,
-			catppuccin.red,
-			catppuccin.peach,
-			catppuccin.yellow,
-			catppuccin.green,
-			catppuccin.sky,
-			catppuccin.blue,
-			catppuccin.mauve,
-			catppuccin.overlay0,
+	local function button(sc, txt, leader_txt, keybind, keybind_opts)
+		local sc_after = sc:gsub("%s", ""):gsub(leader_txt, "<leader>")
+
+		local opts = {
+			position = "center",
+			shortcut = sc,
+			cursor = 5,
+			width = 36,
+			align_shortcut = "right",
+			hl_shortcut = "AlphaKeys",
 		}
-		for i, color in pairs(colors) do
-			local cmd = "hi StartLogo" .. i .. " guifg=" .. color
-			vim.cmd(cmd)
+
+		if nil == keybind then
+			keybind = sc_after
+		end
+		keybind_opts = vim.F.if_nil(keybind_opts, { noremap = true, silent = true, nowait = true })
+		opts.keymap = { "n", sc_after, keybind, keybind_opts }
+
+		local function on_press()
+			-- local key = vim.api.nvim_replace_termcodes(keybind .. '<Ignore>', true, false, true)
+			local key = vim.api.nvim_replace_termcodes(sc_after .. "<Ignore>", true, false, true)
+			vim.api.nvim_feedkeys(key, "t", false)
 		end
 
-		local lines = {}
-
-		for i, chars in pairs(header) do
-			local line = {
-				type = "text",
-				val = chars,
-				opts = {
-					hl = "StartLogo" .. i,
-					shrink_margin = false,
-					position = "center",
-				},
-			}
-
-			table.insert(lines, line)
-		end
-
-		return lines
+		return {
+			type = "button",
+			val = txt,
+			on_press = on_press,
+			opts = opts,
+		}
 	end
 
+	local leader = " "
 	dashboard.section.buttons.val = {
-		dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"),
-		dashboard.button("e", " " .. " New file", ":ene <BAR> startinsert <CR>"),
-		dashboard.button(
-			"p",
-			" " .. " Find project",
-			":lua require('telescope').extensions.projects.projects()<CR>"
-		),
-		dashboard.button("r", " " .. " Recent files", ":Telescope oldfiles <CR>"),
-		dashboard.button("t", " " .. " Find text", ":Telescope live_grep <CR>"),
-		dashboard.button("c", " " .. " Config", ":e ~/.config/nvim/init.lua <CR>"),
-		dashboard.button("q", " " .. " Quit", ":qa<CR>"),
+		button("space f c", "  Scheme change", leader, nil, {
+			noremap = true,
+			silent = true,
+			nowait = true,
+			callback = function()
+				require("telescope.builtin").colorscheme()
+			end,
+		}),
+		button("space f r", "  File frecency", leader, nil, {
+			noremap = true,
+			silent = true,
+			nowait = true,
+			callback = function()
+				require("telescope").extensions.frecency.frecency()
+			end,
+		}),
+		button("space f e", "  File history", leader, nil, {
+			noremap = true,
+			silent = true,
+			nowait = true,
+			callback = function()
+				require("telescope.builtin").oldfiles()
+			end,
+		}),
+		button("space f p", "  Project find", leader, nil, {
+			noremap = true,
+			silent = true,
+			nowait = true,
+			callback = function()
+				require("telescope").extensions.projects.projects({})
+			end,
+		}),
+		button("space f f", "  File find", leader, nil, {
+			noremap = true,
+			silent = true,
+			nowait = true,
+			callback = function()
+				require("telescope.builtin").find_files()
+			end,
+		}),
+		button("space f n", "  File new", leader, nil, {
+			noremap = true,
+			silent = true,
+			nowait = true,
+			callback = function()
+				vim.api.nvim_command("enew")
+			end,
+		}),
+		button("space f w", "  Word find", leader, nil, {
+			noremap = true,
+			silent = true,
+			nowait = true,
+			callback = function()
+				require("telescope.builtin").live_grep()
+			end,
+		}),
+		button("q", "  Quit", leader, "q", {
+			noremap = true,
+			silent = true,
+			nowait = true,
+			callback = function()
+				vim.cmd([[ quitall! ]])
+			end,
+		}),
+	}
+	dashboard.section.buttons.opts.hl = "AlphaButtons"
+
+	dashboard.config.layout = {
+		{ type = "padding", val = headerPadding },
+		dashboard.section.header,
+		{ type = "padding", val = 2 },
+		dashboard.section.buttons,
 	}
 
-	dashboard.section.footer.val = fortune()
-	dashboard.section.footer.opts.hl = "StartLogo9"
+	alpha.setup(dashboard.opts)
 
-	alpha.setup({
-		layout = {
-			{ type = "padding", val = 8 },
-			{ type = "group", val = colorize_header() },
-			-- dashboard.section.header,
-			{ type = "padding", val = 3 },
-			dashboard.section.buttons,
-			{ type = "padding", val = 1 },
-			dashboard.section.footer,
-		},
-		opts = { margin = 5 },
+	-- Disable statusline in dashboard
+	vim.api.nvim_create_autocmd("FileType", {
+		pattern = "alpha",
+		callback = function()
+			-- store current statusline value and use that
+			local old_laststatus = vim.opt.laststatus
+			vim.api.nvim_create_autocmd("BufUnload", {
+				buffer = 0,
+				callback = function()
+					vim.opt.laststatus = old_laststatus
+				end,
+			})
+			vim.opt.laststatus = 0
+		end,
 	})
 end
