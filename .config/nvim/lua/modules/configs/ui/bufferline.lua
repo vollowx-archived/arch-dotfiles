@@ -37,9 +37,9 @@ return function()
 				end
 				return str
 			end,
-			numbers = function(opts)
-				return string.format("%s", opts.raise(opts.ordinal))
-			end,
+			-- numbers = function(opts)
+			-- 	return string.format("%s", opts.raise(opts.ordinal))
+			-- end,
 			offsets = {
 				{
 					filetype = "NvimTree",
