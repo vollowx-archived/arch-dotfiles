@@ -20,10 +20,11 @@ return function()
 			show_buffer_default_icon = true,
 			show_close_icon = true,
 			show_tab_indicators = true,
+			indicator_icon = " ",
 			enforce_regular_tabs = true,
 			persist_buffer_sort = true,
 			always_show_bufferline = true,
-			separator_style = "thin",
+			separator_style = { "", "" },
 			diagnostics = "nvim_lsp",
 			diagnostics_indicator = function(count, level, diagnostics_dict, context)
 				local str = " "
@@ -37,9 +38,6 @@ return function()
 				end
 				return str
 			end,
-			-- numbers = function(opts)
-			-- 	return string.format("%s", opts.raise(opts.ordinal))
-			-- end,
 			offsets = {
 				{
 					filetype = "NvimTree",
