@@ -1,8 +1,3 @@
-/*hide all scroll bars*/
-/* *{ scrollbar-width: none !important } */
-* {
-  font-family: JetBrainsMono Nerd Font Mono, sans-serif;
-}
 @-moz-document url-prefix("about:") {
   :root {
     --in-content-page-background: #1e1e2e !important;
@@ -10,24 +5,11 @@
 }
 
 @-moz-document url-prefix(about:home), url-prefix(about:newtab) {
-  .logo-and-wordmark {
-    display: none !important;
-  }
   .search-inner-wrapper {
     display: none !important;
   }
   body {
     background-color: #1f1e2e !important;
-    background-image: url("./bg.png") !important;
-    background-repeat: no-repeat !important;
-    background-size: contain !important;
-    background-position: center;
-    --newtab-background-color: #000000 !important;
-    --newtab-background-color-secondary: #101010 !important;
-  }
-  body[lwt-newtab-brighttext] {
-    --newtab-background-color: #000000 !important;
-    --newtab-background-color-secondary: #101010 !important;
   }
   .top-site-outer .top-site-icon {
     background-color: transparent !important;
