@@ -1,7 +1,3 @@
-if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  exec Hyprland
-fi
-
 # ------------------
 # Initialize modules
 # ------------------
@@ -65,3 +61,7 @@ typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[comment]='fg=242'
 
 source ~/.zsh/aliases.zsh
+
+if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  exec Hyprland
+fi
