@@ -38,6 +38,9 @@ settings["colorscheme"] = "catppuccin"
 ----@type "dark"|"light"
 settings["background"] = "dark"
 
+-- Set if use transparent background.
+----@type boolean
+settings["transparent_background"] = false
 -- Set the command for handling external URLs here. The executable must be available on your $PATH.
 -- This entry is IGNORED on Windows and macOS, which have their default handlers builtin.
 ---@type string

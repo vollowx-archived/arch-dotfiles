@@ -39,7 +39,7 @@ return function()
 	require("lualine").setup({
 		options = {
 			icons_enabled = true,
-			theme = "catppuccin",
+			theme = "auto",
 			disabled_filetypes = { "alpha", "dashboard" },
 			component_separators = "",
 			section_separators = { left = "", right = "" },
