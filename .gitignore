@@ -25,16 +25,10 @@
 .config/lazygit/state.yml
 !.config/mako/
 !.config/mako/**/*
-!.config/mpd/
-!.config/mpd/**/**
-.config/mpd/log
-.config/mpd/state
 !.config/mpv/
 !.config/mpv/**/*
 !.config/neofetch/
 !.config/neofetch/**/*
-!.config/ncmpcpp/
-!.config/ncmpcpp/**/*
 !.config/nvim/
 !.config/nvim/**/*
 .config/nvim/lazy-lock.json
@@ -63,6 +57,14 @@
 !.local/share/fcitx5/
 !.local/share/fcitx5/themes/
 !.local/share/fcitx5/themes/**/*
+
+!.mpd/
+!.mpd/**/**
+.mpd/log
+.mpd/state
+!.ncmpcpp/
+!.ncmpcpp/**/*
+.ncmpcpp/error.log
 
 !.gitconfig
 !.gitignore
