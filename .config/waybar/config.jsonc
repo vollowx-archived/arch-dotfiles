@@ -20,7 +20,7 @@
     "cpu",
     "memory",
     "temperature",
-    "battery",
+    "battery"
   ],
   "wlr/workspaces": {
     "format": "{icon}",
