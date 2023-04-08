@@ -6,8 +6,6 @@
 !.config/btop/**/*
 !.config/cava/
 !.config/cava/**/*
-!.config/dconf/
-!.config/dconf/**/*
 !.config/fcitx5/
 !.config/fcitx5/**/*
 !.config/firefox-chrome/
