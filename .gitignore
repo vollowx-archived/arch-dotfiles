@@ -39,6 +39,8 @@
 !.config/qt5ct/**/*
 !.config/ranger/
 !.config/ranger/**/*
+.config/ranger/plugins/__pycache__
+.config/ranger/plugins/ranger_devicons/__pycache__
 !.config/rofi/
 !.config/rofi/**/*
 !.config/swaylock/
