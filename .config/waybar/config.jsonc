@@ -8,15 +8,22 @@
   "modules-center": ["mpd"],
   "modules-right": [
     "tray",
+    "custom/divider",
     "network",
     "pulseaudio",
     "backlight",
+    "custom/divider",
     "cpu",
     "memory",
     "temperature",
+    "custom/divider",
     "battery",
     "clock"
   ],
+  "custom/divider": {
+    "format": "/",
+    "tooltip": false
+  },
   "wlr/workspaces": {
     "sort-by-name": true,
     "on-click": "activate",

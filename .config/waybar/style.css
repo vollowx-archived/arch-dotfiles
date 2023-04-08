@@ -16,6 +16,8 @@ tooltip {
   border-radius: 12px;
 }
 
+#custom-divider,
+/* /// */
 #submap,
 #workspaces,
 #window,
@@ -26,7 +28,6 @@ tooltip {
 #cpu,
 #memory,
 #temperature,
-#custom-cava,
 #network,
 #pulseaudio,
 #backlight,
@@ -64,6 +65,7 @@ tooltip {
   margin-right: 6px;
 }
 /* middle elements */
+#custom-divider,
 #workspaces,
 #network,
 #pulseaudio,
@@ -79,9 +81,8 @@ tooltip {
 /* special settings */
 
 #submap {
-  background-color: @rosewater;
+  background-color: @green;
   color: @base;
-  padding-right: 12px;
 }
 
 #workspaces button {
