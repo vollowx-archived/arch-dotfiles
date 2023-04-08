@@ -18,55 +18,72 @@ tooltip {
 
 #submap,
 #workspaces,
-#clock,
+#window,
+/* /// */
+#mpd,
+/* /// */
 #tray,
 #cpu,
 #memory,
 #temperature,
 #custom-cava,
-#mpd,
 #network,
 #pulseaudio,
 #backlight,
-#battery {
-  padding: 2px 12px;
-  margin: 4px 4px;
+#battery,
+#clock {
+  margin-top: 4px;
+  margin-bottom: 4px;
   background-color: @base;
-  border-radius: 16px;
 }
 
+/* left element */
+#submap {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+/* right element */
+#clock {
+  padding-left: 6px;
+  padding-right: 12px;
+}
+/* left border elements */
+#mpd,
+#tray {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  padding-left: 12px;
+  margin-left: 6px;
+}
+/* right border elements */
+#window,
+#mpd {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  padding-right: 12px;
+  margin-right: 6px;
+}
+/* middle elements */
+#workspaces,
+#network,
+#pulseaudio,
+#backlight,
 #cpu,
-#network {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  margin-right: 0;
-  padding-right: 0;
-}
 #memory,
-#pulseaudio {
-  margin-left: 0;
-  margin-right: 0;
-  border-radius: 0;
-}
 #temperature,
-#backlight {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  margin-left: 0;
-  padding-left: 0;
+#battery {
+  padding-left: 6px;
+  padding-right: 6px;
 }
+
+/* special settings */
 
 #submap {
-  margin-left: 8px;
-  margin-right: -4px;
-  background-color: @sky;
+  background-color: @rosewater;
   color: @base;
+  padding-right: 12px;
 }
 
-#workspaces {
-  margin-left: 8px;
-  padding: 0 10px;
-}
 #workspaces button {
   padding: 0;
   color: @subtext0;
@@ -83,29 +100,28 @@ tooltip {
   color: @mauve;
 }
 
-#window {
-  padding: 0 8px;
-  margin: 0 4px;
-}
-
-#cpu {
-  color: @red;
-}
-#memory {
-  color: @mauve;
-}
-#temperature {
-  color: @pink;
+#tray {
+  padding-right: 12px;
 }
 
 #network {
-  color: @green;
+  color: @lavender;
 }
 #pulseaudio {
-  color: @yellow;
+  color: @sapphire;
 }
 #backlight {
-  color: @peach;
+  color: @teal;
+}
+
+#cpu {
+  color: @yellow;
+}
+#memory {
+  color: @maroon;
+}
+#temperature {
+  color: @mauve;
 }
 
 #battery {
@@ -119,9 +135,4 @@ tooltip {
 #battery.critical:not(.charging) {
   background-color: @red;
   color: @base;
-}
-
-#clock {
-  color: @rosewater;
-  margin-right: 8px;
 }
