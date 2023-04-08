@@ -53,10 +53,11 @@
 !.local/share/backgrounds/Bridge.jpg
 !.local/share/backgrounds/Street.jpg
 !.local/share/backgrounds/spooky_spill.jpg
+!.local/share/backgrounds/cat_leaves.png
 # Anime
 !.local/share/backgrounds/Aqua.png
 # from https://github.com/mashumarodesu/dots/blob/master/Assets/Aqua.png
-!.local/share/backgrounds/waifu.png
+# not suitable with transparent terminal
 !.local/share/backgrounds/wallhaven-dgv23j.png
 !.local/share/fcitx5/
 !.local/share/fcitx5/themes/
