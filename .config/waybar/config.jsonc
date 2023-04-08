@@ -65,7 +65,7 @@
   },
   "tray": {
     "icon-size": 16,
-    "spacing": 10
+    "spacing": 6
   },
   "cpu": {
     "format": "󰻠 {usage}%"
