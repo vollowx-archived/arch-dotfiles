@@ -82,12 +82,12 @@ local function load_options()
 		termguicolors = true,
 		timeout = true,
 		-- You will feel delay when you input <Space> at lazygit interface if you set it a positive value like 300(ms).
-		timeoutlen = 0,
+		timeoutlen = 300,
 		ttimeout = true,
 		ttimeoutlen = 0,
 		undodir = global.cache_dir .. "undo/",
 		undofile = true,
-		-- Please do NOT set `updatetime` to above 500, otherwise most plugins may not work correctly
+		-- Please do NOT set `updatetime` to above 500, otherwise most plugins may not function correctly
 		updatetime = 200,
 		viewoptions = "folds,cursor,curdir,slash,unix",
 		virtualedit = "block",
@@ -101,9 +101,6 @@ local function load_options()
 		wrapscan = true,
 		writebackup = false,
 	}
-	local function isempty(s)
-		return s == nil or s == ""
-	end
 
 	for name, value in pairs(global_local) do
 		vim.o[name] = value
