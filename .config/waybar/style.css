@@ -31,7 +31,7 @@ tooltip {
 #battery {
   padding: 2px 12px;
   margin: 4px 4px;
-  background-color: alpha(@overlay0, 0.32);
+  background-color: @base;
   border-radius: 16px;
 }
 

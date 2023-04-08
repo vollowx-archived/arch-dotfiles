@@ -109,7 +109,7 @@ return function()
 			},
 		},
 		symbol_in_winbar = {
-			enable = true,
+			enable = false,
 			separator = " " .. icons.ui.Separator,
 			hide_keyword = true,
 			show_file = true,
