@@ -49,9 +49,13 @@
 !.local/
 !.local/share/
 !.local/share/backgrounds/
+# Catppuccin
 !.local/share/backgrounds/Bridge.jpg
 !.local/share/backgrounds/Street.jpg
 !.local/share/backgrounds/spooky_spill.jpg
+# Anime
+!.local/share/backgrounds/Aqua.png
+# from https://github.com/mashumarodesu/dots/blob/master/Assets/Aqua.png
 !.local/share/backgrounds/waifu.png
 !.local/share/backgrounds/wallhaven-dgv23j.png
 !.local/share/fcitx5/

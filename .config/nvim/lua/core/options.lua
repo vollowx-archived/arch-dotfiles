@@ -50,7 +50,7 @@ local function load_options()
 		list = true,
 		listchars = "tab:»·,nbsp:+,trail:·,extends:→,precedes:←",
 		magic = true,
-		mousescroll = "ver:3,hor:6",
+		mousescroll = "ver:1,hor:1",
 		number = true,
 		previewheight = 12,
 		pumheight = 15,

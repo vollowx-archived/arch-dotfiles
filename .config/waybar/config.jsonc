@@ -3,15 +3,9 @@
 {
   "position": "top",
   "layer": "top",
-  "height": 48,
-  "modules-left": [
-    "hyprland/submap",
-    "wlr/workspaces",
-    "mpd"
-  ],
-  "modules-center": [
-    "clock"
-  ],
+  "height": 36,
+  "modules-left": ["hyprland/submap", "wlr/workspaces", "hyprland/window"],
+  "modules-center": ["mpd"],
   "modules-right": [
     "tray",
     "network",
@@ -20,18 +14,16 @@
     "cpu",
     "memory",
     "temperature",
-    "battery"
+    "battery",
+    "clock"
   ],
   "wlr/workspaces": {
-    "format": "{icon}",
     "sort-by-name": true,
     "on-click": "activate",
     "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1",
-    "format-icons": {
-      "10": " 1.5 "
-    }
+    "on-scroll-down": "hyprctl dispatch workspace e-1"
   },
+  "hyprland/title": {},
   "mpd": {
     "format": "{stateIcon}{consumeIcon} {randomIcon}{repeatIcon}{singleIcon}{title}({elapsedTime:%M:%S}/{totalTime:%M:%S}) 󰝚 ",
     "format-disconnected": "󰝛 ",
@@ -65,10 +57,6 @@
     "tooltip-format": "{artist} - {album} - {title}",
     "tooltip-format-disconnected": "MPD (disconnected)"
   },
-  "clock": {
-    "format": "󰥔 {:%m.%d/%H:%M}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-  },
   "tray": {
     "icon-size": 16,
     "spacing": 10
@@ -99,24 +87,12 @@
       "phone": "󰏲",
       "portable": "󰏲",
       "car": "󰄋",
-      "default": [
-        "󰕿",
-        "󰖀",
-        "󰕾"
-      ]
+      "default": ["󰕿", "󰖀", "󰕾"]
     }
   },
   "backlight": {
     "format": "{icon} {percent}%",
-    "format-icons": [
-      "󰃚",
-      "󰃛",
-      "󰃜",
-      "󰃝",
-      "󰃞",
-      "󰃟",
-      "󰃠"
-    ]
+    "format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"]
   },
   "battery": {
     "states": {
@@ -126,18 +102,10 @@
     "format": "{icon} {capacity}%",
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
+    "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
+  },
+  "clock": {
+    "format": "󰥔 {:%m/%d %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   }
 }

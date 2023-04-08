@@ -7,7 +7,7 @@
 }
 
 window#waybar {
-  background-color: alpha(@base, 0.8);
+  background-color: transparent;
   color: @text;
 }
 
@@ -29,10 +29,10 @@ tooltip {
 #pulseaudio,
 #backlight,
 #battery {
-  padding: 5px 10px;
-  margin: 5px 2.5px 7px 2.5px;
-  background-color: alpha(@text, 0.16);
-  border-radius: 14px;
+  padding: 2px 12px;
+  margin: 4px 4px;
+  background-color: alpha(@overlay0, 0.32);
+  border-radius: 16px;
 }
 
 #cpu,
@@ -46,7 +46,6 @@ tooltip {
 #pulseaudio {
   margin-left: 0;
   margin-right: 0;
-  padding-right: 0;
   border-radius: 0;
 }
 #temperature,
@@ -54,6 +53,7 @@ tooltip {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   margin-left: 0;
+  padding-left: 0;
 }
 
 #submap {
@@ -63,7 +63,6 @@ tooltip {
   color: @base;
 }
 
-/* the first element */
 #workspaces {
   margin-left: 8px;
   padding: 0 10px;
@@ -84,8 +83,9 @@ tooltip {
   color: @mauve;
 }
 
-#clock {
-  color: @rosewater;
+#window {
+  padding: 5px 10px;
+  margin: 5px 2.5px 7px 2.5px;
 }
 
 #cpu {
@@ -108,10 +108,8 @@ tooltip {
   color: @peach;
 }
 
-/* the last element */
 #battery {
   color: @flamingo;
-  margin-right: 8px;
 }
 #battery.charging {
   background-color: @green;
@@ -121,4 +119,9 @@ tooltip {
 #battery.critical:not(.charging) {
   background-color: @red;
   color: @base;
+}
+
+#clock {
+  color: @rosewater;
+  margin-right: 8px;
 }

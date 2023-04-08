@@ -89,7 +89,12 @@ return function()
 					symbol_map = vim.tbl_deep_extend("force", icons.kind, icons.type, icons.cmp),
 				})(entry, vim_item)
 				local strings = vim.split(kind.kind, "%s", { trimempty = true })
-				kind.kind = strings[1] .. "  " .. strings[2] .. " "
+				if table.getn(strings) == 2 then
+					kind.kind = strings[1] .. "  " .. strings[2]
+				else
+					kind.kind = "  " .. kind.kind
+				end
+				kind.kind = kind.kind .. " "
 				return kind
 			end,
 		},
