@@ -1,5 +1,4 @@
 return function()
-	local colors = require("modules.utils").get_palette()
 	local icons = {
 		diagnostics = require("modules.utils.icons").get("diagnostics", true),
 		misc = require("modules.utils.icons").get("misc", false),
@@ -66,7 +65,8 @@ return function()
 			lualine_c = {
 				{
 					"branch",
-					icon = " ",
+					-- to remove a whitespace
+					icon = string.sub(icons.git.Branch, 1, 3),
 					padding = {
 						left = 1,
 						right = 0,
@@ -85,7 +85,7 @@ return function()
 			lualine_x = {
 				{
 					"diagnostics",
-					sources = { "nvim_diagnostic" },
+					sources = { "nvim_lsp" },
 					sections = { "error", "warn", "info", "hint" },
 					symbols = {
 						error = icons.diagnostics.Error,
@@ -97,7 +97,7 @@ return function()
 				-- lsp
 				{
 					function()
-						local msg = "No Active Lsp"
+						local msg = "[]"
 						local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
 						local clients = vim.lsp.get_active_clients()
 						if next(clients) == nil then
@@ -125,18 +125,12 @@ return function()
 				{
 					"fileformat",
 					symbols = {
-						unix = "", -- e712
-						dos = "", -- e70f
-						mac = "", -- e711
+						unix = "",
+						dos = "",
+						mac = "",
 					},
 				},
-				{
-					"encoding",
-					padding = {
-						left = 0,
-						right = 1,
-					},
-				},
+				"encoding",
 			},
 			lualine_z = { "location" },
 		},
