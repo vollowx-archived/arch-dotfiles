@@ -52,7 +52,7 @@
       "on": "<span foreground='#f5e0dc'>󰑘</span> "
     },
     "state-icons": {
-      "paused": "󰐊",
+      "paused": "󰼛",
       "playing": "󰏤"
     },
     "on-scroll-up": "mpc seek +1",
@@ -74,14 +74,14 @@
     "format": "󰍛 {}%"
   },
   "temperature": {
-    "format": "󰔏 {temperatureC}°C"
+    "format": "󰔄 {temperatureC}°C"
   },
   "network": {
     "format-wifi": "󰤨 {signalStrength}%",
     "format-alt": "󰤨 {essid}",
     "format-ethernet": "󰈀 {signalStrength}",
     "format-disconnected": "󰤮 ",
-    "tooltip-format-wifi": "󰤢 {essid} 󰁅 {bandwidthDownBits} 󰁝 {bandwidthUpBits}",
+    "tooltip-format-wifi": "󱚻 {essid} 󰁅 {bandwidthDownBits} 󰁝 {bandwidthUpBits}",
     "tooltip-format-ethernet": "󰈀 {essid} 󰁅 {bandwidthDownBits} 󰁝 {bandwidthUpBits}"
   },
   "pulseaudio": {
@@ -111,7 +111,7 @@
     "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
   },
   "clock": {
-    "format": "󰥔 {:%H:%M}",
+    "format": "󰅐 {:%H:%M}",
     "tooltip-format": "{:%d} {calendar}"
   }
 }
