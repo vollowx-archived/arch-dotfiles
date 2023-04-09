@@ -5,17 +5,28 @@ return function()
 		git = require("modules.utils.icons").get("git", true),
 		ui = require("modules.utils.icons").get("ui", true),
 	}
-	local hide_in_width = function()
-		return vim.fn.winwidth(0) > 80
+
+	local function diff_source()
+		local gitsigns = vim.b.gitsigns_status_dict
+		if gitsigns then
+			return {
+				added = gitsigns.added,
+				modified = gitsigns.changed,
+				removed = gitsigns.removed,
+			}
+		end
 	end
 
-	local has_value = function(arr, val)
-		for _, value in ipairs(arr) do
-			if value == val then
-				return true
+	local function get_cwd()
+		local cwd = vim.fn.getcwd()
+		local is_windows = require("core.global").is_windows
+		if not is_windows then
+			local home = require("core.global").home
+			if cwd:find(home, 1, true) == 1 then
+				cwd = "~" .. cwd:sub(#home + 1)
 			end
 		end
-		return false
+		return icons.ui.RootFolderOpened .. cwd
 	end
 
 	local mini_sections = {
@@ -51,28 +62,7 @@ return function()
 				},
 			},
 			lualine_b = {
-				{
-					"filetype",
-					colored = false,
-					icon_only = true,
-					padding = {
-						left = 1,
-						right = 0,
-					},
-				},
-				"filename",
-			},
-			lualine_c = {
-				{
-					"branch",
-					-- to remove a whitespace
-					icon = string.sub(icons.git.Branch, 1, 3),
-					padding = {
-						left = 1,
-						right = 0,
-					},
-					cond = hide_in_width,
-				},
+				"branch",
 				{
 					"diff",
 					symbols = {
@@ -80,12 +70,13 @@ return function()
 						modified = icons.git.Mod,
 						removed = icons.git.Remove,
 					},
+					source = diff_source,
 				},
 			},
-			lualine_x = {
+			lualine_c = {
 				{
 					"diagnostics",
-					sources = { "nvim_lsp" },
+					sources = { "nvim_diagnostic" },
 					sections = { "error", "warn", "info", "hint" },
 					symbols = {
 						error = icons.diagnostics.Error,
@@ -93,44 +84,24 @@ return function()
 						info = icons.diagnostics.Information,
 						hint = icons.diagnostics.Hint,
 					},
-				},
-				-- lsp
-				{
-					function()
-						local msg = "[]"
-						local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
-						local clients = vim.lsp.get_active_clients()
-						if next(clients) == nil then
-							return msg
-						end
-						for _, client in ipairs(clients) do
-							local filetypes = client.config.filetypes
-							if
-								filetypes
-								and vim.fn.index(filetypes, buf_ft) ~= -1
-								and not has_value({ "null-ls" }, client.name)
-							then
-								return "[" .. client.name .. "]"
-							end
-						end
-						return msg
-					end,
-					padding = {
-						left = 0,
-						right = 1,
-					},
+					always_visible = true,
 				},
 			},
+			lualine_x = {
+				get_cwd,
+			},
 			lualine_y = {
+				{ "filetype", icon_only = true },
+				"encoding",
 				{
 					"fileformat",
+					icons_enabled = true,
 					symbols = {
-						unix = "",
-						dos = "",
-						mac = "",
+						unix = "LF",
+						dos = "CRLF",
+						mac = "CR",
 					},
 				},
-				"encoding",
 			},
 			lualine_z = { "location" },
 		},

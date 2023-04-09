@@ -149,10 +149,10 @@ return function()
 			show_on_dirs = true,
 			debounce_delay = 50,
 			icons = {
-				hint = icons.diagnostics.Hint_alt,
-				info = icons.diagnostics.Information_alt,
-				warning = icons.diagnostics.Warning_alt,
-				error = icons.diagnostics.Error_alt,
+				hint = icons.diagnostics.Hint,
+				info = icons.diagnostics.Information,
+				warning = icons.diagnostics.Warning,
+				error = icons.diagnostics.Error,
 			},
 		},
 		filesystem_watchers = {

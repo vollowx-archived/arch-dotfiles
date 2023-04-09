@@ -161,12 +161,6 @@ local data = {
 		Information = "",
 		Question = "",
 		Hint = "",
-		-- Holo version
-		Error_alt = "",
-		Warning_alt = "",
-		Information_alt = "",
-		Question_alt = "",
-		Hint_alt = "",
 	},
 	misc = {
 		Campass = "",
