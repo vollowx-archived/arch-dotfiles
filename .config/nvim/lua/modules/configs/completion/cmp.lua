@@ -52,7 +52,6 @@ return function()
 		return (diff < 0)
 	end
 
-	local lspkind = require("lspkind")
 	local cmp = require("cmp")
 
 	cmp.setup({
@@ -84,19 +83,10 @@ return function()
 		formatting = {
 			fields = { "abbr", "menu", "kind" },
 			format = function(entry, vim_item)
-				local kind = lspkind.cmp_format({
-					mode = "symbol_text",
-					maxwidth = 50,
-					symbol_map = vim.tbl_deep_extend("force", icons.kind, icons.type, icons.cmp),
-				})(entry, vim_item)
-				local strings = vim.split(kind.kind, "%s", { trimempty = true })
-				if table.getn(strings) == 2 then
-					kind.kind = strings[1] .. "  " .. strings[2]
-				else
-					kind.kind = "  " .. kind.kind
-				end
-				kind.kind = kind.kind .. " "
-				return kind
+				local symbol_map = vim.tbl_deep_extend("force", icons.kind, icons.type, icons.cmp)
+				local icon = symbol_map[vim_item.kind] or " "
+				vim_item.kind = icon .. "  " .. vim_item.kind .. " "
+				return vim_item
 			end,
 		},
 		-- You can set mappings if you want
