@@ -58,13 +58,14 @@ return function()
 	cmp.setup({
 		window = {
 			completion = {
-				border = border("CmpBorder"),
-				winhighlight = "Normal:CmpPmenu,CursorLine:CmpSel,Search:PmenuSel",
+				border = border("PmenuBorder"),
+				winhighlight = "Normal:Pmenu,CursorLine:PmenuSel,Search:PmenuSel",
 				max_width = 80,
 				max_height = 20,
 			},
 			documentation = {
-				border = border("CmpBorder"),
+				border = border("PmenuBorder"),
+				winhighlight = "Normal:Pmenu",
 			},
 		},
 		sorting = {

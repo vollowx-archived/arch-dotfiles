@@ -78,7 +78,7 @@ return function()
 			nvimtree = true,
 			overseer = false,
 			pounce = false,
-			semantic_tokens = false,
+			semantic_tokens = true,
 			symbols_outline = false,
 			telekasten = false,
 			telescope = true,
@@ -135,13 +135,12 @@ return function()
 					-- For indent-blankline
 					IndentBlanklineContextChar = { fg = cp.surface2 },
 
-					-- For cmp
-					CmpBorder = { fg = cp.surface2 },
-					CmpPmenu = { fg = cp.none },
+					-- For nvim-cmp and wilder
+					Pmenu = { fg = cp.none },
+					PmenuBorder = { fg = cp.surface1 },
 					PmenuSel = { bg = cp.green, fg = cp.base },
 					CmpItemAbbr = { fg = cp.white },
-					CmpItemAbbrMatch = { fg = cp.blue, bold = true },
-					CmpSel = { link = "PmenuSel", bold = true },
+					CmpItemAbbrMatch = { fg = cp.blue, style = { "bold" } },
 
 					-- For native lsp configs.
 					DiagnosticVirtualTextError = { bg = cp.none },
@@ -161,6 +160,17 @@ return function()
 
 					-- For trouble.nvim
 					TroubleNormal = { bg = cp.base },
+
+					-- For lsp semantic tokens
+					["@lsp.type.comment"] = { fg = cp.overlay0 },
+					["@lsp.type.enum"] = { link = "@type" },
+					["@lsp.type.property"] = { link = "@property" },
+					["@lsp.type.macro"] = { link = "@constant" },
+					["@lsp.typemod.function.defaultLibrary"] = { fg = cp.blue, style = { "bold", "italic" } },
+					["@lsp.typemod.function.defaultLibrary.c"] = { fg = cp.blue, style = { "bold" } },
+					["@lsp.typemod.function.defaultLibrary.cpp"] = { fg = cp.blue, style = { "bold" } },
+					["@lsp.typemod.method.defaultLibrary"] = { link = "@lsp.typemod.function.defaultLibrary" },
+					["@lsp.typemod.variable.defaultLibrary"] = { fg = cp.flamingo },
 
 					-- For treesitter.
 					["@field"] = { fg = cp.rosewater },
@@ -259,6 +269,9 @@ return function()
 				AlphaHeader = { fg = cp.subtext0 },
 				AlphaButtons = { link = "String" },
 				AlphaKeys = { link = "Keyword" },
+
+				CmpDoc = { bg = cp.mantle },
+				CmpDocBorder = { bg = cp.mantle, fg = cp.mantle },
 			}
 		end,
 	})
