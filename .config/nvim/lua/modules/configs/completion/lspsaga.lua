@@ -1,4 +1,6 @@
 return function()
+	require("modules.utils").gen_lspkind_hl()
+
 	local icons = {
 		cmp = require("modules.utils.icons").get("cmp", true),
 		diagnostics = require("modules.utils.icons").get("diagnostics", true),
@@ -10,10 +12,10 @@ return function()
 	local function set_sidebar_icons()
 		-- Set icons for sidebar.
 		local diagnostic_icons = {
-			Error = icons.diagnostics.Error,
-			Warn = icons.diagnostics.Warning,
-			Info = icons.diagnostics.Information,
-			Hint = icons.diagnostics.Hint,
+			Error = icons.diagnostics.Error_alt,
+			Warn = icons.diagnostics.Warning_alt,
+			Info = icons.diagnostics.Information_alt,
+			Hint = icons.diagnostics.Hint_alt,
 		}
 		for type, icon in pairs(diagnostic_icons) do
 			local hl = "DiagnosticSign" .. type
@@ -77,7 +79,6 @@ return function()
 			keys = {
 				exec_action = "r",
 				quit = "q",
-				go_action = "g",
 				expand_or_jump = "<CR>",
 				quit_in_show = { "q", "<ESC>" },
 			},
@@ -110,7 +111,7 @@ return function()
 			enable = false,
 			separator = " " .. icons.ui.Separator,
 			hide_keyword = true,
-			show_file = true,
+			show_file = false,
 			color_mode = true,
 		},
 		beacon = {
@@ -119,7 +120,7 @@ return function()
 		},
 		ui = {
 			title = false,
-			border = "rounded", -- Can be single, double, rounded, solid, shadow.
+			border = "single", -- Can be single, double, rounded, solid, shadow.
 			winblend = 0,
 			actionfix = icons.ui.Spell,
 			expand = icons.ui.ArrowClosed,

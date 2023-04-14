@@ -6,9 +6,6 @@ return function()
 		ui = require("modules.utils.icons").get("ui"),
 	}
 
-	local nvim_tree_config = require("nvim-tree.config")
-	local tree_cb = nvim_tree_config.nvim_tree_callback
-
 	require("nvim-tree").setup({
 		auto_reload_on_write = true,
 		create_in_closed_folder = false,
@@ -16,15 +13,12 @@ return function()
 		hijack_cursor = true,
 		hijack_netrw = true,
 		hijack_unnamed_buffer_when_opening = true,
-		ignore_buffer_on_setup = false,
-		open_on_setup = false,
-		open_on_setup_file = false,
 		open_on_tab = false,
 		respect_buf_cwd = false,
 		sort_by = "name",
 		sync_root_with_cwd = true,
 		view = {
-			adaptive_size = true,
+			adaptive_size = false,
 			centralize_selection = false,
 			width = 30,
 			side = "left",
@@ -32,7 +26,6 @@ return function()
 			number = false,
 			relativenumber = false,
 			signcolumn = "yes",
-			hide_root_folder = false,
 			float = {
 				enable = false,
 				open_win_config = {
@@ -42,13 +35,6 @@ return function()
 					height = 30,
 					row = 1,
 					col = 1,
-				},
-			},
-			mappings = {
-				list = {
-					{ key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
-					{ key = "h", cb = tree_cb("close_node") },
-					{ key = "v", cb = tree_cb("vsplit") },
 				},
 			},
 		},
@@ -82,21 +68,23 @@ return function()
 				padding = " ",
 				symlink_arrow = "  ",
 				glyphs = {
-					default = icons.documents.Default,
-					symlink = icons.documents.Symlink,
+					default = icons.documents.Default, --
+					symlink = icons.documents.Symlink, --
 					bookmark = icons.ui.Bookmark,
 					git = {
 						unstaged = icons.git.Mod_alt,
-						staged = icons.git.Add,
+						staged = icons.git.Add, --
 						unmerged = icons.git.Unmerged,
-						renamed = icons.git.Rename,
-						untracked = icons.git.Untracked,
-						deleted = icons.git.Remove,
-						ignored = icons.git.Ignore,
+						renamed = icons.git.Rename, --
+						untracked = icons.git.Untracked, -- "ﲉ"
+						deleted = icons.git.Remove, --
+						ignored = icons.git.Ignore, --◌
 					},
 					folder = {
-						arrow_open = "",
-						arrow_closed = "",
+						-- arrow_open = "",
+						-- arrow_closed = "",
+						arrow_open = "",
+						arrow_closed = "",
 						default = icons.ui.Folder,
 						open = icons.ui.FolderOpen,
 						empty = icons.ui.EmptyFolder,
@@ -116,7 +104,6 @@ return function()
 			update_root = true,
 			ignore_list = {},
 		},
-		ignore_ft_on_setup = {},
 		filters = {
 			dotfiles = false,
 			custom = { ".DS_Store" },
@@ -145,14 +132,14 @@ return function()
 			},
 		},
 		diagnostics = {
-			enable = true,
-			show_on_dirs = true,
+			enable = false,
+			show_on_dirs = false,
 			debounce_delay = 50,
 			icons = {
-				hint = icons.diagnostics.Hint,
-				info = icons.diagnostics.Information,
-				warning = icons.diagnostics.Warning,
-				error = icons.diagnostics.Error,
+				hint = icons.diagnostics.Hint_alt,
+				info = icons.diagnostics.Information_alt,
+				warning = icons.diagnostics.Warning_alt,
+				error = icons.diagnostics.Error_alt,
 			},
 		},
 		filesystem_watchers = {

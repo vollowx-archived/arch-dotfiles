@@ -1,5 +1,5 @@
 return function()
-	local transparent_background = require("core.settings").transparent_background
+	local transparent_background = false -- Set background transparency here!
 
 	require("catppuccin").setup({
 		flavour = "mocha", -- Can be one of: latte, frappe, macchiato, mocha
@@ -58,7 +58,6 @@ return function()
 			gitgutter = false,
 			gitsigns = true,
 			harpoon = false,
-			headlines = true,
 			hop = true,
 			illuminate = true,
 			indent_blankline = { enabled = true, colored_indent_levels = false },
@@ -131,19 +130,6 @@ return function()
 					Type = { fg = cp.blue },
 					Typedef = { fg = cp.yellow },
 					StorageClass = { fg = cp.red, style = { "italic" } },
-
-					-- For indent-blankline
-					IndentBlanklineContextChar = { fg = cp.overlay0 },
-
-					-- For nvim-tree
-					NvimTreeIndentMarker = { fg = cp.surface0 },
-
-					-- For nvim-cmp and wilder
-					Pmenu = { fg = cp.none },
-					PmenuBorder = { fg = cp.surface1 },
-					PmenuSel = { bg = cp.green, fg = cp.base },
-					CmpItemAbbr = { fg = cp.white },
-					CmpItemAbbrMatch = { fg = cp.blue, style = { "bold" } },
 
 					-- For native lsp configs.
 					DiagnosticVirtualTextError = { bg = cp.none },
@@ -267,15 +253,5 @@ return function()
 				}
 			end,
 		},
-		custom_highlights = function(cp)
-			return {
-				AlphaHeader = { fg = cp.subtext0 },
-				AlphaButtons = { link = "String" },
-				AlphaKeys = { link = "Keyword" },
-
-				CmpDoc = { bg = cp.mantle },
-				CmpDocBorder = { bg = cp.mantle, fg = cp.mantle },
-			}
-		end,
 	})
 end

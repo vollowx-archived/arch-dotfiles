@@ -3,7 +3,7 @@ return function()
 	local mason = require("mason")
 	local mason_lspconfig = require("mason-lspconfig")
 
-	require("lspconfig.ui.windows").default_options.border = "rounded"
+	require("lspconfig.ui.windows").default_options.border = "single"
 
 	local icons = {
 		ui = require("modules.utils.icons").get("ui", true),

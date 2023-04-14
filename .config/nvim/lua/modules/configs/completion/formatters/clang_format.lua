@@ -1,1 +1,1 @@
-return { "-style=file" }
+return { "-style={BasedOnStyle: LLVM, IndentWidth: 4}" }

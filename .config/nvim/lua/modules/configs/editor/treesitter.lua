@@ -22,7 +22,6 @@ return vim.schedule_wrap(function()
 			"markdown_inline",
 			"python",
 			"rust",
-			"scss",
 			"typescript",
 			"vimdoc",
 			"vue",

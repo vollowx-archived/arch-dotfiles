@@ -1,8 +1,5 @@
 return function()
-	local icons = {
-		ui = require("modules.utils.icons").get("ui"),
-		diagnostics = require("modules.utils.icons").get("diagnostics", true),
-	}
+	local icons = { ui = require("modules.utils.icons").get("ui") }
 
 	local opts = {
 		options = {
@@ -25,28 +22,19 @@ return function()
 			always_show_bufferline = true,
 			separator_style = "thin",
 			diagnostics = "nvim_lsp",
-			diagnostics_indicator = function(count, level, diagnostics_dict, context)
-				local str = " "
-				for is, num in pairs(diagnostics_dict) do
-					local sym = is == "error" and icons.diagnostics.Error
-						or (
-							is == "warning" and icons.diagnostics.Warning
-							or (is == "info" and icons.diagnostics.Information or icons.diagnostics.Hint)
-						)
-					str = str .. sym .. num .. " "
-				end
-				return str
+			diagnostics_indicator = function(count)
+				return "(" .. count .. ")"
 			end,
 			offsets = {
 				{
 					filetype = "NvimTree",
-					text = "",
+					text = "File Explorer",
 					text_align = "center",
 					padding = 1,
 				},
 				{
 					filetype = "lspsagaoutline",
-					text = "",
+					text = "Lspsaga Outline",
 					text_align = "center",
 					padding = 1,
 				},

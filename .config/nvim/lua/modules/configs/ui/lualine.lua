@@ -1,10 +1,40 @@
 return function()
+	local colors = require("modules.utils").get_palette()
 	local icons = {
 		diagnostics = require("modules.utils.icons").get("diagnostics", true),
-		misc = require("modules.utils.icons").get("misc", false),
-		git = require("modules.utils.icons").get("git", true),
+		misc = require("modules.utils.icons").get("misc", true),
 		ui = require("modules.utils.icons").get("ui", true),
 	}
+
+	local function escape_status()
+		local ok, m = pcall(require, "better_escape")
+		return ok and m.waiting and icons.misc.EscapeST or ""
+	end
+
+	local _cache = { context = "", bufnr = -1 }
+	local function lspsaga_symbols()
+		local exclude = {
+			["terminal"] = true,
+			["toggleterm"] = true,
+			["prompt"] = true,
+			["NvimTree"] = true,
+			["help"] = true,
+		}
+		if vim.api.nvim_win_get_config(0).zindex or exclude[vim.bo.filetype] then
+			return "" -- Excluded filetypes
+		else
+			local currbuf = vim.api.nvim_get_current_buf()
+			local ok, lspsaga = pcall(require, "lspsaga.symbolwinbar")
+			if ok and lspsaga:get_winbar() ~= nil then
+				_cache.context = lspsaga:get_winbar()
+				_cache.bufnr = currbuf
+			elseif _cache.bufnr ~= currbuf then
+				_cache.context = "" -- Reset [invalid] cache (usually from another buffer)
+			end
+
+			return _cache.context
+		end
+	end
 
 	local function diff_source()
 		local gitsigns = vim.b.gitsigns_status_dict
@@ -46,53 +76,60 @@ return function()
 		filetypes = { "DiffviewFiles" },
 	}
 
+	local function python_venv()
+		local function env_cleanup(venv)
+			if string.find(venv, "/") then
+				local final_venv = venv
+				for w in venv:gmatch("([^/]+)") do
+					final_venv = w
+				end
+				venv = final_venv
+			end
+			return venv
+		end
+
+		if vim.bo.filetype == "python" then
+			local venv = os.getenv("CONDA_DEFAULT_ENV")
+			if venv then
+				return string.format("%s", env_cleanup(venv))
+			end
+			venv = os.getenv("VIRTUAL_ENV")
+			if venv then
+				return string.format("%s", env_cleanup(venv))
+			end
+		end
+		return ""
+	end
+
 	require("lualine").setup({
 		options = {
 			icons_enabled = true,
-			theme = "auto",
-			disabled_filetypes = { "alpha", "dashboard" },
-			component_separators = "",
-			section_separators = { left = "", right = "" },
+			theme = "catppuccin",
+			disabled_filetypes = {},
+			component_separators = "|",
+			section_separators = { left = "", right = "" },
 		},
 		sections = {
-			lualine_a = {
-				{
-					"mode",
-					icon = icons.misc.Vim,
-				},
-			},
-			lualine_b = {
-				"branch",
-				{
-					"diff",
-					symbols = {
-						added = icons.git.Add,
-						modified = icons.git.Mod,
-						removed = icons.git.Remove,
-					},
-					source = diff_source,
-				},
-			},
-			lualine_c = {
+			lualine_a = { { "mode" } },
+			lualine_b = { { "branch" }, { "diff", source = diff_source } },
+			lualine_c = { lspsaga_symbols },
+			lualine_x = {
+				{ escape_status },
 				{
 					"diagnostics",
 					sources = { "nvim_diagnostic" },
-					sections = { "error", "warn", "info", "hint" },
 					symbols = {
 						error = icons.diagnostics.Error,
 						warn = icons.diagnostics.Warning,
 						info = icons.diagnostics.Information,
-						hint = icons.diagnostics.Hint,
 					},
-					always_visible = true,
 				},
-			},
-			lualine_x = {
-				get_cwd,
+				{ get_cwd },
 			},
 			lualine_y = {
-				{ "filetype", icon_only = true },
-				"encoding",
+				{ "filetype", colored = true, icon_only = true },
+				{ python_venv },
+				{ "encoding" },
 				{
 					"fileformat",
 					icons_enabled = true,
@@ -103,7 +140,7 @@ return function()
 					},
 				},
 			},
-			lualine_z = { "location" },
+			lualine_z = { "progress", "location" },
 		},
 		inactive_sections = {
 			lualine_a = {},
@@ -124,4 +161,10 @@ return function()
 			diffview,
 		},
 	})
+
+	-- Properly set background color for lspsaga
+	local winbar_bg = require("modules.utils").hl_to_rgb("StatusLine", true, colors.mantle)
+	for _, hlGroup in pairs(require("lspsaga.lspkind").get_kind_group()) do
+		require("modules.utils").extend_hl(hlGroup, { bg = winbar_bg })
+	end
 end

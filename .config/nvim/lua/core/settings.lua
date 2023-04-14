@@ -28,24 +28,20 @@ settings["load_big_files_faster"] = true
 settings["palette_overwrite"] = {}
 
 -- Set the colorscheme to use here.
--- Available values are: `catppuccin`, `catppuccin-latte`, `catppucin-mocha`, `catppuccin-frappe`, `catppuccin-macchiato`.
+-- Available values are: `catppuccin`, `catppuccin-latte`, `catppucin-mocha`, `catppuccin-frappe`, `catppuccin-macchiato`, `edge`, `nord`.
 ---@type string
 settings["colorscheme"] = "catppuccin"
 
 -- Set background color to use here.
--- Useful for when you want to use a colorscheme that has a light and dark variant like `edge`.
--- Available values are: `dark`, `light`.
-----@type "dark"|"light"
+-- Useful if you would like to use a colorscheme that has a light and dark variant like `edge`.
+-- Valid values are: `dark`, `light`.
+---@type "dark"|"light"
 settings["background"] = "dark"
-
--- Set if use transparent background.
-----@type boolean
-settings["transparent_background"] = true
 
 -- Set the command for handling external URLs here. The executable must be available on your $PATH.
 -- This entry is IGNORED on Windows and macOS, which have their default handlers builtin.
 ---@type string
-settings["external_browser"] = "firefox-developer-edition --new-tab"
+settings["external_browser"] = "chrome-cli open"
 
 -- Filetypes in this list will skip lsp formatting if rhs is true
 ---@type table<string, boolean>
@@ -59,8 +55,6 @@ settings["server_formatting_block_list"] = {
 	lua_ls = true,
 	tsserver = true,
 	clangd = true,
-	volar = true,
-	jsonls = true,
 }
 
 -- Set the language servers that will be installed during bootstrap here
@@ -70,13 +64,11 @@ settings["server_formatting_block_list"] = {
 settings["lsp_deps"] = {
 	"bashls",
 	"clangd",
-	"cssls",
 	"html",
 	"jsonls",
 	"lua_ls",
 	"pyright",
-	"rust_analyzer",
-	"volar",
+	-- "gopls",
 }
 
 -- Set the general-purpose servers that will be installed during bootstrap here
@@ -87,12 +79,11 @@ settings["lsp_deps"] = {
 settings["null_ls_deps"] = {
 	"black",
 	"clang_format",
-	"editorconfig_checker",
 	"prettier",
-	"prettierd",
 	"rustfmt",
 	"shfmt",
 	"stylua",
+	"vint",
 }
 
 return settings

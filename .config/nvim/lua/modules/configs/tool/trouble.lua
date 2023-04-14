@@ -42,6 +42,14 @@ return function()
 		auto_preview = true, -- automatically preview the location of the diagnostic. <esc> to close preview and go back to last window
 		auto_fold = false, -- automatically fold a file trouble list at creation
 		auto_jump = { "lsp_definitions" }, -- for the given modes, automatically jump if there is only a single result
-		use_diagnostic_signs = true, -- enabling this will use the signs defined in your lsp client
+		signs = {
+			-- icons / text used for a diagnostic
+			error = icons.diagnostics.Error_alt,
+			warning = icons.diagnostics.Warning_alt,
+			hint = icons.diagnostics.Hint_alt,
+			information = icons.diagnostics.Information_alt,
+			other = icons.diagnostics.Question_alt,
+		},
+		use_diagnostic_signs = false, -- enabling this will use the signs defined in your lsp client
 	})
 end
