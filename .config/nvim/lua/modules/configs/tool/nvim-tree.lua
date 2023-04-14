@@ -6,6 +6,9 @@ return function()
 		ui = require("modules.utils.icons").get("ui"),
 	}
 
+	local nvim_tree_config = require("nvim-tree.config")
+	local tree_cb = nvim_tree_config.nvim_tree_callback
+
 	require("nvim-tree").setup({
 		auto_reload_on_write = true,
 		create_in_closed_folder = false,
@@ -35,6 +38,14 @@ return function()
 					height = 30,
 					row = 1,
 					col = 1,
+				},
+			},
+			mappings = {
+				list = {
+					{ key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
+					{ key = "h", cb = tree_cb("close_node") },
+					{ key = "v", cb = tree_cb("vsplit") },
+					{ key = "H", cb = tree_cb("split") },
 				},
 			},
 		},
@@ -68,23 +79,21 @@ return function()
 				padding = " ",
 				symlink_arrow = "  ",
 				glyphs = {
-					default = icons.documents.Default, --
-					symlink = icons.documents.Symlink, --
+					default = icons.documents.Default,
+					symlink = icons.documents.Symlink,
 					bookmark = icons.ui.Bookmark,
 					git = {
-						unstaged = icons.git.Mod_alt,
-						staged = icons.git.Add, --
+						unstaged = icons.git.Mod,
+						staged = icons.git.Add,
 						unmerged = icons.git.Unmerged,
-						renamed = icons.git.Rename, --
-						untracked = icons.git.Untracked, -- "ﲉ"
-						deleted = icons.git.Remove, --
-						ignored = icons.git.Ignore, --◌
+						renamed = icons.git.Rename,
+						untracked = icons.git.Untracked,
+						deleted = icons.git.Remove,
+						ignored = icons.git.Ignore,
 					},
 					folder = {
-						-- arrow_open = "",
-						-- arrow_closed = "",
-						arrow_open = "",
-						arrow_closed = "",
+						arrow_open = "",
+						arrow_closed = "",
 						default = icons.ui.Folder,
 						open = icons.ui.FolderOpen,
 						empty = icons.ui.EmptyFolder,
@@ -136,10 +145,10 @@ return function()
 			show_on_dirs = false,
 			debounce_delay = 50,
 			icons = {
-				hint = icons.diagnostics.Hint_alt,
-				info = icons.diagnostics.Information_alt,
-				warning = icons.diagnostics.Warning_alt,
-				error = icons.diagnostics.Error_alt,
+				hint = icons.diagnostics.Hint,
+				info = icons.diagnostics.Information,
+				warning = icons.diagnostics.Warning,
+				error = icons.diagnostics.Error,
 			},
 		},
 		filesystem_watchers = {

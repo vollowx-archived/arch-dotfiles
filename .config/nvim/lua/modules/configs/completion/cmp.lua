@@ -53,7 +53,7 @@ return function()
 			local source_symbol = opts.symbol_map[entry.source.name] or icons.cmp.undefined
 
 			vim_item.menu = " " .. source_symbol .. "  |"
-			vim_item.kind = string.format("  ⟬ %s %s ⟭", kind_symbol, vim_item.kind)
+			vim_item.kind = string.format(" %s %s", kind_symbol, vim_item.kind)
 
 			if opts.maxwidth ~= nil then
 				if opts.ellipsis_char == nil then
@@ -75,12 +75,14 @@ return function()
 	cmp.setup({
 		window = {
 			completion = {
-				border = border("Normal"),
+				border = border("PmenuBorder"),
+				winhighlight = "Normal:Pmenu,CursorLine:PmenuSel,Search:PmenuSel",
 				max_width = 80,
 				max_height = 20,
 			},
 			documentation = {
-				border = border("CmpDocBorder"),
+				border = border("PmenuBorder"),
+				winhighlight = "Normal:Pmenu",
 			},
 		},
 		sorting = {
@@ -115,8 +117,8 @@ return function()
 			["<CR>"] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }),
 			["<C-p>"] = cmp.mapping.select_prev_item(),
 			["<C-n>"] = cmp.mapping.select_next_item(),
-			["<C-d>"] = cmp.mapping.scroll_docs(-4),
-			["<C-f>"] = cmp.mapping.scroll_docs(4),
+			["<C-u>"] = cmp.mapping.scroll_docs(-4),
+			["<C-d>"] = cmp.mapping.scroll_docs(4),
 			["<C-w>"] = cmp.mapping.close(),
 			["<Tab>"] = cmp.mapping(function(fallback)
 				if cmp.visible() then

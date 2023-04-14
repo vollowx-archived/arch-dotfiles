@@ -17,7 +17,7 @@ local function load_options()
 		breakat = [[\ \	;:,!?]],
 		breakindentopt = "shift:2,min:20",
 		clipboard = "unnamedplus",
-		cmdheight = 2, -- 0, 1, 2
+		cmdheight = 1, -- 0, 1, 2
 		cmdwinheight = 5,
 		complete = ".,w,b,k",
 		completeopt = "menuone,noselect",
@@ -50,7 +50,7 @@ local function load_options()
 		list = true,
 		listchars = "tab:»·,nbsp:+,trail:·,extends:→,precedes:←",
 		magic = true,
-		mousescroll = "ver:3,hor:6",
+		mousescroll = "ver:1,hor:1",
 		number = true,
 		previewheight = 12,
 		pumheight = 15,
@@ -61,7 +61,7 @@ local function load_options()
 		sessionoptions = "curdir,help,tabpages,winsize",
 		shada = "!,'300,<50,@100,s10,h",
 		shiftround = true,
-		shiftwidth = 4,
+		shiftwidth = 2,
 		shortmess = "aoOTIcF",
 		showbreak = "↳  ",
 		showcmd = false,
@@ -71,7 +71,7 @@ local function load_options()
 		signcolumn = "yes",
 		smartcase = true,
 		smarttab = true,
-		softtabstop = 4,
+		softtabstop = 2,
 		splitbelow = true,
 		splitkeep = "cursor",
 		splitright = true,
@@ -79,7 +79,7 @@ local function load_options()
 		swapfile = false,
 		switchbuf = "usetab,uselast",
 		synmaxcol = 2500,
-		tabstop = 4,
+		tabstop = 2,
 		termguicolors = true,
 		timeout = true,
 		timeoutlen = 300,
@@ -110,9 +110,6 @@ local function load_options()
 	if not isempty(conda_prefix) then
 		vim.g.python_host_prog = conda_prefix .. "/bin/python"
 		vim.g.python3_host_prog = conda_prefix .. "/bin/python"
-	elseif global.is_mac then
-		vim.g.python_host_prog = "/usr/bin/python"
-		vim.g.python3_host_prog = "/usr/local/bin/python3"
 	else
 		vim.g.python_host_prog = "/usr/bin/python"
 		vim.g.python3_host_prog = "/usr/bin/python3"
@@ -120,12 +117,6 @@ local function load_options()
 
 	for name, value in pairs(global_local) do
 		vim.o[name] = value
-	end
-
-	-- Fix sqlite3 missing-lib issue on Windows
-	if global.is_windows then
-		-- Download the DLLs form https://www.sqlite.org/download.html
-		vim.g.sqlite_clib_path = global.home .. "/Documents/sqlite-dll-win64-x64-3400100/sqlite3.dll"
 	end
 end
 

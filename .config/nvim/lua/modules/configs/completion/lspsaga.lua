@@ -12,10 +12,10 @@ return function()
 	local function set_sidebar_icons()
 		-- Set icons for sidebar.
 		local diagnostic_icons = {
-			Error = icons.diagnostics.Error_alt,
-			Warn = icons.diagnostics.Warning_alt,
-			Info = icons.diagnostics.Information_alt,
-			Hint = icons.diagnostics.Hint_alt,
+			Error = icons.diagnostics.Error,
+			Warn = icons.diagnostics.Warning,
+			Info = icons.diagnostics.Information,
+			Hint = icons.diagnostics.Hint,
 		}
 		for type, icon in pairs(diagnostic_icons) do
 			local hl = "DiagnosticSign" .. type
@@ -120,7 +120,7 @@ return function()
 		},
 		ui = {
 			title = false,
-			border = "single", -- Can be single, double, rounded, solid, shadow.
+			border = "rounded", -- Can be single, double, rounded, solid, shadow.
 			winblend = 0,
 			actionfix = icons.ui.Spell,
 			expand = icons.ui.ArrowClosed,

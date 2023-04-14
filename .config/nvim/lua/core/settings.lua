@@ -41,7 +41,7 @@ settings["background"] = "dark"
 -- Set the command for handling external URLs here. The executable must be available on your $PATH.
 -- This entry is IGNORED on Windows and macOS, which have their default handlers builtin.
 ---@type string
-settings["external_browser"] = "chrome-cli open"
+settings["external_browser"] = "firefox-developer-edition --new-tab"
 
 -- Filetypes in this list will skip lsp formatting if rhs is true
 ---@type table<string, boolean>
@@ -55,6 +55,8 @@ settings["server_formatting_block_list"] = {
 	lua_ls = true,
 	tsserver = true,
 	clangd = true,
+	volar = true,
+	jsonls = true,
 }
 
 -- Set the language servers that will be installed during bootstrap here
@@ -64,11 +66,14 @@ settings["server_formatting_block_list"] = {
 settings["lsp_deps"] = {
 	"bashls",
 	"clangd",
+	"cssls",
+	"gopls",
 	"html",
 	"jsonls",
 	"lua_ls",
 	"pyright",
-	-- "gopls",
+	"rust_analyzer",
+	"volar",
 }
 
 -- Set the general-purpose servers that will be installed during bootstrap here
@@ -80,6 +85,7 @@ settings["null_ls_deps"] = {
 	"black",
 	"clang_format",
 	"prettier",
+	"prettierd",
 	"rustfmt",
 	"shfmt",
 	"stylua",
