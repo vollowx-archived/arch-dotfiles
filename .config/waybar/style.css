@@ -25,28 +25,29 @@ tooltip {
 #mpd,
 /* /// */
 #tray,
-#cpu,
-#memory,
-#temperature,
 #network,
 #pulseaudio,
 #backlight,
+#cpu,
+#memory,
+#temperature,
 #battery,
 #clock {
   margin-top: 4px;
   margin-bottom: 4px;
 }
 
-/* middle elements */
+/* plain elements */
 #custom-divider,
-#network,
+#mpd,
+#tray #network,
 #pulseaudio,
 #backlight,
 #cpu,
 #memory,
 #temperature {
-  padding-left: 3px;
-  padding-right: 3px;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 /* left element */
 #submap {
@@ -107,14 +108,6 @@ tooltip {
 }
 #workspaces button:hover {
   color: @mauve;
-}
-
-#mpd {
-  margin: 0 12px;
-}
-
-#tray {
-  padding-right: 6px;
 }
 
 #network {
