@@ -133,7 +133,7 @@ return function()
 					StorageClass = { fg = cp.red, style = { "italic" } },
 
 					-- For indent-blankline
-					IndentBlanklineContextChar = { fg = cp.overlay0 },
+					IndentBlanklineContextChar = { fg = cp.red },
 
 					-- For nvim-tree
 					NvimTreeIndentMarker = { fg = cp.surface0 },
