@@ -1,0 +1,127 @@
+@import "./mocha.css";
+
+* {
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 11pt;
+  font-weight: bold;
+}
+
+window#waybar {
+  background-color: transparent;
+  color: @text;
+}
+
+tooltip {
+  background-color: @surface1;
+  border-radius: 12px;
+}
+
+#submap,
+#workspaces,
+#clock,
+#tray,
+#cpu,
+#memory,
+#temperature,
+#custom-cava,
+#mpd,
+#network,
+#pulseaudio,
+#backlight,
+#battery {
+  padding: 2px 12px;
+  margin: 4px 4px;
+  background-color: alpha(@overlay0, 0.32);
+  border-radius: 16px;
+}
+
+#cpu,
+#network {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-right: 0;
+  padding-right: 0;
+}
+#memory,
+#pulseaudio {
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 0;
+}
+#temperature,
+#backlight {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+#submap {
+  margin-left: 8px;
+  margin-right: -4px;
+  background-color: @sky;
+  color: @base;
+}
+
+#workspaces {
+  margin-left: 8px;
+  padding: 0 10px;
+}
+#workspaces button {
+  padding: 0;
+  color: @subtext0;
+  border-radius: 12px;
+}
+#workspaces button.active,
+#workspaces button.focused {
+  color: @rosewater;
+}
+#workspaces button.urgent {
+  color: @peach;
+}
+#workspaces button:hover {
+  color: @mauve;
+}
+
+#window {
+  padding: 0 8px;
+  margin: 0 4px;
+}
+
+#cpu {
+  color: @red;
+}
+#memory {
+  color: @mauve;
+}
+#temperature {
+  color: @pink;
+}
+
+#network {
+  color: @green;
+}
+#pulseaudio {
+  color: @yellow;
+}
+#backlight {
+  color: @peach;
+}
+
+#battery {
+  color: @flamingo;
+}
+#battery.charging {
+  background-color: @green;
+  color: @base;
+}
+#battery.warning:not(.charging),
+#battery.critical:not(.charging) {
+  background-color: @red;
+  color: @base;
+}
+
+#clock {
+  color: @rosewater;
+  margin-right: 8px;
+}
