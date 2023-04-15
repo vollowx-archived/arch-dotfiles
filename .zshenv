@@ -10,6 +10,7 @@ export MOZ_WEBRENDER=1
 export KITTY_ENABLE_WAYLAND=1
 
 # Desktop
+export WLR_NO_HARDWARE_CURSORS=1
 export XDG_SESSION_TYPE=wayland
 export XDG_CURRENT_DESKTOP=Hyprland
 export XDG_SESSION_DESKTOP=Hyprland
