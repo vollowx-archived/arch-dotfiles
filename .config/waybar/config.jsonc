@@ -79,28 +79,31 @@
     "format": "󰔄 {temperatureC}°C"
   },
   "network": {
-    "format-wifi": "󰤨 {signalStrength}%",
-    "format-alt": "󰤨 {essid}",
-    "format-ethernet": "󰈀 {signalStrength}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰈀 ",
     "format-disconnected": "󰤮 ",
-    "tooltip-format-wifi": "󱚻 {essid} 󰁅 {bandwidthDownBits} 󰁝 {bandwidthUpBits}",
-    "tooltip-format-ethernet": "󰈀 {essid} 󰁅 {bandwidthDownBits} 󰁝 {bandwidthUpBits}"
+    "format-icons": ["󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "],
+    "tooltip-format-wifi": "󱚻 {essid} ~ {signalStrength}% 󰁅 {bandwidthDownBits} 󰁝 {bandwidthUpBits}",
+    "tooltip-format-ethernet": "󰈀 {essid} ~ {signalStrength}% 󰁅 {bandwidthDownBits} 󰁝 {bandwidthUpBits}"
   },
   "pulseaudio": {
     "on-click": "pamixer -t",
-    "format": "{icon} {volume}%",
-    "format-muted": "󰖁 Muted",
+    "format": "{icon}",
+    "format-muted": "󰖁",
     "format-icons": {
       "headphone": "󰋋",
       "phone": "󰏲",
       "portable": "󰏲",
       "car": "󰄋",
       "default": ["󰕿", "󰖀", "󰕾"]
-    }
+    },
+    "tooltip-format": "{volume}%"
   },
   "backlight": {
-    "format": "{icon} {percent}%",
-    "format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"]
+    "format": "{icon}",
+    "format-icons": ["󰃚", "󰃛", "󰃜", "󰃝 ", "󰃞 ", "󰃟 ", "󰃠 "],
+    "tooltip": true,
+    "tooltip": "{percent}%"
   },
   "battery": {
     "states": {
