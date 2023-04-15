@@ -38,7 +38,7 @@ source ~/.zsh/env.zsh
 setopt HIST_IGNORE_ALL_DUPS
 
 # Set editor default keymap to emacs (`-e`) or vi (`-v`)
-# bindkey -v
+bindkey -v
 
 # Remove path separator from WORDCHARS.
 WORDCHARS=${WORDCHARS//[\/]}
