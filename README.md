@@ -2,18 +2,19 @@
 
 ## Desktop
 
-| ~            | name       | installing command                                                      |
-| ------------ | ---------- | ----------------------------------------------------------------------- |
-| desktop      | Hyprland   | `paru -S hyprland`                                                      |
-| wallpaper    | hyprpaper  | `paru -S hyprpaper`                                                     |
-| launcher     | rofi       | `paru -S rofi-lbonn-wayland-git rofi-calc rofi-emoji`                   |
-| notification | mako       | `paru -S mako`                                                          |
-| bar          | waybar     | `paru -S waybar-hyprland-git`                                           |
-| idle         | swayidle   | `paru -S swayidle`                                                      |
-| locker       | swaylock   | `paru -S swaylock`                                                      |
-| screenshot   | grimblast  | `paru -S grimblast`                                                     |
-| color picker | hyprpicker | `paru -S hyprpicker`                                                    |
-| controllers  | light      | `paru -S light && sudo chmod +s /bin/light - pamixer - paru -S pamixer` |
+| ~                      | name       | installing command                                                      |
+| ---------------------- | ---------- | ----------------------------------------------------------------------- |
+| desktop                | Hyprland   | `paru -S hyprland`                                                      |
+| wallpaper              | hyprpaper  | `paru -S hyprpaper`                                                     |
+| launcher               | rofi       | `paru -S rofi-lbonn-wayland-git rofi-calc rofi-emoji`                   |
+| notification           | mako       | `paru -S mako`                                                          |
+| bar                    | waybar     | `paru -S waybar-hyprland-git`                                           |
+| idle                   | swayidle   | `paru -S swayidle`                                                      |
+| locker                 | swaylock   | `paru -S swaylock`                                                      |
+| screenshot             | grimblast  | `paru -S grimblast`                                                     |
+| color picker           | hyprpicker | `paru -S hyprpicker`                                                    |
+| controllers            | light      | `paru -S light && sudo chmod +s /bin/light - pamixer - paru -S pamixer` |
+| blue light proctection | sunset     | `paru -S wlsunset`                                                      |
 
 ## Desktop / Selectable
 
