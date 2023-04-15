@@ -1,7 +1,7 @@
 // some of these icons maybe look small,
 // but display normally, so just ignore this
 {
-  "position": "top",
+  "position": "bottom",
   "layer": "top",
   "height": 40,
   "modules-left": ["hyprland/submap", "wlr/workspaces", "hyprland/window"],
@@ -43,15 +43,15 @@
     },
     "random-icons": {
       "off": "<span foreground='#a6adc8'>󰒝</span> ",
-      "on": "<span foreground='#f5e0dc'>󰒝</span> "
+      "on": "<span foreground='#89b4fa'>󰒝</span> "
     },
     "repeat-icons": {
       "off": "<span foreground='#a6adc8'>󰑖</span> ",
-      "on": "<span foreground='#f5e0dc'>󰑖</span> "
+      "on": "<span foreground='#89b4fa'>󰑖</span> "
     },
     "single-icons": {
       "off": "<span foreground='#a6adc8'>󰑘</span> ",
-      "on": "<span foreground='#f5e0dc'>󰑘</span> "
+      "on": "<span foreground='#89b4fa'>󰑘</span> "
     },
     "state-icons": {
       "paused": "󰼛",
