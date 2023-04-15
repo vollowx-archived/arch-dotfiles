@@ -45,6 +45,9 @@ export EDITOR="nvim"
 export BROWSER="firefox-developer-edition"
 export TERMINAL="kitty"
 export LANG="en_US.UTF-8"
+
 export BAT_THEME="Catppuccin"
 export EXA_ICON_SPACING=2
 export RANGER_DEVICONS_SEPARATOR="  "
+export ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+export ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_UNDERLINE
