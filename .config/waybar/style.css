@@ -12,7 +12,7 @@ window#waybar {
 }
 
 tooltip {
-  background-color: @surface1;
+  background-color: @surface2;
   border-radius: 12px;
 }
 
@@ -35,55 +35,63 @@ tooltip {
 #clock {
   margin-top: 4px;
   margin-bottom: 4px;
-  background-color: @base;
 }
 
-/* left element */
-#submap {
-  padding-left: 12px;
-  padding-right: 12px;
-}
-/* right element */
-#clock {
-  padding-left: 6px;
-  padding-right: 12px;
-}
-/* left border elements */
-#mpd,
-#tray {
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
-  padding-left: 12px;
-  margin-left: 6px;
-}
-/* right border elements */
-#window,
-#mpd {
-  border-top-right-radius: 12px;
-  border-bottom-right-radius: 12px;
-  padding-right: 12px;
-  margin-right: 6px;
-}
 /* middle elements */
 #custom-divider,
-#workspaces,
 #network,
 #pulseaudio,
 #backlight,
 #cpu,
 #memory,
-#temperature,
-#battery {
-  padding-left: 6px;
-  padding-right: 6px;
+#temperature {
+  padding-left: 3px;
+  padding-right: 3px;
 }
-
-/* special settings */
-
+/* left element */
 #submap {
+  margin-left: 6px;
+  margin-right: -14px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 14px;
+
   background-color: @green;
   color: @base;
 }
+/* right element */
+#clock {
+  margin-left: -14px;
+  margin-right: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 14px;
+
+  background-color: @blue;
+  color: @base;
+}
+/* 2rd left element */
+#workspaces {
+  margin-right: 12px;
+  padding-left: 22px;
+  padding-right: 12px;
+  border-radius: 0 14px 14px 0;
+
+  background-color: @surface1;
+  color: @blue;
+}
+/* 2rd right element */
+#battery {
+  margin-left: 12px;
+  padding-left: 12px;
+  padding-right: 22px;
+  border-radius: 14px 0 0 14px;
+
+  background-color: @surface1;
+  color: @blue;
+}
+
+/* special settings */
 
 #workspaces button {
   padding: 0;
@@ -92,7 +100,7 @@ tooltip {
 }
 #workspaces button.active,
 #workspaces button.focused {
-  color: @rosewater;
+  color: @green;
 }
 #workspaces button.urgent {
   color: @peach;
@@ -101,8 +109,12 @@ tooltip {
   color: @mauve;
 }
 
+#mpd {
+  margin: 0 12px;
+}
+
 #tray {
-  padding-right: 12px;
+  padding-right: 6px;
 }
 
 #network {
@@ -125,15 +137,11 @@ tooltip {
   color: @mauve;
 }
 
-#battery {
-  color: @flamingo;
-}
-#battery.charging {
-  background-color: @green;
-  color: @base;
+#battery.charging,
+#battery.plugged {
+  color: @green;
 }
 #battery.warning:not(.charging),
 #battery.critical:not(.charging) {
-  background-color: @red;
-  color: @base;
+  color: @red;
 }

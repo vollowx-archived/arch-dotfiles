@@ -16,7 +16,6 @@
     "cpu",
     "memory",
     "temperature",
-    "custom/divider",
     "battery",
     "clock"
   ],
@@ -29,6 +28,9 @@
     "on-click": "activate",
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1"
+  },
+  "hyprland/window": {
+    "max-length": 40
   },
   "mpd": {
     "format": "{stateIcon}{consumeIcon} {randomIcon}{repeatIcon}{singleIcon}{title}({elapsedTime:%M:%S}/{totalTime:%M:%S}) 󰝚 ",
