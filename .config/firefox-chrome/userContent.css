@@ -3,28 +3,3 @@
     --in-content-page-background: #1e1e2e !important;
   }
 }
-
-@-moz-document url-prefix(about:home), url-prefix(about:newtab) {
-  .search-inner-wrapper {
-    display: none !important;
-  }
-  body {
-    background-color: #1f1e2e !important;
-  }
-  .top-site-outer .top-site-icon {
-    background-color: transparent !important;
-  }
-  .top-site-outer .tile {
-    background-color: rgba(49, 49, 49, 0.4) !important;
-  }
-  .top-sites-list:not(.dnd-active) .top-site-outer:is(.active, :focus, :hover) {
-    background: rgba(49, 49, 49, 0.3) !important;
-  }
-  .top-site-outer .context-menu-button:is(:active, :focus) {
-    background-color: transparent !important;
-  }
-  .search-wrapper .search-handoff-button {
-    border-radius: 40px !important;
-    background-color: rgba(49, 49, 49, 0.4) !important;
-  }
-}
