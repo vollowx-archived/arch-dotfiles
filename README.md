@@ -35,6 +35,7 @@
 |              | yesplaymusic | `paru -S yesplaymusic`                                                                                      |
 | shell        | zsh          | `paru -S zsh && chsh -s /bin/zsh`                                                                           |
 | file manager | ranger       | `paru -S ranger python-pillow`                                                                              |
+|              | xplr         | `paru -S xplr`                                                                                              |
 |              | nemo         | `paru -S nemo`                                                                                              |
 
 ## Theme
