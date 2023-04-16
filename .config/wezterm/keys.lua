@@ -36,7 +36,7 @@ map("\\", "LEADER", act.SplitHorizontal({ domain = "CurrentPaneDomain" }))
 map("-", "LEADER", act.SplitVertical({ domain = "CurrentPaneDomain" }))
 -- map 1-9 to switch to tab 1-9, 0 for the last tab
 for i = 1, 9 do
-	map(tostring(i), { "LEADER", "SUPER" }, act.ActivateTab(i - 1))
+	map(tostring(i), "ALT|SHIFT", act.ActivateTab(i - 1))
 end
 map("0", "SHIFT|CTRL", act.ActivateTab(-1))
 -- 'hjkl' to move between panes
