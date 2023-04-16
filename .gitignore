@@ -13,6 +13,8 @@
 !.config/firefox-chrome/**/*
 !.config/fontconfig/
 !.config/fontconfig/**/*
+!.config/foot/
+!.config/foot/**/*
 !.config/gtk-3.0/
 !.config/gtk-3.0/settings.ini
 !.config/hypr/
@@ -46,8 +48,6 @@
 !.config/swaylock/**/*
 !.config/waybar/
 !.config/waybar/**/*
-!.config/wezterm/
-!.config/wezterm/**/*
 !.config/xplr/
 !.config/xplr/**/*
 

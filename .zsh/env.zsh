@@ -43,7 +43,7 @@ export PATH="$HOME/.bin:$PATH"
 # Others
 export EDITOR="nvim"
 export BROWSER="firefox-developer-edition"
-export TERMINAL="kitty"
+export TERMINAL="foot"
 export LANG="en_US.UTF-8"
 
 export BAT_THEME="Catppuccin"
