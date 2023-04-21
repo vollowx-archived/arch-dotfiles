@@ -3,35 +3,35 @@
 * {
   font-family: JetBrainsMono Nerd Font;
   font-size: 11pt;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 window#waybar {
-  background-color: transparent;
+  background-color: alpha(@base, 0.8);
   color: @text;
+  border-bottom: 2px solid @surface1;
 }
 
 tooltip {
-  background-color: @surface1;
+  background-color: @surface2;
   border-radius: 12px;
 }
 
 #submap,
 #workspaces,
-#clock,
-#tray,
-#cpu,
-#memory,
-#temperature,
-#custom-cava,
 #mpd,
+#tray,
 #network,
 #pulseaudio,
 #backlight,
-#battery {
-  padding: 2px 12px;
-  margin: 4px 4px;
-  background-color: alpha(@overlay0, 0.32);
+#cpu,
+#memory,
+#temperature,
+#battery,
+#clock {
+  padding: 0 10px;
+  margin: 4px 2px 6px 2px;
+  background-color: @surface0;
   border-radius: 16px;
 }
 
@@ -57,20 +57,21 @@ tooltip {
 }
 
 #submap {
-  margin-left: 8px;
-  margin-right: -4px;
+  margin-left: 14px;
+  margin-right: -10px;
   background-color: @sky;
+  font-weight: 900;
   color: @base;
 }
 
 #workspaces {
-  margin-left: 8px;
-  padding: 0 10px;
+  margin-left: 14px;
 }
 #workspaces button {
+  margin: 0 -1px;
   padding: 0;
   color: @subtext0;
-  border-radius: 12px;
+  border-radius: 16px;
 }
 #workspaces button.active,
 #workspaces button.focused {
@@ -85,43 +86,52 @@ tooltip {
 
 #window {
   padding: 0 8px;
-  margin: 0 4px;
+  margin: 0 2px;
+}
+
+#mpd.paused,
+#mpd.stopped {
+  color: @subtext1;
+  font-style: italic;
+}
+
+#network {
+  color: @lavender;
+}
+#pulseaudio {
+  color: @sapphire;
+}
+#backlight {
+  color: @rosewater;
 }
 
 #cpu {
-  color: @red;
+  color: @maroon;
 }
 #memory {
-  color: @mauve;
+  color: @sky;
 }
 #temperature {
   color: @pink;
 }
 
-#network {
-  color: @green;
-}
-#pulseaudio {
-  color: @yellow;
-}
-#backlight {
-  color: @peach;
-}
-
 #battery {
-  color: @flamingo;
+  color: @blue;
 }
-#battery.charging {
+#battery.plugged {
   background-color: @green;
+  font-weight: 900;
   color: @base;
 }
-#battery.warning:not(.charging),
-#battery.critical:not(.charging) {
+#battery.warning:not(.plugged),
+#battery.critical:not(.plugged) {
   background-color: @red;
+  font-weight: 900;
   color: @base;
 }
 
 #clock {
   color: @rosewater;
-  margin-right: 8px;
+  font-weight: 900;
+  margin-right: 14px;
 }

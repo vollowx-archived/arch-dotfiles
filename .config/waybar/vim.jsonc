@@ -102,8 +102,7 @@
   "backlight": {
     "format": "{icon}",
     "format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"],
-    "tooltip": true,
-    "tooltip": "{percent}%"
+    "tooltip-format": "{percent}%"
   },
   "battery": {
     "states": {
@@ -117,6 +116,6 @@
   },
   "clock": {
     "format": "󰅐 {:%H:%M}",
-    "tooltip-format": "{:%d} {calendar}"
+    "tooltip-format": "<big>{:%B %d}</big>\n<tt><small>{calendar}</small></tt>"
   }
 }
