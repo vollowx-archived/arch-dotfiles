@@ -28,8 +28,6 @@
 !.config/mako/**/*
 !.config/mpv/
 !.config/mpv/**/*
-!.config/neofetch/
-!.config/neofetch/**/*
 !.config/nvim/
 !.config/nvim/**/*
 .config/nvim/lazy-lock.json
