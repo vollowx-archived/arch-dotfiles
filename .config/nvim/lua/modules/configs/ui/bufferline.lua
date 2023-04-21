@@ -17,23 +17,29 @@ return function()
 			color_icons = true,
 			show_buffer_icons = true,
 			show_buffer_close_icons = true,
-			show_buffer_default_icon = true,
 			show_close_icon = true,
 			show_tab_indicators = true,
 			enforce_regular_tabs = true,
 			persist_buffer_sort = true,
 			always_show_bufferline = true,
 			separator_style = "thin",
+			get_element_icon = function(buf)
+				return require("nvim-web-devicons").get_icon(
+					buf.name,
+					vim.bo.filetype,
+					{ default = true, strict = true }
+				)
+			end,
 			diagnostics = "nvim_lsp",
 			diagnostics_indicator = function(count, level, diagnostics_dict, context)
-				local str = " "
+				local str = ""
 				for is, num in pairs(diagnostics_dict) do
 					local sym = is == "error" and icons.diagnostics.Error
 						or (
 							is == "warning" and icons.diagnostics.Warning
 							or (is == "info" and icons.diagnostics.Information or icons.diagnostics.Hint)
 						)
-					str = str .. sym .. num .. " "
+					str = str .. " " .. sym .. num
 				end
 				return str
 			end,

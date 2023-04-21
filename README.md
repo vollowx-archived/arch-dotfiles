@@ -2,25 +2,26 @@
 
 ## Desktop
 
-| ~                      | name       | installing command                                                      |
-| ---------------------- | ---------- | ----------------------------------------------------------------------- |
-| desktop                | Hyprland   | `paru -S hyprland`                                                      |
-| wallpaper              | hyprpaper  | `paru -S hyprpaper`                                                     |
-| launcher               | rofi       | `paru -S rofi-lbonn-wayland-git rofi-calc rofi-emoji`                   |
-| notification           | mako       | `paru -S mako`                                                          |
-| bar                    | waybar     | `paru -S waybar-hyprland-git`                                           |
-| idle                   | swayidle   | `paru -S swayidle`                                                      |
-| locker                 | swaylock   | `paru -S swaylock`                                                      |
-| screenshot             | grimblast  | `paru -S grimblast`                                                     |
-| color picker           | hyprpicker | `paru -S hyprpicker`                                                    |
-| controllers            | light      | `paru -S light && sudo chmod +s /bin/light - pamixer - paru -S pamixer` |
-| blue light proctection | sunset     | `paru -S wlsunset`                                                      |
+| ~                      | name       | installing command                                    |
+| ---------------------- | ---------- | ----------------------------------------------------- |
+| desktop                | Hyprland   | `paru -S hyprland`                                    |
+| wallpaper              | hyprpaper  | `paru -S hyprpaper`                                   |
+| launcher               | rofi       | `paru -S rofi-lbonn-wayland-git rofi-calc rofi-emoji` |
+| notification           | mako       | `paru -S mako`                                        |
+| bar                    | waybar     | `paru -S waybar-hyprland-git`                         |
+| idle                   | swayidle   | `paru -S swayidle`                                    |
+| locker                 | swaylock   | `paru -S swaylock`                                    |
+| screenshot             | grimblast  | `paru -S grimblast`                                   |
+| color picker           | hyprpicker | `paru -S hyprpicker`                                  |
+| controllers            | light      | `paru -S light && sudo chmod +s /bin/light`           |
+|                        | pamixer    | `paru -S pamixer`                                     |
+| blue light proctection | sunset     | `paru -S wlsunset`                                    |
 
 ## Desktop / Selectable
 
 | ~   | name   | installing command              |
 | --- | ------ | ------------------------------- |
-| ime | fcitx5 | `paru -S fcitx5 fcitx5-gtk`     |
+| IME | fcitx5 | `paru -S fcitx5 fcitx5-gtk`     |
 |     | zh     | `paru -S fcitx5-chinese-addons` |
 |     | jp     | `paru -S fcitx5-anthy`          |
 
