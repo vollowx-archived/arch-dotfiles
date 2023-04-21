@@ -48,8 +48,6 @@
 !.config/swaylock/**/*
 !.config/waybar/
 !.config/waybar/**/*
-!.config/xplr/
-!.config/xplr/**/*
 
 !.local/
 !.local/share/
