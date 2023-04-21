@@ -21,8 +21,11 @@ alias gp="git push $@"
 alias gpl="git pull $@"
 
 alias nv="nvim $@"
+alias nvd="WINIT_UNIX_BACKEND=x11 neovide --novsync --multigrid $@"
 
 alias nc="ncmpcpp $@"
+
+alias nf="neofetch $@"
 
 alias pp="pnpm $@"
 alias ppb="pnpm build $@"
