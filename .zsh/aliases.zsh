@@ -27,7 +27,7 @@ alias nvd="xw neovide --novsync --multigrid $@"
 
 alias nc="ncmpcpp $@"
 
-alias nf="neofetch $@"
+alias ff="fastfetch $@"
 
 alias pp="pnpm $@"
 alias ppb="pnpm build $@"
