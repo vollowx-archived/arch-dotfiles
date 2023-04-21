@@ -111,7 +111,8 @@ return function()
 			enable = true,
 			separator = " " .. icons.ui.Separator,
 			hide_keyword = true,
-			show_file = false,
+			show_file = true,
+			folder_level = 1,
 			color_mode = true,
 		},
 		beacon = {
