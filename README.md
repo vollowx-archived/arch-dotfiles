@@ -29,6 +29,7 @@
 
 | ~            | name         | installing command                                                                                          |
 | ------------ | ------------ | ----------------------------------------------------------------------------------------------------------- |
+| terminal     | Foot         | `paru -S foot`                                                                                              |
 | editor       | NeoVim       | `paru -S neovim-nightly-bin lazygit zoxide ripgrep sqlite fd yarn lldb make unzip`                          |
 |              | VSCode       | `paru -S code-transparent code-features`                                                                    |
 | NPM          | pnpm         | `paru -S npm && sudo npm i -g pnpm && pnpm i -g pnpm && npm uninstall -g pnpm`                              |
