@@ -26,7 +26,7 @@ return function()
 	cmp_window.info_ = cmp_window.info
 	cmp_window.info = function(self)
 		local info = self:info_()
-		info.scrollable = false
+		info.scrollable = true
 		return info
 	end
 

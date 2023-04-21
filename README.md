@@ -29,13 +29,13 @@
 
 | ~            | name         | installing command                                                                                          |
 | ------------ | ------------ | ----------------------------------------------------------------------------------------------------------- |
+| shell        | zsh          | `paru -S zsh starship && chsh -s /bin/zsh`                                                                  |
 | terminal     | Foot         | `paru -S foot libsixel`                                                                                     |
 | editor       | NeoVim       | `paru -S neovim-nightly-bin lazygit zoxide ripgrep sqlite fd yarn lldb make unzip`                          |
 |              | VSCode       | `paru -S code-transparent code-features`                                                                    |
 | NPM          | pnpm         | `paru -S npm && sudo npm i -g pnpm && pnpm i -g pnpm && npm uninstall -g pnpm`                              |
 | music player | MPD          | `paru -S mpd mpc ncmpcpp cava mpdscribble && systemctl enable --user --now mpdscribble.service mpd.service` |
 |              | yesplaymusic | `paru -S yesplaymusic`                                                                                      |
-| shell        | zsh          | `paru -S zsh && chsh -s /bin/zsh`                                                                           |
 | file manager | ranger (tui) | `paru -S ranger-git`                                                                                        |
 |              | nemo (gui)   | `paru -S nemo`                                                                                              |
 
