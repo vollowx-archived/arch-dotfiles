@@ -75,10 +75,10 @@
     "format": "󰔄 {temperatureC}°C"
   },
   "network": {
-    "format-wifi": "󰤨 {signalStrength}%",
-    "format-alt": "󰤨 {essid}",
+    "format-wifi": "{icon} {signalStrength}%",
     "format-ethernet": "󰈀 {signalStrength}",
     "format-disconnected": "󰤮 ",
+    "format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
     "tooltip-format-wifi": "󱚻 {essid} 󰁅 {bandwidthDownBits} 󰁝 {bandwidthUpBits}",
     "tooltip-format-ethernet": "󰈀 {essid} 󰁅 {bandwidthDownBits} 󰁝 {bandwidthUpBits}"
   },
