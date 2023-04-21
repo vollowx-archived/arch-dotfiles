@@ -20,8 +20,10 @@ alias gsa="git status $@"
 alias gp="git push $@"
 alias gpl="git pull $@"
 
+alias xw="env -u WAYLAND_DISPLAY"
+
 alias nv="nvim $@"
-alias nvd="WINIT_UNIX_BACKEND=x11 neovide --novsync --multigrid $@"
+alias nvd="xw neovide --novsync --multigrid $@"
 
 alias nc="ncmpcpp $@"
 
