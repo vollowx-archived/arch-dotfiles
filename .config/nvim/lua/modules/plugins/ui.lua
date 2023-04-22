@@ -25,6 +25,11 @@ ui["lewis6991/gitsigns.nvim"] = {
 	event = { "CursorHold", "CursorHoldI" },
 	config = require("ui.gitsigns"),
 }
+ui["b0o/incline.nvim"] = {
+	lazy = true,
+	event = "BufReadPre",
+	config = require("ui.incline"),
+}
 ui["lukas-reineke/indent-blankline.nvim"] = {
 	lazy = true,
 	event = "BufReadPost",
@@ -64,6 +69,11 @@ ui["edluffy/specs.nvim"] = {
 	lazy = true,
 	event = "CursorMoved",
 	config = require("ui.specs"),
+}
+ui["folke/twilight.nvim"] = {
+	lazy = true,
+	cmd = { "Twilight", "TwilightEnable", "TwilightDisable" },
+	config = require("ui.twilight"),
 }
 ui["folke/zen-mode.nvim"] = {
 	lazy = true,

@@ -31,7 +31,6 @@ return function()
 			},
 			twilight = { enabled = true }, -- enable to start Twilight when zen mode opens
 			gitsigns = { enabled = false }, -- disables git signs
-			tmux = { enabled = false }, -- disables the tmux statusline
 		},
 		-- callback where you can add custom code when the Zen window opens
 		on_open = function(win) end,

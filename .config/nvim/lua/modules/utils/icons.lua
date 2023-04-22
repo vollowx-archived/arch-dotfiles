@@ -28,7 +28,7 @@ local data = {
 		Text = "",
 		TypeParameter = "",
 		Unit = "",
-		Undefinded = "",
+		Undefinded = "",
 		Value = "",
 		Variable = "",
 		-- ccls-specific icons.

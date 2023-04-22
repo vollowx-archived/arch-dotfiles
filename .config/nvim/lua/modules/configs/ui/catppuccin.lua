@@ -236,5 +236,12 @@ return function()
 				}
 			end,
 		},
+		custom_highlights = function(cp)
+			return {
+				InclineNormal = { bg = cp.pink, fg = cp.base },
+				InclineNormalNC = { bg = cp.surface1, fg = cp.pink },
+				ScrollbarHandle = { bg = cp.overlay0 },
+			}
+		end,
 	})
 end

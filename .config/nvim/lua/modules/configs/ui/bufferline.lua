@@ -31,7 +31,7 @@ return function()
 				)
 			end,
 			diagnostics = "nvim_lsp",
-			diagnostics_indicator = function(count, level, diagnostics_dict, context)
+			diagnostics_indicator = function(_, _, diagnostics_dict, _)
 				local str = ""
 				for is, num in pairs(diagnostics_dict) do
 					local sym = is == "error" and icons.diagnostics.Error
