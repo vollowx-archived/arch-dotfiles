@@ -14,7 +14,7 @@ return function()
 			file_ignore_patterns = { ".git/", ".cache", "%.class", "%.pdf", "%.mkv", "%.mp4", "%.zip" },
 			layout_config = {
 				horizontal = {
-					preview_width = 0.5,
+					preview_width = 0.6,
 				},
 			},
 			file_previewer = require("telescope.previewers").vim_buffer_cat.new,

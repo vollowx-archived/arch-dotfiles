@@ -15,6 +15,9 @@ ui["catppuccin/nvim"] = {
 	name = "catppuccin",
 	config = require("ui.catppuccin"),
 }
+ui["sainnhe/everforest"] = {
+	lazy = false,
+}
 ui["j-hui/fidget.nvim"] = {
 	lazy = true,
 	event = "LspAttach",
