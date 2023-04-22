@@ -65,5 +65,10 @@ ui["edluffy/specs.nvim"] = {
 	event = "CursorMoved",
 	config = require("ui.specs"),
 }
+ui["folke/zen-mode.nvim"] = {
+	lazy = true,
+	cmd = { "ZenMode" },
+	config = require("ui.zen-mode"),
+}
 
 return ui
