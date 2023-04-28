@@ -26,7 +26,7 @@ return function()
 	cmp_window.info_ = cmp_window.info
 	cmp_window.info = function(self)
 		local info = self:info_()
-		info.scrollable = true
+		info.scrollable = false
 		return info
 	end
 
@@ -50,9 +50,7 @@ return function()
 			end
 
 			local kind_symbol = opts.symbol_map[vim_item.kind] or icons.kind.Undefined
-			local source_symbol = opts.symbol_map[entry.source.name] or icons.cmp.undefined
 
-			vim_item.menu = " " .. source_symbol .. "  |"
 			vim_item.kind = string.format(" %s %s", kind_symbol, vim_item.kind)
 
 			if opts.maxwidth ~= nil then
@@ -102,7 +100,7 @@ return function()
 			},
 		},
 		formatting = {
-			fields = { "menu", "abbr", "kind" },
+			fields = { "abbr", "kind" },
 			format = function(entry, vim_item)
 				local kind_map = vim.tbl_deep_extend("force", icons.kind, icons.type, icons.cmp)
 				local kind = cmp_format({
