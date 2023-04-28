@@ -50,6 +50,7 @@
 
 !.local/share/backgrounds/
 # Catppuccin
+!.local/share/backgrounds/Catppuccin.png
 !.local/share/backgrounds/Bridge.jpg
 !.local/share/backgrounds/Street.jpg
 !.local/share/backgrounds/SpookySpill.jpg
@@ -61,6 +62,7 @@
 # dgv23j (NachoNeko)
 # we52gr (NachoNeko)
 # zyxvqy (ACatUnderADroppingSun)
+# o59gvl (Flowers)
 
 !.local/share/fcitx5/
 !.local/share/fcitx5/themes/

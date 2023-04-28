@@ -55,10 +55,12 @@ return function()
 			section_separators = { left = "", right = "" },
 		},
 		sections = {
-			lualine_a = { "mode" },
+			lualine_a = {
+				"mode",
+			},
 			lualine_b = {
-				"branch",
 				"filename",
+				"branch",
 			},
 			lualine_c = {
 				{
@@ -96,8 +98,11 @@ return function()
 						mac = "CR",
 					},
 				},
+				"progress",
 			},
-			lualine_z = { "location" },
+			lualine_z = {
+				"location",
+			},
 		},
 		inactive_sections = {
 			lualine_a = {},
