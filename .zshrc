@@ -47,5 +47,3 @@ ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
 source ~/.zsh/aliases.zsh
-
-eval "$(starship init zsh)"
