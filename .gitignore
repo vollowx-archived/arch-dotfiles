@@ -19,8 +19,6 @@
 !.config/gtk-3.0/settings.ini
 !.config/hypr/
 !.config/hypr/**/*
-!.config/kitty/
-!.config/kitty/**/*
 !.config/lazygit/
 !.config/lazygit/**/*
 .config/lazygit/state.yml
