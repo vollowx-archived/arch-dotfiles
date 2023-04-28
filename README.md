@@ -2,9 +2,9 @@
 
 ## Showcase
 
-| music | neovim | something | waybar themes |
-| ---|---|---|---|
-| ![image](https://user-images.githubusercontent.com/73375859/235141782-d715aadd-b9ec-46b8-ac48-8116c1280bad.png) | ![image](https://user-images.githubusercontent.com/73375859/235141863-79ae2da5-be11-489f-9a15-f8e40e0dbb14.png) | ![image](https://user-images.githubusercontent.com/73375859/235142039-8b2a77da-af5b-4d2c-9cd2-04389adc5f06.png) | ![image](https://user-images.githubusercontent.com/73375859/235142126-cadcece8-522d-4d58-86fb-27b12820ccea.png)|
+| music                                                                                                           | neovim                                                                                                          | something                                                                                                       | waybar themes                                                                                                   |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| ![image](https://user-images.githubusercontent.com/73375859/235141782-d715aadd-b9ec-46b8-ac48-8116c1280bad.png) | ![image](https://user-images.githubusercontent.com/73375859/235141863-79ae2da5-be11-489f-9a15-f8e40e0dbb14.png) | ![image](https://user-images.githubusercontent.com/73375859/235142039-8b2a77da-af5b-4d2c-9cd2-04389adc5f06.png) | ![image](https://user-images.githubusercontent.com/73375859/235142126-cadcece8-522d-4d58-86fb-27b12820ccea.png) |
 
 ## Desktop
 
@@ -44,6 +44,7 @@
 |              | yesplaymusic | `paru -S yesplaymusic`                                                                                      |
 | file manager | ranger (tui) | `paru -S ranger-git`                                                                                        |
 |              | nemo (gui)   | `paru -S nemo`                                                                                              |
+| fetch        | fastfetch    | `paru -S fastfetch`                                                                                         |
 
 ## Theme
 
