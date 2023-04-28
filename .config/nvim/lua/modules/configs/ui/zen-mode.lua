@@ -1,6 +1,6 @@
 return function()
 	require("zen-mode").setup({
-		zindex = 40,
+		zindex = 50,
 		window = {
 			backdrop = 0.95, -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal
 			-- height and width can be:
@@ -22,8 +22,6 @@ return function()
 			},
 		},
 		plugins = {
-			-- disable some global vim options (vim.o...)
-			-- comment the lines to not apply the options
 			options = {
 				enabled = true,
 				ruler = false, -- disables the ruler text in the cmd line area
@@ -32,9 +30,5 @@ return function()
 			twilight = { enabled = true }, -- enable to start Twilight when zen mode opens
 			gitsigns = { enabled = false }, -- disables git signs
 		},
-		-- callback where you can add custom code when the Zen window opens
-		on_open = function(win) end,
-		-- callback where you can add custom code when the Zen window closes
-		on_close = function() end,
 	})
 end
