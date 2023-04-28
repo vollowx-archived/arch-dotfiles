@@ -13,10 +13,10 @@ EnumerateGroupForwardKeys=
 EnumerateGroupBackwardKeys=
 
 [Hotkey/EnumerateForwardKeys]
-0=Control+space
+0=Alt+space
 
 [Hotkey/EnumerateBackwardKeys]
-0=Control+Shift+space
+0=Alt+Shift+space
 
 [Hotkey/ActivateKeys]
 0=Hangul_Hanja
