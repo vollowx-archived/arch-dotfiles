@@ -9,9 +9,36 @@
   font-size: 12pt;
 }
 
+#appcontent
+  > #tabbrowser-tabbox
+  > #tabbrowser-tabpanels
+  > .deck-selected
+  > .browserContainer
+  > .browserStack
+  > browser {
+  border-radius: 12px !important;
+  margin: 16px !important;
+}
+
+.browserContainer {
+  background-color: var(
+    --lwt-accent-color-inactive,
+    var(--lwt-accent-color)
+  ) !important;
+  background-image: var(--lwt-header-image), var(--lwt-additional-images) !important;
+  background-repeat: no-repeat, var(--lwt-background-tiling) !important;
+  background-position: right top, var(--lwt-background-alignment) !important;
+}
+
 #sidebar-box,
 .sidebar-panel[lwt-sidebar-brighttext] {
-  background-color: #181825 !important;
+  background-color: var(
+    --lwt-accent-color-inactive,
+    var(--lwt-accent-color)
+  ) !important;
+  background-image: var(--lwt-header-image), var(--lwt-additional-images) !important;
+  background-repeat: no-repeat, var(--lwt-background-tiling) !important;
+  background-position: right top, var(--lwt-background-alignment) !important;
 }
 #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]
   #sidebar-header {
@@ -35,9 +62,9 @@
 /* hide navigation bar when it is not focused, press A-d to get focus */
 #main-window:not([customizing])
   #navigator-toolbox:not(:focus-within):not(:hover) {
-  margin-top: -41px;
+  margin-top: -42px;
   opacity: 0;
 }
 #navigator-toolbox {
-  transition: 300ms ease;
+  transition: 200ms ease;
 }
