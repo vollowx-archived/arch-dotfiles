@@ -5,7 +5,7 @@ screenshots
 effect-blur=40x3
 clock
 indicator
-indicator-radius=100
+indicator-radius=64
 
 inside-color=89b4fa
 inside-clear-color=f9e2af
@@ -27,6 +27,3 @@ text-color=1e1e2e
 key-hl-color=1e1e2e
 
 font=JetBrainsMono Nerd Font
-font-size=32
-
-fade-in=0.3
