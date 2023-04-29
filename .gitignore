@@ -44,6 +44,8 @@
 !.config/swaylock/**/*
 !.config/waybar/
 !.config/waybar/**/*
+!.config/xsettingsd/
+!.config/xsettingsd/**/*
 
 !.local/
 !.local/share/

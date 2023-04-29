@@ -21,6 +21,8 @@
 | color picker | hyprpicker | `paru -S hyprpicker`                                  |
 | controllers  | light      | `paru -S light && sudo chmod +s /bin/light`           |
 |              | pamixer    | `paru -S pamixer`                                     |
+|              | nwg-look   | `paru -S nwg-look`                                    |
+|              | qt5ct      | `paru -S qt5ct`                                       |
 | blue light   | sunset     | `paru -S wlsunset`                                    |
 
 ## Desktop / Selectable
