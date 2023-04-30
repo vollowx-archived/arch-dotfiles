@@ -31,8 +31,8 @@ return function()
 			cursor = 5,
 			width = 36,
 			align_shortcut = "right",
-			hl = "AlphaButton",
-			hl_shortcut = "AlphaAttr",
+			hl = "AlphaButtons",
+			hl_shortcut = "AlphaShortcut",
 		}
 
 		if nil == keybind then
@@ -114,7 +114,7 @@ return function()
 			end,
 		}),
 	}
-	dashboard.section.buttons.opts.hl = "AlphaButton"
+	dashboard.section.buttons.opts.hl = "AlphaButtons"
 
 	dashboard.config.layout = {
 		{ type = "padding", val = headerPadding },
