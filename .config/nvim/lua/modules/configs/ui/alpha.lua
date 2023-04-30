@@ -1,7 +1,6 @@
 return function()
 	local alpha = require("alpha")
 	local dashboard = require("alpha.themes.dashboard")
-	require("modules.utils").gen_alpha_hl()
 
 	local fn = vim.fn
 	local marginTopPercent = 0.3
