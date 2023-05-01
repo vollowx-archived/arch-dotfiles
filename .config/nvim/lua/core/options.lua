@@ -110,6 +110,9 @@ local function load_options()
 	if not isempty(conda_prefix) then
 		vim.g.python_host_prog = conda_prefix .. "/bin/python"
 		vim.g.python3_host_prog = conda_prefix .. "/bin/python"
+	elseif global.is_mac then
+		vim.g.python_host_prog = "/usr/bin/python"
+		vim.g.python3_host_prog = "/usr/local/bin/python3"
 	else
 		vim.g.python_host_prog = "/usr/bin/python"
 		vim.g.python3_host_prog = "/usr/bin/python3"
@@ -117,6 +120,12 @@ local function load_options()
 
 	for name, value in pairs(global_local) do
 		vim.o[name] = value
+	end
+
+	-- Fix sqlite3 missing-lib issue on Windows
+	if global.is_windows then
+		-- Download the DLLs form https://www.sqlite.org/download.html
+		vim.g.sqlite_clib_path = global.home .. "/Documents/sqlite-dll-win64-x64-3400200/sqlite3.dll"
 	end
 end
 

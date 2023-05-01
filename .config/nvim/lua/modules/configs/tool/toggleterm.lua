@@ -35,8 +35,6 @@ return function()
 		shell = vim.o.shell, -- change the default shell
 		float_opts = {
 			border = "curved",
-			width = 120,
-			height = 24,
 		},
 	})
 end

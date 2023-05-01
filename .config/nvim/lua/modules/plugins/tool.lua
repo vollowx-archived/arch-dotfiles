@@ -5,12 +5,12 @@ tool["tpope/vim-fugitive"] = {
 	cmd = { "Git", "G" },
 }
 -- only for fcitx5 user who uses non-English language during coding
-tool["pysan3/fcitx5.nvim"] = {
-	lazy = true,
-	event = "BufReadPost",
-	cond = vim.fn.executable("fcitx5-remote") == 1,
-	config = require("tool.fcitx5"),
-}
+-- tool["pysan3/fcitx5.nvim"] = {
+-- 	lazy = true,
+-- 	event = "BufReadPost",
+-- 	cond = vim.fn.executable("fcitx5-remote") == 1,
+-- 	config = require("tool.fcitx5"),
+-- }
 tool["nvim-tree/nvim-tree.lua"] = {
 	lazy = true,
 	cmd = {

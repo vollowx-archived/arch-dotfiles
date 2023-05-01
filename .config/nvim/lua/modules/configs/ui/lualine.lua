@@ -46,6 +46,31 @@ return function()
 		filetypes = { "DiffviewFiles" },
 	}
 
+	local function python_venv()
+		local function env_cleanup(venv)
+			if string.find(venv, "/") then
+				local final_venv = venv
+				for w in venv:gmatch("([^/]+)") do
+					final_venv = w
+				end
+				venv = final_venv
+			end
+			return venv
+		end
+
+		if vim.bo.filetype == "python" then
+			local venv = os.getenv("CONDA_DEFAULT_ENV")
+			if venv then
+				return string.format("%s", env_cleanup(venv))
+			end
+			venv = os.getenv("VIRTUAL_ENV")
+			if venv then
+				return string.format("%s", env_cleanup(venv))
+			end
+		end
+		return ""
+	end
+
 	require("lualine").setup({
 		options = {
 			icons_enabled = true,
@@ -59,8 +84,16 @@ return function()
 				"mode",
 			},
 			lualine_b = {
-				"filename",
 				"branch",
+				{
+					"diff",
+					symbols = {
+						added = icons.git.Add,
+						modified = icons.git.Mod,
+						removed = icons.git.Remove,
+					},
+					source = diff_source,
+				},
 			},
 			lualine_c = {
 				{
@@ -74,20 +107,12 @@ return function()
 						hint = icons.diagnostics.Hint,
 					},
 				},
-				{
-					"diff",
-					symbols = {
-						added = icons.git.Add,
-						modified = icons.git.Mod,
-						removed = icons.git.Remove,
-					},
-					source = diff_source,
-				},
 			},
 			lualine_x = {
 				get_cwd,
 			},
 			lualine_y = {
+				{ python_venv },
 				{ "filetype", icon_only = true },
 				{
 					"fileformat",
@@ -98,11 +123,8 @@ return function()
 						mac = "CR",
 					},
 				},
-				"progress",
 			},
-			lualine_z = {
-				"location",
-			},
+			lualine_z = { "progress", "location" },
 		},
 		inactive_sections = {
 			lualine_a = {},

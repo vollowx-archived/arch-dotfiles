@@ -36,16 +36,21 @@ return function()
 				end
 				return str
 			end,
+			indicator = {
+				-- icon = "▎",
+				icon = " ",
+				style = "icon",
+			},
 			offsets = {
 				{
 					filetype = "NvimTree",
-					text = "",
+					text = "File Explorer",
 					text_align = "center",
 					padding = 1,
 				},
 				{
 					filetype = "lspsagaoutline",
-					text = "",
+					text = "Lspsaga Outline",
 					text_align = "center",
 					padding = 1,
 				},

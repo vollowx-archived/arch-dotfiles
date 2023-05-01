@@ -1,6 +1,6 @@
 local bind = require("keymap.bind")
 local map_cr = bind.map_cr
-local map_cu = bind.map_cu
+-- local map_cu = bind.map_cu
 -- local map_cmd = bind.map_cmd
 -- local map_callback = bind.map_callback
 
@@ -21,9 +21,6 @@ local plug_map = {
 	["n|<A-7>"] = map_cr("BufferLineGoToBuffer 7"):with_noremap():with_silent():with_desc("buffer: Goto buffer 7"),
 	["n|<A-8>"] = map_cr("BufferLineGoToBuffer 8"):with_noremap():with_silent():with_desc("buffer: Goto buffer 8"),
 	["n|<A-9>"] = map_cr("BufferLineGoToBuffer 9"):with_noremap():with_silent():with_desc("buffer: Goto buffer 9"),
-
-	-- Plugin: zen-mode
-	["n|<A-z>"] = map_cu(":ZenMode"):with_silent():with_desc("edit: toggle zen mode"),
 }
 
 bind.nvim_load_mapping(plug_map)

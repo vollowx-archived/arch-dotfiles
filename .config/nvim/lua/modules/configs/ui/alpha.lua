@@ -4,7 +4,9 @@ return function()
 
 	local fn = vim.fn
 	local marginTopPercent = 0.3
-	local headerPadding = fn.max({ 2, fn.floor(fn.winheight(0) * marginTopPercent) })
+	local header_padding = fn.max({ 2, fn.floor(fn.winheight(0) * marginTopPercent) })
+
+	require("modules.utils").gen_alpha_hl()
 
 	dashboard.section.header.val = {
 		[[  ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣿⣶⣿⣦⣼⣆         ]],
@@ -115,14 +117,44 @@ return function()
 	}
 	dashboard.section.buttons.opts.hl = "AlphaButtons"
 
+	local function footer()
+		local stats = require("lazy").stats()
+		local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+		return "   Have Fun with neovim"
+			.. "   v"
+			.. vim.version().major
+			.. "."
+			.. vim.version().minor
+			.. "."
+			.. vim.version().patch
+			.. "   "
+			.. stats.count
+			.. " plugins in "
+			.. ms
+			.. "ms"
+	end
+
+	dashboard.section.footer.val = footer()
+	dashboard.section.footer.opts.hl = "AlphaFooter"
+
 	dashboard.config.layout = {
-		{ type = "padding", val = headerPadding },
+		{ type = "padding", val = header_padding },
 		dashboard.section.header,
 		{ type = "padding", val = 2 },
 		dashboard.section.buttons,
+		{ type = "padding", val = 1 },
+		dashboard.section.footer,
 	}
 
 	alpha.setup(dashboard.opts)
+
+	vim.api.nvim_create_autocmd("User", {
+		pattern = "LazyVimStarted",
+		callback = function()
+			dashboard.section.footer.val = footer()
+			pcall(vim.cmd.AlphaRedraw)
+		end,
+	})
 
 	-- Disable statusline in dashboard
 	vim.api.nvim_create_autocmd("FileType", {

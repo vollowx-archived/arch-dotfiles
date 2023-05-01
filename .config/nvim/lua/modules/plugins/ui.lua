@@ -15,6 +15,10 @@ ui["catppuccin/nvim"] = {
 	name = "catppuccin",
 	config = require("ui.catppuccin"),
 }
+ui["sainnhe/edge"] = {
+	lazy = true,
+	config = require("ui.edge"),
+}
 ui["j-hui/fidget.nvim"] = {
 	lazy = true,
 	event = "LspAttach",
@@ -24,11 +28,6 @@ ui["lewis6991/gitsigns.nvim"] = {
 	lazy = true,
 	event = { "CursorHold", "CursorHoldI" },
 	config = require("ui.gitsigns"),
-}
-ui["b0o/incline.nvim"] = {
-	lazy = true,
-	event = "BufReadPre",
-	config = require("ui.incline"),
 }
 ui["lukas-reineke/indent-blankline.nvim"] = {
 	lazy = true,
@@ -50,6 +49,10 @@ ui["karb94/neoscroll.nvim"] = {
 	event = "BufReadPost",
 	config = require("ui.neoscroll"),
 }
+ui["shaunsingh/nord.nvim"] = {
+	lazy = true,
+	config = require("ui.nord"),
+}
 ui["rcarriga/nvim-notify"] = {
 	lazy = true,
 	event = "VeryLazy",
@@ -60,25 +63,25 @@ ui["folke/paint.nvim"] = {
 	event = { "CursorHold", "CursorHoldI" },
 	config = require("ui.paint"),
 }
-ui["dstein64/nvim-scrollview"] = {
+ui["lewis6991/satellite.nvim"] = {
 	lazy = true,
 	event = "BufReadPost",
-	config = require("ui.scrollview"),
+	config = require("ui.satellite"),
 }
 ui["edluffy/specs.nvim"] = {
 	lazy = true,
 	event = "CursorMoved",
 	config = require("ui.specs"),
 }
-ui["folke/twilight.nvim"] = {
+ui["folke/todo-comments.nvim"] = {
 	lazy = true,
-	cmd = { "Twilight", "TwilightEnable", "TwilightDisable" },
-	config = require("ui.twilight"),
+	event = "BufReadPost",
+	config = require("ui.todo-comments"),
+	dependencies = "nvim-lua/plenary.nvim",
 }
-ui["folke/zen-mode.nvim"] = {
+ui["Mofiqul/vscode.nvim"] = {
 	lazy = true,
-	cmd = { "ZenMode" },
-	config = require("ui.zen-mode"),
+	config = require("ui.vscode"),
 }
 
 return ui
