@@ -143,6 +143,10 @@ return function()
 					CmpItemAbbr = { fg = cp.overlay2 },
 					CmpItemAbbrMatch = { fg = cp.blue, style = { "bold" } },
 
+					-- For lspsaga
+					OutlineNormal = { bg = cp.crust },
+					OutlineIndent = { fg = cp.surface0 },
+
 					-- For native lsp configs
 					DiagnosticVirtualTextError = { bg = cp.none },
 					DiagnosticVirtualTextWarn = { bg = cp.none },
