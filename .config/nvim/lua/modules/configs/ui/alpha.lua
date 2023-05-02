@@ -58,7 +58,7 @@ return function()
 
 	local leader = " "
 	dashboard.section.buttons.val = {
-		button("space f n", "  New File", leader, nil, {
+		button("Spc f n", "  New File", leader, nil, {
 			noremap = true,
 			silent = true,
 			nowait = true,
@@ -66,7 +66,7 @@ return function()
 				vim.api.nvim_command("enew")
 			end,
 		}),
-		button("space f c", "  Change Theme", leader, nil, {
+		button("Spc f c", "  Change Theme", leader, nil, {
 			noremap = true,
 			silent = true,
 			nowait = true,
@@ -74,7 +74,7 @@ return function()
 				require("telescope.builtin").colorscheme()
 			end,
 		}),
-		button("space f r", "  File Frecency", leader, nil, {
+		button("Spc f r", "  File Frecency", leader, nil, {
 			noremap = true,
 			silent = true,
 			nowait = true,
@@ -82,7 +82,7 @@ return function()
 				require("telescope").extensions.frecency.frecency()
 			end,
 		}),
-		button("space f e", "  File History", leader, nil, {
+		button("Spc f e", "  File History", leader, nil, {
 			noremap = true,
 			silent = true,
 			nowait = true,
@@ -90,7 +90,7 @@ return function()
 				require("telescope.builtin").oldfiles()
 			end,
 		}),
-		button("space f p", "  Find Project", leader, nil, {
+		button("Spc f p", "  Find Project", leader, nil, {
 			noremap = true,
 			silent = true,
 			nowait = true,
@@ -98,7 +98,7 @@ return function()
 				require("telescope").extensions.projects.projects({})
 			end,
 		}),
-		button("space f f", "  Find File", leader, nil, {
+		button("Spc f f", "  Find File", leader, nil, {
 			noremap = true,
 			silent = true,
 			nowait = true,
@@ -106,7 +106,7 @@ return function()
 				require("telescope.builtin").find_files()
 			end,
 		}),
-		button("space f w", "  Find Word", leader, nil, {
+		button("Spc f w", "  Find Word", leader, nil, {
 			noremap = true,
 			silent = true,
 			nowait = true,
@@ -120,15 +120,15 @@ return function()
 	local function footer()
 		local stats = require("lazy").stats()
 		local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-		return "  "
+		return " "
 			.. vim.version().major
 			.. "."
 			.. vim.version().minor
 			.. "."
 			.. vim.version().patch
-			.. "  "
+			.. "   "
 			.. stats.count
-			.. "  "
+			.. "   "
 			.. ms
 			.. "ms"
 	end
