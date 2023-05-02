@@ -98,7 +98,10 @@ editor["nvim-treesitter/nvim-treesitter"] = {
 			"abecodes/tabout.nvim",
 			config = require("editor.tabout"),
 		},
-		{ "romgrk/nvim-treesitter-context" },
+		{
+			"romgrk/nvim-treesitter-context",
+			config = require("editor.context"),
+		},
 	},
 }
 

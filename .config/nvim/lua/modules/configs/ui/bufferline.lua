@@ -44,15 +44,15 @@ return function()
 			offsets = {
 				{
 					filetype = "NvimTree",
-					text = "File Explorer",
+					text = "",
 					text_align = "center",
-					padding = 1,
+					padding = 0,
 				},
 				{
 					filetype = "lspsagaoutline",
-					text = "Lspsaga Outline",
+					text = "",
 					text_align = "center",
-					padding = 1,
+					padding = 0,
 				},
 			},
 		},
@@ -66,7 +66,7 @@ return function()
 
 		local catppuccin_hl_overwrite = {
 			highlights = require("catppuccin.groups.integrations.bufferline").get({
-				styles = { "italic", "bold" },
+				styles = { "bold" },
 				custom = {
 					mocha = {
 						-- Hint
