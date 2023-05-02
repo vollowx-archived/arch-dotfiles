@@ -104,9 +104,9 @@
       "critical": 20
     },
     "format": "{icon} {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
-    "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
+    "format-charging": "󱈑 {capacity}%",
+    "format-plugged": "󱈑 {capacity}%",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
   },
   "clock": {
     "format": "󰅐 {:%H:%M}",
