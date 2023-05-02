@@ -129,6 +129,7 @@ return function()
 					CursorLineNr = { fg = cp.green },
 					Search = { bg = cp.surface1, fg = cp.pink, style = { "bold" } },
 					IncSearch = { bg = cp.pink, fg = cp.surface1 },
+					WinSeparator = { bg = cp.base, fg = cp.base },
 
 					-- For indent-blankline
 					IndentBlanklineContextChar = { fg = cp.pink },
