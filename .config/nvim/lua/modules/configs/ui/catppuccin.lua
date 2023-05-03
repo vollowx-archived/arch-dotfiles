@@ -130,7 +130,6 @@ return function()
 					CursorLineNr = { fg = cp.green },
 					Search = { bg = cp.surface1, fg = cp.pink, style = { "bold" } },
 					IncSearch = { bg = cp.pink, fg = cp.surface1 },
-					WinSeparator = { bg = cp.base, fg = cp.base },
 
 					-- For indent-blankline
 					IndentBlanklineContextChar = { fg = cp.pink },
@@ -148,6 +147,7 @@ return function()
 					-- For lspsaga
 					OutlineNormal = { bg = cp.crust },
 					OutlineIndent = { fg = cp.surface0 },
+					OutlineWinSeparator = { bg = cp.base, fg = cp.base },
 
 					-- For native lsp configs
 					DiagnosticVirtualTextError = { bg = cp.none },
