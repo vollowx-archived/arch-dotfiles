@@ -21,15 +21,6 @@ return function()
 		}
 	end
 
-	local cmp_window = require("cmp.utils.window")
-
-	cmp_window.info_ = cmp_window.info
-	cmp_window.info = function(self)
-		local info = self:info_()
-		info.scrollable = false
-		return info
-	end
-
 	local compare = require("cmp.config.compare")
 	compare.lsp_scores = function(entry1, entry2)
 		local diff
@@ -77,6 +68,7 @@ return function()
 				winhighlight = "Normal:Pmenu,CursorLine:PmenuSel,Search:PmenuSel",
 				max_width = 80,
 				max_height = 20,
+				scrollbar = true,
 			},
 			documentation = {
 				border = border("PmenuBorder"),
@@ -167,6 +159,9 @@ return function()
 			-- { name = "copilot" },
 			-- { name = "codeium" },
 			-- { name = "cmp_tabnine" },
+		},
+		experimental = {
+			ghost_text = true,
 		},
 	})
 end
