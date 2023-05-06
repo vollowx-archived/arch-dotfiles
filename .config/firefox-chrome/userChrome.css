@@ -9,15 +9,11 @@
   font-size: 12pt;
 }
 
-#appcontent
-  > #tabbrowser-tabbox
-  > #tabbrowser-tabpanels
-  > .deck-selected
-  > .browserContainer
-  > .browserStack
-  > browser {
-  border-radius: 16px !important;
-  margin: 16px !important;
+#tabbrowser-tabpanels {
+  padding: 16px !important;
+}
+.browserStack > browser {
+  border-radius: 16px;
 }
 
 #navigator-toolbox {
@@ -58,8 +54,20 @@
 #titlebar {
   visibility: collapse !important;
 }
-#urlbar .urlbar-input-box {
-  text-align: center;
+#urlbar {
+  position: fixed !important;
+  margin: 10vh auto;
+  top: 0 !important;
+  left: 50% !important;
+  width: 960px !important;
+  max-width: 90vw;
+  height: auto !important;
+  max-height: 80vh;
+  transform: translateX(-50%);
+  z-index: 999;
+}
+#urlbar #urlbar-background {
+  --toolbar-field-focus-background-color: #181825 !important;
 }
 /* hide horizontal tabs at the top of the window */
 #TabsToolbar > * {
@@ -68,7 +76,7 @@
 /* hide navigation bar when it is not focused, press A-d to get focus */
 #main-window:not([customizing])
   #navigator-toolbox:not(:focus-within):not(:hover) {
-  margin-top: -42px;
+  margin-top: -40px;
   opacity: 0;
 }
 #navigator-toolbox {
