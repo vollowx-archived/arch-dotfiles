@@ -159,10 +159,6 @@ return function()
 					TelescopeResultsDiffChange = { fg = cp.yellow },
 					TelescopeResultsDiffDelete = { fg = cp.red },
 
-					-- For toggle-term
-					ToggleTerm1NormalFloat = { link = "NormalFloat" },
-					ToggleTerm1FloatBorder = { link = "FloatBorder" },
-
 					-- For lsp semantic tokens
 					["@lsp.type.comment"] = { fg = cp.overlay0 },
 					["@lsp.type.enum"] = { link = "@type" },
