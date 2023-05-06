@@ -46,7 +46,7 @@ ui["zbirenbaum/neodim"] = {
 }
 ui["karb94/neoscroll.nvim"] = {
 	lazy = true,
-	event = "BufReadPost",
+	event = "VeryLazy",
 	config = require("ui.neoscroll"),
 }
 ui["shaunsingh/nord.nvim"] = {
