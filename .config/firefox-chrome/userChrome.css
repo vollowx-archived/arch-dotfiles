@@ -16,7 +16,7 @@
   > .browserContainer
   > .browserStack
   > browser {
-  border-radius: 12px !important;
+  border-radius: 16px !important;
   margin: 16px !important;
 }
 
@@ -38,6 +38,9 @@
   background-position: right top, var(--lwt-background-alignment) !important;
 }
 
+#sidebar-box {
+  padding-right: 16px;
+}
 .sidebar-splitter {
   display: none;
 }
@@ -45,7 +48,7 @@
   --sidebar-background-color: #11111b !important;
 }
 #sidebar-header {
-  margin: 12px;
+  margin: 16px 0;
   background-color: #1e1e2e;
   border-radius: 16px;
   --sidebar-border-color: transparent !important;
