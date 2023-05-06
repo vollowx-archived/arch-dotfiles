@@ -79,9 +79,5 @@ ui["folke/todo-comments.nvim"] = {
 	config = require("ui.todo-comments"),
 	dependencies = "nvim-lua/plenary.nvim",
 }
-ui["Mofiqul/vscode.nvim"] = {
-	lazy = true,
-	config = require("ui.vscode"),
-}
 
 return ui
