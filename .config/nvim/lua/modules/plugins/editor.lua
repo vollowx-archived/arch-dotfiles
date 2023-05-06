@@ -82,6 +82,10 @@ editor["nvim-treesitter/nvim-treesitter"] = {
 	config = require("editor.treesitter"),
 	dependencies = {
 		{ "nvim-treesitter/nvim-treesitter-textobjects" },
+		{
+			"romgrk/nvim-treesitter-context",
+			config = require("editor.context"),
+		},
 		{ "mrjones2014/nvim-ts-rainbow" },
 		{ "JoosepAlviste/nvim-ts-context-commentstring" },
 		{ "mfussenegger/nvim-treehopper" },
@@ -97,10 +101,6 @@ editor["nvim-treesitter/nvim-treesitter"] = {
 		{
 			"abecodes/tabout.nvim",
 			config = require("editor.tabout"),
-		},
-		{
-			"romgrk/nvim-treesitter-context",
-			config = require("editor.context"),
 		},
 	},
 }

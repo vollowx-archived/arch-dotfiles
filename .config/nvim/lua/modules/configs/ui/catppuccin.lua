@@ -82,60 +82,33 @@ return function()
 			semantic_tokens = true,
 			symbols_outline = false,
 			telekasten = false,
-			telescope = true,
-			treesitter_context = false,
+			telescope = { enable = true, nvchad = true },
+			treesitter_context = true,
 			ts_rainbow = true,
 			vim_sneak = false,
 			vimwiki = false,
 			which_key = true,
 		},
-		color_overrides = {
-			mocha = {
-				rosewater = "#F5E0DC",
-				flamingo = "#F2CDCD",
-				mauve = "#DDB6F2",
-				pink = "#F5C2E7",
-				red = "#F28FAD",
-				maroon = "#E8A2AF",
-				peach = "#F8BD96",
-				yellow = "#FAE3B0",
-				green = "#ABE9B3",
-				blue = "#96CDFB",
-				sky = "#89DCEB",
-				teal = "#B5E8E0",
-				lavender = "#C9CBFF",
-
-				text = "#D9E0EE",
-				subtext1 = "#BAC2DE",
-				subtext0 = "#A6ADC8",
-				overlay2 = "#C3BAC6",
-				overlay1 = "#988BA2",
-				overlay0 = "#6E6C7E",
-				surface2 = "#6E6C7E",
-				surface1 = "#575268",
-				surface0 = "#302D41",
-
-				base = "#1E1E2E",
-				mantle = "#1A1826",
-				crust = "#161320",
-			},
-		},
 		highlight_overrides = {
 			---@param cp palette
-			mocha = function(cp)
+			all = function(cp)
 				return {
 					-- For base configs
-					NormalFloat = { fg = cp.text, bg = transparent_background and cp.none or cp.base },
-					-- FloatBorder = { fg = cp.blue },
+					NormalFloat = { fg = cp.text, bg = transparent_background and cp.none or cp.mantle },
+					-- FloatNormal = { bg = cp.mantle },
+					FloatBorder = { fg = cp.mantle, bg = cp.mantle },
 					CursorLineNr = { fg = cp.green },
 					Search = { bg = cp.surface1, fg = cp.pink, style = { "bold" } },
 					IncSearch = { bg = cp.pink, fg = cp.surface1 },
 
+					-- For lsp
+					LspInfoBorder = { link = "FloatBorder" },
+
+					-- For mason
+					MasonNormal = { link = "NormalFloat" },
+
 					-- For indent-blankline
 					IndentBlanklineContextChar = { fg = cp.pink },
-
-					-- For nvim-tree
-					NvimTreeIndentMarker = { fg = cp.surface0 },
 
 					-- For nvim-cmp and wilder
 					Pmenu = { fg = cp.overlay2, bg = transparent_background and cp.none or cp.base },
@@ -145,7 +118,7 @@ return function()
 					CmpItemAbbrMatch = { fg = cp.blue, style = { "bold" } },
 
 					-- For lspsaga
-					OutlineNormal = { bg = cp.crust },
+					OutlineNormal = { bg = cp.mantle },
 					OutlineIndent = { fg = cp.surface0 },
 					OutlineWinSeparator = { bg = cp.base, fg = cp.base },
 
@@ -167,12 +140,28 @@ return function()
 
 					-- For nvim-tree
 					NvimTreeRootFolder = { fg = cp.pink },
-
-					-- For nvim-treesitter-context
-					TreesitterContext = { bg = cp.surface0 },
+					NvimTreeIndentMarker = { fg = cp.surface0 },
 
 					-- For trouble.nvim
 					TroubleNormal = { bg = cp.base },
+
+					-- For telescope
+					TelescopeBorder = { link = "FloatBorder" },
+					TelescopePromptBorder = { fg = cp.surface0, bg = cp.surface0 },
+					TelescopePromptNormal = { fg = cp.text, bg = cp.surface0 },
+					TelescopePromptPrefix = { fg = cp.flamingo, bg = cp.surface0 },
+					TelescopeNormal = { link = "NormalFloat" },
+					TelescopePreviewTitle = { fg = cp.base, bg = cp.green },
+					TelescopePromptTitle = { fg = cp.base, bg = cp.red },
+					TelescopeResultsTitle = { fg = cp.mantle, bg = cp.mantle },
+					TelescopeSelection = { fg = cp.text, bg = cp.surface0 },
+					TelescopeResultsDiffAdd = { fg = cp.green },
+					TelescopeResultsDiffChange = { fg = cp.yellow },
+					TelescopeResultsDiffDelete = { fg = cp.red },
+
+					-- For toggle-term
+					ToggleTerm1NormalFloat = { link = "NormalFloat" },
+					ToggleTerm1FloatBorder = { link = "FloatBorder" },
 
 					-- For lsp semantic tokens
 					["@lsp.type.comment"] = { fg = cp.overlay0 },

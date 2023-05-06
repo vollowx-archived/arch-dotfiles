@@ -37,7 +37,6 @@ return function()
 				return str
 			end,
 			indicator = {
-				-- icon = "▎",
 				icon = " ",
 				style = "icon",
 			},
