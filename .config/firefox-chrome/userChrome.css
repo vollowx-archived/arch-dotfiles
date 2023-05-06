@@ -1,7 +1,7 @@
 :root {
   --toolbarbutton-border-radius: 16px !important;
-  --sidebar-background-color: #181825 !important;
-  --toolbar-bgcolor: #181825 !important;
+  --lwt-sidebar-background-color: #11111b !important;
+  --toolbar-bgcolor: #11111b !important;
 }
 
 * {
@@ -20,6 +20,14 @@
   margin: 16px !important;
 }
 
+#navigator-toolbox {
+  --chrome-content-separator-color: transparent !important;
+}
+
+:is(menupopup, panel)[type="arrow"] {
+  --panel-border-color: #6c7086 !important;
+}
+
 .browserContainer {
   background-color: var(
     --lwt-accent-color-inactive,
@@ -30,22 +38,17 @@
   background-position: right top, var(--lwt-background-alignment) !important;
 }
 
-#sidebar-box,
-.sidebar-panel[lwt-sidebar-brighttext] {
-  background-color: var(
-    --lwt-accent-color-inactive,
-    var(--lwt-accent-color)
-  ) !important;
-  background-image: var(--lwt-header-image), var(--lwt-additional-images) !important;
-  background-repeat: no-repeat, var(--lwt-background-tiling) !important;
-  background-position: right top, var(--lwt-background-alignment) !important;
-}
-#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]
-  #sidebar-header {
-  display: none;
-}
 .sidebar-splitter {
   display: none;
+}
+#sidebar-box {
+  --sidebar-background-color: #11111b !important;
+}
+#sidebar-header {
+  margin: 12px;
+  background-color: #1e1e2e;
+  border-radius: 16px;
+  --sidebar-border-color: transparent !important;
 }
 
 /* remove top tabbar */
@@ -66,5 +69,5 @@
   opacity: 0;
 }
 #navigator-toolbox {
-  transition: 200ms ease;
+  transition: 300ms ease;
 }
