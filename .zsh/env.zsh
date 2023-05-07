@@ -37,6 +37,7 @@ export QT_IM_MODULE=fcitx
 export PNPM_HOME="/home/pancak/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 
 # Others
 export EDITOR="nvim"
