@@ -17,6 +17,16 @@ return function()
 		end
 	end
 
+	local function lsp_status()
+		if rawget(vim, "lsp") then
+			for _, client in ipairs(vim.lsp.get_active_clients()) do
+				if client.attached_buffers[vim.api.nvim_get_current_buf()] and client.name ~= "null-ls" then
+					return (vim.o.columns > 100 and "%#St_LspStatus#" .. " LSP [" .. client.name .. "]") or " LSP"
+				end
+			end
+		end
+	end
+
 	local function get_cwd()
 		local cwd = vim.fn.getcwd()
 		local is_windows = require("core.global").is_windows
@@ -108,6 +118,10 @@ return function()
 					},
 					source = diff_source,
 				},
+				-- This can make things after this in section c centered
+				-- function()
+				-- 	return "%="
+				-- end,
 			},
 			lualine_x = {
 				{
@@ -121,6 +135,7 @@ return function()
 						hint = icons.diagnostics.Hint,
 					},
 				},
+				lsp_status,
 			},
 			lualine_y = {
 				get_cwd,
