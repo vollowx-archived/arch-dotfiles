@@ -93,11 +93,11 @@ return function()
 				},
 			},
 			lualine_b = {
-				{ "filetype", colored = false, icon_only = true },
-				{ "filename", padding = { left = 0 } },
+				{ "filetype", colored = false, icon_only = true, padding = { left = 1 } },
+				{ "filename" },
 			},
 			lualine_c = {
-				{ "branch", icon = string.sub(icons.git.Branch, 1, 4) },
+				{ "branch", icon = string.sub(icons.git.Branch, 1, 4), padding = { left = 1 } },
 				{
 					"diff",
 					colored = false,
@@ -107,7 +107,6 @@ return function()
 						removed = icons.git.Remove,
 					},
 					source = diff_source,
-					padding = { left = 0 },
 				},
 			},
 			lualine_x = {
