@@ -24,6 +24,8 @@
 |              | nwg-look   | `paru -S nwg-look`                                    |
 |              | qt5ct      | `paru -S qt5ct`                                       |
 | blue light   | sunset     | `paru -S wlsunset`                                    |
+| tray         | nm-applet  | `paru -S network-manager-applet`                      |
+|              | blueman    | `paru -S blueman`                                     |
 
 ## Desktop / Selectable
 
