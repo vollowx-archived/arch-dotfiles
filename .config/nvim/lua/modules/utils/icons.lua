@@ -55,7 +55,7 @@ local data = {
 	},
 	git = {
 		Add = "",
-		Branch = "",
+		Branch = "󰘬",
 		Diff = "",
 		Git = "",
 		Ignore = "",

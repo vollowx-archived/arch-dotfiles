@@ -71,31 +71,46 @@ return function()
 		return ""
 	end
 
+	local colors = require("modules.utils").get_palette()
+	local custom_catppuccin = require("lualine.themes.catppuccin")
+	custom_catppuccin.normal.c.fg = colors.overlay0
+
 	require("lualine").setup({
 		options = {
 			icons_enabled = true,
-			theme = "catppuccin",
+			theme = custom_catppuccin,
 			disabled_filetypes = {},
-			component_separators = "|",
+			component_separators = "",
 			section_separators = { left = "", right = "" },
 		},
 		sections = {
 			lualine_a = {
-				"mode",
+				{
+					"mode",
+					fmt = function(name)
+						return icons.misc.Vim .. name
+					end,
+				},
 			},
 			lualine_b = {
-				"branch",
+				{ "filetype", colored = false, icon_only = true },
+				{ "filename", padding = { left = 0 } },
+			},
+			lualine_c = {
+				{ "branch", icon = string.sub(icons.git.Branch, 1, 4) },
 				{
 					"diff",
+					colored = false,
 					symbols = {
 						added = icons.git.Add,
 						modified = icons.git.Mod,
 						removed = icons.git.Remove,
 					},
 					source = diff_source,
+					padding = { left = 0 },
 				},
 			},
-			lualine_c = {
+			lualine_x = {
 				{
 					"diagnostics",
 					sources = { "nvim_diagnostic" },
@@ -108,23 +123,11 @@ return function()
 					},
 				},
 			},
-			lualine_x = {
-				get_cwd,
-			},
 			lualine_y = {
-				{ python_venv },
-				{ "filetype", icon_only = true },
-				{
-					"fileformat",
-					icons_enabled = true,
-					symbols = {
-						unix = "LF",
-						dos = "CRLF",
-						mac = "CR",
-					},
-				},
+				get_cwd,
+				python_venv,
 			},
-			lualine_z = { "progress", "location" },
+			lualine_z = { "location" },
 		},
 		inactive_sections = {
 			lualine_a = {},
