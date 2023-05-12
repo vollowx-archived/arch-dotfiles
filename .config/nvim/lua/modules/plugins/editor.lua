@@ -28,11 +28,6 @@ editor["LunarVim/bigfile.nvim"] = {
 editor["ojroques/nvim-bufdel"] = {
 	lazy = true,
 	event = "BufReadPost",
-	config = function()
-		require("bufdel").setup({
-			quit = false,
-		})
-	end,
 }
 editor["rhysd/clever-f.vim"] = {
 	lazy = true,
