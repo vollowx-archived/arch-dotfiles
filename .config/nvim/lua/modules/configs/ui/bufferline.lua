@@ -37,8 +37,7 @@ return function()
 				return str
 			end,
 			indicator = {
-				icon = " ",
-				style = "icon",
+				style = "none",
 			},
 			offsets = {
 				{
