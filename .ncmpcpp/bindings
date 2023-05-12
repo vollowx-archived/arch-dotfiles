@@ -1,9 +1,3 @@
-# the t key isn't used and it's easier to press than /, so lets use it
-def_key "t"
-  find
-def_key "t"
-  find_item_forward
-
 def_key "+"
   show_clock
 def_key "="
@@ -38,7 +32,6 @@ def_key "n"
 def_key "N"
   previous_found_item
 
-# not used but bound
 def_key "J"
   move_selected_items_down
 def_key "K"
@@ -46,9 +39,7 @@ def_key "K"
 
 def_key "d"
   delete_playlist_items
-
 def_key "d"
   delete_browser_items
-
 def_key "d"
   delete_stored_playlist
