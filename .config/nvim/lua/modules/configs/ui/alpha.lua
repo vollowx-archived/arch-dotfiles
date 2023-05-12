@@ -29,7 +29,7 @@ return function()
 		local opts = {
 			position = "center",
 			shortcut = sc,
-			cursor = 5,
+			cursor = 3,
 			width = 36,
 			align_shortcut = "right",
 			hl = "AlphaButtons",
