@@ -2,7 +2,7 @@
 
 * {
   font-family: JetBrainsMono Nerd Font;
-  font-size: 13pt;
+  font-size: 12pt;
   font-weight: 500;
 }
 
@@ -24,7 +24,7 @@ tooltip {
 }
 
 #workspaces button {
-  margin: 8px;
+  margin: 2px 0px;
   padding: 0;
   border-radius: 9999px;
   color: @subtext0;
@@ -57,41 +57,44 @@ tooltip {
 #battery {
   padding-left: 1px;
   color: @blue;
+  border-radius: 9999px;
 }
+#battery.charging,
 #battery.plugged {
   background-color: @green;
-  font-weight: 900;
   color: @base;
 }
+#battery.warning:not(.charging),
+#battery.critical:not(.charging),
 #battery.warning:not(.plugged),
 #battery.critical:not(.plugged) {
   background-color: @red;
-  font-weight: 900;
   color: @base;
 }
 
 #clock {
   color: @rosewater;
-  font-size: 1.2em;
-  font-weight: 900;
   margin-bottom: 8px;
 }
 
-#custom-launch {
+#custom-launch,
+#custom-out {
   color: @base;
-  background-color: @green;
-  font-size: 1.5em;
+  font-size: 1.2em;
   border-radius: 12px;
-  padding: 8px 0px;
+  padding: 6px 13px;
   margin: 0px 8px;
+}
+
+#custom-launch {
+  background-color: @green;
   margin-top: 8px;
 }
 #custom-out {
-  color: @base;
   background-color: @red;
-  font-size: 1.5em;
-  border-radius: 12px;
-  padding: 8px 16px;
-  margin: 0px 8px;
   margin-bottom: 8px;
+}
+
+#custom-separator {
+  color: @surface1;
 }
