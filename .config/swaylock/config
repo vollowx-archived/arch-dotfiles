@@ -2,10 +2,10 @@ ignore-empty-password
 disable-caps-lock-text
 
 screenshots
-effect-blur=40x3
+effect-blur=30x3
 clock
 indicator
-indicator-radius=64
+indicator-radius=80
 
 inside-color=89b4fa
 inside-clear-color=f9e2af
@@ -26,4 +26,4 @@ separator-color=89b4fa
 text-color=1e1e2e
 key-hl-color=1e1e2e
 
-font=JetBrainsMono Nerd Font
+font=Roboto

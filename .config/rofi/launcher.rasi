@@ -116,7 +116,7 @@ textbox-prompt-colon {
 }
 entry {
     enabled:                     true;
-    padding:                     5px 0px;
+    padding:                     1px 0px;
     background-color:            inherit;
     text-color:                  inherit;
     cursor:                      text;
@@ -255,6 +255,7 @@ mode-switcher{
     text-color:                  @foreground-colour;
 }
 button {
+    width:                       36px;
     padding:                     5px 10px;
     border:                      0px solid;
     border-radius:               10px;

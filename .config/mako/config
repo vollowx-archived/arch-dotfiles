@@ -1,22 +1,21 @@
-font=JetBrainsMono Nerd Font 12
+font=Roboto 13
 
 default-timeout=10000
 group-by=summary
 
 layer=top
 markup=1
-anchor=bottom-right
-width=450
-margin=20
-padding=12,12,12,12
+anchor=top-right
 width=400
-border-radius=8
+margin=20
+padding=16
+border-radius=0
 border-size=2
 
-background-color=#1e1e2e
+background-color=#313244
 text-color=#cdd6f4
-border-color=#45475a
-progress-color=over #313244
+border-color=#89b4fa
+progress-color=over #45475a
 
 [urgency=high]
 border-color=#f2cdcd
