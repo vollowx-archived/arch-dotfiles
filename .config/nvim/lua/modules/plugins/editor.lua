@@ -1,19 +1,13 @@
 local editor = {}
 
-editor["rainbowhxch/accelerated-jk.nvim"] = {
-	lazy = true,
-	event = "VeryLazy",
-	config = require("editor.accelerated-jk"),
-}
 editor["rmagatti/auto-session"] = {
 	lazy = true,
 	cmd = { "SessionSave", "SessionRestore", "SessionDelete" },
 	config = require("editor.auto-session"),
 }
-editor["m4xshen/autoclose.nvim"] = {
-	lazy = true,
+editor["echasnovski/mini.pairs"] = {
 	event = "InsertEnter",
-	config = require("editor.autoclose"),
+	config = require("editor.mini-pairs"),
 }
 editor["max397574/better-escape.nvim"] = {
 	lazy = true,
@@ -36,7 +30,7 @@ editor["rhysd/clever-f.vim"] = {
 }
 editor["numToStr/Comment.nvim"] = {
 	lazy = true,
-	event = { "CursorHold", "CursorHoldI" },
+	event = { "BufReadPost", "BufNewFile" },
 	config = require("editor.comment"),
 }
 editor["sindrets/diffview.nvim"] = {
@@ -55,7 +49,7 @@ editor["phaazon/hop.nvim"] = {
 }
 editor["RRethy/vim-illuminate"] = {
 	lazy = true,
-	event = { "CursorHold", "CursorHoldI" },
+	event = { "BufReadPost", "BufNewFile" },
 	config = require("editor.vim-illuminate"),
 }
 editor["romainl/vim-cool"] = {
@@ -73,12 +67,8 @@ editor["lambdalisue/suda.vim"] = {
 ----------------------------------------------------------------------
 editor["nvim-treesitter/nvim-treesitter"] = {
 	lazy = true,
-	build = function()
-		if #vim.api.nvim_list_uis() ~= 0 then
-			vim.api.nvim_command("TSUpdate")
-		end
-	end,
-	event = { "CursorHold", "CursorHoldI" },
+	build = ":TSUpdate",
+	event = { "BufReadPost", "BufNewFile" },
 	config = require("editor.treesitter"),
 	dependencies = {
 		{ "nvim-treesitter/nvim-treesitter-textobjects" },

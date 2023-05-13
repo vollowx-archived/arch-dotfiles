@@ -15,10 +15,6 @@ ui["catppuccin/nvim"] = {
 	name = "catppuccin",
 	config = require("ui.catppuccin"),
 }
-ui["sainnhe/edge"] = {
-	lazy = true,
-	config = require("ui.edge"),
-}
 ui["j-hui/fidget.nvim"] = {
 	lazy = true,
 	event = "LspAttach",
@@ -49,10 +45,6 @@ ui["karb94/neoscroll.nvim"] = {
 	event = "VeryLazy",
 	config = require("ui.neoscroll"),
 }
-ui["shaunsingh/nord.nvim"] = {
-	lazy = true,
-	config = require("ui.nord"),
-}
 ui["rcarriga/nvim-notify"] = {
 	lazy = true,
 	event = "VeryLazy",
@@ -67,11 +59,6 @@ ui["lewis6991/satellite.nvim"] = {
 	lazy = true,
 	event = "BufReadPost",
 	config = require("ui.satellite"),
-}
-ui["edluffy/specs.nvim"] = {
-	lazy = true,
-	event = "CursorMoved",
-	config = require("ui.specs"),
 }
 ui["folke/todo-comments.nvim"] = {
 	lazy = true,
