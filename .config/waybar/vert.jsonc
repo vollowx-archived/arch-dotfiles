@@ -99,6 +99,7 @@
     "on-click": "~/.config/rofi/powermenu.sh"
   },
   "custom/separator": {
-    "format": "────"
+    "format": "────",
+    "tooltip": false
   }
 }
