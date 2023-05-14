@@ -124,6 +124,11 @@ return function()
 				function()
 					return "%="
 				end,
+				{
+					"searchcount",
+					maxcount = 999,
+					timeout = 500,
+				},
 			},
 			lualine_x = {
 				{
