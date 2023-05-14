@@ -46,16 +46,20 @@ tooltip {
   font-style: italic;
 }
 
+#pulseaudio,
+#backlight,
+#battery {
+  margin: 0 8px;
+}
 #pulseaudio {
-  padding-left: 2px;
+  margin-left: 10px;
   color: @green;
 }
 #backlight {
-  margin-left: -4px;
+  margin-left: 4px;
   color: @rosewater;
 }
 #battery {
-  padding-left: 1px;
   color: @blue;
   border-radius: 9999px;
 }
