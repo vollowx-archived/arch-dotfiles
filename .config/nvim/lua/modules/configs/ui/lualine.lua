@@ -21,10 +21,12 @@ return function()
 		if rawget(vim, "lsp") then
 			for _, client in ipairs(vim.lsp.get_active_clients()) do
 				if client.attached_buffers[vim.api.nvim_get_current_buf()] and client.name ~= "null-ls" then
-					return (vim.o.columns > 100 and "%#St_LspStatus#" .. "󱕷 LSP [" .. client.name .. "]") or "󱕷 LSP"
+					return (vim.o.columns > 100 and "%#St_LspStatus#" .. "󱕷 LSP [" .. client.name .. "]")
+						or "󱕷 LSP"
 				end
 			end
 		end
+		return "󱕷 No LSP"
 	end
 
 	local function get_cwd()
@@ -91,14 +93,14 @@ return function()
 			theme = custom_catppuccin,
 			disabled_filetypes = {},
 			component_separators = "",
-			section_separators = { left = "", right = "" },
+			section_separators = { left = "", right = "" },
 		},
 		sections = {
 			lualine_a = {
 				{
 					"mode",
 					fmt = function(name)
-						return icons.misc.Vim .. name
+						return icons.misc.ManUp .. name
 					end,
 				},
 			},
@@ -119,9 +121,9 @@ return function()
 					source = diff_source,
 				},
 				-- This can make things after this in section c centered
-				-- function()
-				-- 	return "%="
-				-- end,
+				function()
+					return "%="
+				end,
 			},
 			lualine_x = {
 				{
@@ -141,7 +143,9 @@ return function()
 				get_cwd,
 				python_venv,
 			},
-			lualine_z = { "location" },
+			lualine_z = {
+				{ "location" },
+			},
 		},
 		inactive_sections = {
 			lualine_a = {},

@@ -135,6 +135,15 @@ return function()
 					},
 					OutlineIndent = { fg = cp.surface0 },
 
+					-- For diffview
+					DiffviewNormal = {
+						bg = transparent_background and cp.none or cp.mantle,
+					},
+					DiffviewWinSeparator = {
+						bg = transparent_background and cp.none or cp.base,
+						fg = transparent_background and cp.surface1 or cp.base,
+					},
+
 					-- For native lsp configs
 					DiagnosticVirtualTextError = { bg = cp.none },
 					DiagnosticVirtualTextWarn = { bg = cp.none },
