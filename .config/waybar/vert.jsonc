@@ -1,7 +1,7 @@
 {
   "position": "left",
   "layer": "top",
-  "modules-left": ["custom/launch", "hyprland/submap", "wlr/workspaces"],
+  "modules-left": ["hyprland/submap", "custom/launch", "wlr/workspaces"],
   "modules-center": ["mpd"],
   "modules-right": [
     "tray",
@@ -25,7 +25,7 @@
     "format": "{stateIcon}{consumeIcon} {randomIcon}{repeatIcon}{singleIcon}{title} 󰝚 ",
     "format-disconnected": "󰝛 ",
     "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped 󰝚 ",
-    "title-len": 10,
+    "title-len": 16,
     "interval": 10,
     "consume-icons": {
       "on": " 󰆐" // Icon shows only when "consume" is on

@@ -77,10 +77,11 @@ tooltip {
 }
 
 #clock {
-  color: @rosewater;
+  color: @text;
   margin-bottom: 8px;
 }
 
+#submap,
 #custom-launch,
 #custom-out {
   color: @base;
@@ -90,6 +91,10 @@ tooltip {
   margin: 0px 8px;
 }
 
+#submap {
+  background-color: @rosewater;
+  margin-top: 8px;
+}
 #custom-launch {
   background-color: @green;
   margin-top: 8px;
