@@ -101,14 +101,14 @@ local clipboard_config = function()
 		}
 	elseif global.is_wsl then
 		vim.g.clipboard = {
-			name = "win32yank-wsl",
+			name = "psyank-wsl",
 			copy = {
-				["+"] = "win32yank.exe -i --crlf",
-				["*"] = "win32yank.exe -i --crlf",
+				["+"] = "clip.exe",
+				["*"] = "clip.exe",
 			},
 			paste = {
-				["+"] = "win32yank.exe -o --lf",
-				["*"] = "win32yank.exe -o --lf",
+				["+"] = [[powershell.exe -NoProfile -NoLogo -NonInteractive -Command [console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))]],
+				["*"] = [[powershell.exe -NoProfile -NoLogo -NonInteractive -Command [console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))]],
 			},
 			cache_enabled = 0,
 		}
@@ -117,7 +117,7 @@ end
 
 local shell_config = function()
 	if global.is_windows then
-		if not (vim.fn.executable("pwsh") or vim.fn.executable("powershell")) then
+		if not (vim.fn.executable("pwsh") == 1 or vim.fn.executable("powershell") == 1) then
 			vim.notify(
 				[[
 Failed to setup terminal config
@@ -127,14 +127,14 @@ cmd.exe will be used instead for `:!` (shell bang) and toggleterm.nvim.
 
 You're recommended to install PowerShell for better experience.]],
 				vim.log.levels.WARN,
-				{ title = "[core] Runtime error" }
+				{ title = "[core] Runtime Warning" }
 			)
 			return
 		end
 
 		local basecmd = "-NoLogo -MTA -ExecutionPolicy RemoteSigned"
 		local ctrlcmd = "-Command [console]::InputEncoding = [console]::OutputEncoding = [System.Text.Encoding]::UTF8"
-		vim.api.nvim_set_option_value("shell", vim.fn.executable("pwsh") and "pwsh" or "powershell", {})
+		vim.api.nvim_set_option_value("shell", vim.fn.executable("pwsh") == 1 and "pwsh" or "powershell", {})
 		vim.api.nvim_set_option_value("shellcmdflag", string.format("%s %s;", basecmd, ctrlcmd), {})
 		vim.api.nvim_set_option_value("shellredir", "-RedirectStandardOutput %s -NoNewWindow -Wait", {})
 		vim.api.nvim_set_option_value("shellpipe", "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode", {})
