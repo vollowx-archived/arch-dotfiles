@@ -56,7 +56,6 @@ tooltip {
   color: @green;
 }
 #backlight {
-  margin-left: 4px;
   color: @rosewater;
 }
 #battery {
