@@ -1,9 +1,9 @@
 alias grep="rg $@"
 alias find="fd $@"
 alias df="duf $@"
-alias ls="exa --git --icons $@"
-alias la="exa --git --icons --all $@"
-alias l="exa --git --icons --all --long $@"
+alias ls="exa --git --icons --group-directories-first $@"
+alias la="ls --all $@"
+alias l="la --long $@"
 alias cat="bat $@"
 alias dig="dog $@"
 

@@ -14,7 +14,8 @@ Core:
 paru -S hyprland-git hyprpaper-git rofi-lbonn-wayland-git rofi-calc rofi-emoji mako\
         waybar-hyprland-git swayidle swaylock-effects grimblast hyprpicker\
         light pamixer wlsunset network-manager-applet blueman\
-        zsh foot libsixel mpd mpc ncmpcpp cava mpdscribble ranger nemo fastfetch
+        zsh zoxide ripgrep fd duf exa bat dog foot libsixel\
+        mpd mpc ncmpcpp cava mpdscribble ranger nemo fastfetch
 sudo chmod +s /bin/light
 chsh -s /bin/zsh
 ```
@@ -53,14 +54,15 @@ paru -S fcitx5 fcitx5-chinese-addons fcitx5-anthy
 
 ## Core/Non Desktop
 
-| ~         | name      | command                                    |
-| --------- | --------- | ------------------------------------------ |
-| shell     | zsh       | `paru -S zsh && chsh -s /bin/zsh`          |
-| terminal  | foot      | `paru -S foot libsixel`                    |
-| music     | mpd       | `paru -S mpd mpc ncmpcpp cava mpdscribble` |
-| file mgr  | ranger    | `paru -S ranger`                           |
-|           | nemo      | `paru -S nemo`                             |
-| sys fetch | fastfetch | `paru -S fastfetch`                        |
+| ~         | name      | command                                     |
+| --------- | --------- | ------------------------------------------- |
+| shell     | zsh       | `paru -S zsh && chsh -s /bin/zsh`           |
+| units     |           | `paru -S zoxide ripgrep fd duf exa bat dog` |
+| terminal  | foot      | `paru -S foot libsixel`                     |
+| music     | mpd       | `paru -S mpd mpc ncmpcpp cava mpdscribble`  |
+| file mgr  | ranger    | `paru -S ranger`                            |
+|           | nemo      | `paru -S nemo`                              |
+| sys fetch | fastfetch | `paru -S fastfetch`                         |
 
 ## Extra/Softwares
 

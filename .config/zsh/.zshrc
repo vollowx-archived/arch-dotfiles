@@ -34,6 +34,8 @@ unset key
 
 source ./.config/zsh/modules/env.zsh
 
+source ~/.config/zsh/modules/aliases.zsh
+
 # Remove older command from the history if a duplicate is to be added.
 setopt HIST_IGNORE_ALL_DUPS
 
@@ -46,4 +48,4 @@ ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 
 source ~/.config/zsh/modules/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
-source ~/.config/zsh/modules/aliases.zsh
+eval "$(zoxide init zsh)"
