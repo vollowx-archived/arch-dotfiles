@@ -3,6 +3,8 @@
 !.config/
 !.config/chromium-flags.conf
 !.config/nighttab.json
+!.config/bat/
+!.config/bat/**/*
 !.config/cava/
 !.config/cava/**/*
 !.config/fcitx5/
