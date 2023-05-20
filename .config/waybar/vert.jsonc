@@ -14,8 +14,15 @@
     "custom/out"
   ],
   "wlr/workspaces": {
-    "sort-by-name": true,
-    "format": "",
+    "format": "{icon}",
+    "format-icons": {
+      "1": "󰎆",
+      "2": "󱠇",
+      "3": "󰥱",
+      "4": "",
+      "default": "󰝥"
+    },
+    "sort-by-number": true,
     "on-click": "activate",
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1"
@@ -79,12 +86,12 @@
   "battery": {
     "states": {
       "warning": 30,
-      "critical": 20
+      "critical": 15
     },
     "format": "{icon}",
-    "format-charging": "{icon}",
     "format-plugged": "{icon}",
-    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "tooltip-format": "{capacity}%, {time}"
   },
   "clock": {
     "format": "{:%H\n%M}",
