@@ -3,8 +3,6 @@
 !.config/
 !.config/chromium-flags.conf
 !.config/nighttab.json
-!.config/btop/
-!.config/btop/**/*
 !.config/cava/
 !.config/cava/**/*
 !.config/fcitx5/
@@ -16,7 +14,7 @@
 !.config/foot/
 !.config/foot/**/*
 !.config/gtk-3.0/
-!.config/gtk-3.0/settings.ini
+!.config/gtk-3.0/**/*
 !.config/hypr/
 !.config/hypr/**/*
 !.config/lazygit/
@@ -34,20 +32,23 @@
 !.config/obs-studio/themes/**/*
 !.config/paru/
 !.config/paru/**/*
-!.config/qt5ct/
-!.config/qt5ct/**/*
-!.config/ranger/
-!.config/ranger/**/*
-.config/ranger/plugins/__pycache__
-.config/ranger/plugins/ranger_devicons/__pycache__
+!.config/qt6ct/
+!.config/qt6ct/**/*
 !.config/rofi/
 !.config/rofi/**/*
+!.config/systemd/
+!.config/systemd/**/*
 !.config/swaylock/
 !.config/swaylock/**/*
 !.config/waybar/
 !.config/waybar/**/*
 !.config/xsettingsd/
 !.config/xsettingsd/**/*
+!.config/zsh/
+!.config/zsh/.zshrc
+!.config/zsh/.zimrc
+!.config/zsh/modules/
+!.config/zsh/modules/**/*
 
 !.local/
 !.local/share/
@@ -86,11 +87,7 @@
 !.gitmodules
 !.npmrc
 
-!.zshrc
 !.zshenv
-!.zimrc
-!.zsh/
-!.zsh/**/*
 !.bin/
 !.bin/**/*
 

@@ -32,7 +32,7 @@ unset key
 # Configs
 # -------
 
-source ~/.zsh/env.zsh
+source ./.config/zsh/modules/env.zsh
 
 # Remove older command from the history if a duplicate is to be added.
 setopt HIST_IGNORE_ALL_DUPS
@@ -44,6 +44,6 @@ WORDCHARS=${WORDCHARS//[\/]}
 # zsh-users/zsh-autosuggestions is the last module in your ~/.zimrc.
 ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 
-source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
+source ~/.config/zsh/modules/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
-source ~/.zsh/aliases.zsh
+source ~/.config/zsh/modules/aliases.zsh
