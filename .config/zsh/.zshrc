@@ -32,7 +32,7 @@ unset key
 # Configs
 # -------
 
-source ./.config/zsh/modules/env.zsh
+source ~/.config/zsh/modules/env.zsh
 
 source ~/.config/zsh/modules/aliases.zsh
 
