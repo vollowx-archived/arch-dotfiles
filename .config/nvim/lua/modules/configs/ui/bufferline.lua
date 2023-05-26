@@ -22,7 +22,7 @@ return function()
 			enforce_regular_tabs = true,
 			persist_buffer_sort = true,
 			always_show_bufferline = false,
-			separator_style = "slant",
+			separator_style = "thin",
 			diagnostics = "nvim_lsp",
 			diagnostics_indicator = function(_, _, diagnostics_dict, _)
 				local str = ""
