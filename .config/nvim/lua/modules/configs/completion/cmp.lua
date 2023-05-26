@@ -63,9 +63,6 @@ return function()
 
 	cmp.setup({
 		preselect = cmp.PreselectMode.Item,
-		completion = {
-			completeopt = "menu,menuone",
-		},
 		window = {
 			completion = {
 				border = border("PmenuBorder"),
