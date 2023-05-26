@@ -38,11 +38,11 @@ case "$choise" in
 	;;
 "brightness_up" | "b+")
 	light -A 5
-	notify-send "󰃠  Light" "Brightness: $(light)%" --hint="int:value:$(light)"
+	notify-send "󰃠  Brightness" "Brightness: $(light)%" --hint="int:value:$(light)"
 	;;
 "brightness_down" | "b-")
 	light -U 5
-	notify-send "󰃠  Light" "Brightness: $(light)%" --hint="int:value:$(light)"
+	notify-send "󰃠  Brightness" "Brightness: $(light)%" --hint="int:value:$(light)"
 	;;
 "screenshot_copy_area" | "sca")
 	grimblast copy area
