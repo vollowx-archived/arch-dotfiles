@@ -3,8 +3,9 @@ export XCURSOR_THEME=Catppuccin-Mocha-Dark-Cursors
 export XCURSOR_SIZE=32
 
 # Path
+export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$HOME/.bin:$PATH"
-export PATH="$HOME/.local/share/pnpm:$PATH"
+export PATH="$PNPM_HOME:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 
 # Others
