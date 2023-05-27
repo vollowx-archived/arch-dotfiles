@@ -97,7 +97,7 @@ return function()
 					NormalFloat = { fg = cp.text, bg = transparent_background and cp.none or cp.mantle },
 					-- FloatNormal = { bg = cp.mantle },
 					FloatBorder = {
-						fg = transparent_background and cp.blue or cp.mantle,
+						fg = transparent_background and cp.surface1 or cp.mantle,
 						bg = transparent_background and cp.none or cp.mantle,
 					},
 					CursorLineNr = { fg = cp.green },
@@ -173,7 +173,7 @@ return function()
 					-- For telescope
 					TelescopeBorder = { link = "FloatBorder" },
 					TelescopePromptBorder = {
-						fg = transparent_background and cp.blue or cp.surface0,
+						fg = transparent_background and cp.surface1 or cp.surface0,
 						bg = transparent_background and cp.none or cp.surface0,
 					},
 					TelescopePromptNormal = { fg = cp.text, bg = transparent_background and cp.none or cp.surface0 },
