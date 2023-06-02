@@ -7,7 +7,6 @@
   "modules-right": [
     "tray",
     "custom/divider",
-    "network",
     "pulseaudio",
     "backlight",
     "custom/divider",
@@ -62,7 +61,7 @@
     "tooltip-format-disconnected": "MPD (disconnected)"
   },
   "tray": {
-    "icon-size": 16,
+    "icon-size": 14,
     "spacing": 6
   },
   "cpu": {
@@ -73,14 +72,6 @@
   },
   "temperature": {
     "format": "󰔄 {temperatureC}°C"
-  },
-  "network": {
-    "format-wifi": "{icon} {signalStrength}%",
-    "format-ethernet": "󰈀 {signalStrength}",
-    "format-disconnected": "󰤮 ",
-    "format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
-    "tooltip-format-wifi": "󱚻 {essid} 󰁅 {bandwidthDownBits} 󰁝 {bandwidthUpBits}",
-    "tooltip-format-ethernet": "󰈀 {essid} 󰁅 {bandwidthDownBits} 󰁝 {bandwidthUpBits}"
   },
   "pulseaudio": {
     "on-click": "pamixer -t",
