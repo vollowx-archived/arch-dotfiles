@@ -2,9 +2,9 @@
 export WLR_RENDERER=vulkan
 
 # XDG
-export XDG_CURRENT_DESKTOP=Hyprland
+export XDG_CURRENT_DESKTOP=sway
 export XDG_SESSION_TYPE=wayland
-export XDG_SESSION_DESKTOP=Hyprland
+export XDG_SESSION_DESKTOP=sway
 
 # Wayland
 export GDK_BACKEND=wayland,x11
