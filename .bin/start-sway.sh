@@ -34,3 +34,5 @@ export INPUT_METHOD=fcitx
 export XMODIFIERS=@im=fcitx
 export IMSETTINGS_MODULE=fcitx
 export QT_IM_MODULE=fcitx
+
+sway
