@@ -10,13 +10,13 @@ return function()
 
 	local border = function(hl)
 		return {
-			{ "╭", hl },
+			{ "┌", hl },
 			{ "─", hl },
-			{ "╮", hl },
+			{ "┐", hl },
 			{ "│", hl },
-			{ "╯", hl },
+			{ "┘", hl },
 			{ "─", hl },
-			{ "╰", hl },
+			{ "└", hl },
 			{ "│", hl },
 		}
 	end
@@ -32,35 +32,7 @@ return function()
 		return (diff < 0)
 	end
 
-	local function cmp_format(opts)
-		opts = opts or {}
-
-		return function(entry, vim_item)
-			if opts.before then
-				vim_item = opts.before(entry, vim_item)
-			end
-
-			local kind_symbol = opts.symbol_map[vim_item.kind] or icons.kind.Undefined
-
-			vim_item.kind = string.format(" %s  %s", kind_symbol, vim_item.kind or "")
-
-			if opts.maxwidth ~= nil then
-				if opts.ellipsis_char == nil then
-					vim_item.abbr = string.sub(vim_item.abbr, 1, opts.maxwidth)
-				else
-					local label = vim_item.abbr
-					local truncated_label = vim.fn.strcharpart(label, 0, opts.maxwidth)
-					if truncated_label ~= label then
-						vim_item.abbr = truncated_label .. opts.ellipsis_char
-					end
-				end
-			end
-			return vim_item
-		end
-	end
-
 	local cmp = require("cmp")
-
 	cmp.setup({
 		preselect = cmp.PreselectMode.Item,
 		window = {
@@ -97,16 +69,44 @@ return function()
 		formatting = {
 			fields = { "abbr", "kind", "menu" },
 			format = function(entry, vim_item)
-				local kind_map = vim.tbl_deep_extend("force", icons.kind, icons.type, icons.cmp)
-				local kind = cmp_format({
-					maxwidth = nil,
-					symbol_map = kind_map,
-				})(entry, vim_item)
-				return kind
+				local lspkind_icons = vim.tbl_deep_extend("force", icons.kind, icons.type, icons.cmp)
+				-- load lspkind icons
+				vim_item.kind =
+					string.format(" %s  %s", lspkind_icons[vim_item.kind] or icons.cmp.undefined, vim_item.kind or "")
+
+				vim_item.menu = setmetatable({
+					cmp_tabnine = "[TN]",
+					copilot = "[CPLT]",
+					buffer = "[BUF]",
+					orgmode = "[ORG]",
+					nvim_lsp = "[LSP]",
+					nvim_lua = "[LUA]",
+					path = "[PATH]",
+					tmux = "[TMUX]",
+					treesitter = "[TS]",
+					luasnip = "[SNIP]",
+					spell = "[SPELL]",
+				}, {
+					__index = function()
+						return "[BTN]" -- builtin/unknown source names
+					end,
+				})[entry.source.name]
+
+				local label = vim_item.abbr
+				local truncated_label = vim.fn.strcharpart(label, 0, 80)
+				if truncated_label ~= label then
+					vim_item.abbr = truncated_label .. "..."
+				end
+
+				return vim_item
 			end,
 		},
 		matching = {
 			disallow_partial_fuzzy_matching = false,
+		},
+		performance = {
+			async_budget = 1,
+			max_view_entries = 150,
 		},
 		-- You can set mappings if you want
 		mapping = cmp.mapping.preset.insert({
@@ -140,26 +140,13 @@ return function()
 				require("luasnip").lsp_expand(args.body)
 			end,
 		},
-		performance = {
-			max_view_entries = 350,
-		},
 		-- You should specify your *installed* sources.
 		sources = {
 			{ name = "nvim_lsp" },
 			{ name = "nvim_lua" },
 			{ name = "luasnip" },
 			{ name = "path" },
-			{
-				name = "treesitter",
-				entry_filter = function(entry)
-					local ignore_list = {
-						"Error",
-						"Comment",
-					}
-					local kind = entry:get_completion_item().cmp.kind_text
-					return not vim.tbl_contains(ignore_list, kind)
-				end,
-			},
+			{ name = "treesitter" },
 			{ name = "spell" },
 			{ name = "tmux" },
 			{ name = "orgmode" },
@@ -169,7 +156,6 @@ return function()
 			-- { name = "codeium" },
 			-- { name = "cmp_tabnine" },
 		},
-
 		experimental = {
 			ghost_text = {
 				hl_group = "Whitespace",

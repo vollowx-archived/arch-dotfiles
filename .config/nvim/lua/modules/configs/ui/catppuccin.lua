@@ -89,31 +89,34 @@ return function()
 			vimwiki = false,
 			which_key = true,
 		},
+		color_overrides = {},
 		highlight_overrides = {
 			---@param cp palette
 			all = function(cp)
 				return {
 					-- For base configs
 					NormalFloat = { fg = cp.text, bg = transparent_background and cp.none or cp.mantle },
-					-- FloatNormal = { bg = cp.mantle },
 					FloatBorder = {
-						fg = transparent_background and cp.surface1 or cp.mantle,
+						fg = transparent_background and cp.blue or cp.mantle,
 						bg = transparent_background and cp.none or cp.mantle,
 					},
 					CursorLineNr = { fg = cp.green },
-					Search = { bg = cp.surface1, fg = cp.pink, style = { "bold" } },
-					IncSearch = { bg = cp.pink, fg = cp.surface1 },
 
-					-- For lsp
+					-- For native lsp configs
+					DiagnosticVirtualTextError = { bg = cp.none },
+					DiagnosticVirtualTextWarn = { bg = cp.none },
+					DiagnosticVirtualTextInfo = { bg = cp.none },
+					DiagnosticVirtualTextHint = { bg = cp.none },
 					LspInfoBorder = { link = "FloatBorder" },
 
-					-- For mason
+					-- For mason.nvim
 					MasonNormal = { link = "NormalFloat" },
 
 					-- For indent-blankline
-					IndentBlanklineContextChar = { fg = cp.pink },
+					IndentBlanklineContextStart = { bg = cp.surface0, style = {} },
+					IndentBlanklineContextChar = { fg = cp.surface1 },
 
-					-- For nvim-cmp and wilder
+					-- For nvim-cmp and wilder.nvim
 					Pmenu = { fg = cp.overlay2, bg = transparent_background and cp.none or cp.base },
 					PmenuBorder = { fg = cp.surface1, bg = transparent_background and cp.none or cp.base },
 					PmenuSel = { bg = cp.green, fg = cp.base },
@@ -144,18 +147,6 @@ return function()
 						fg = transparent_background and cp.surface1 or cp.base,
 					},
 
-					-- For native lsp configs
-					DiagnosticVirtualTextError = { bg = cp.none },
-					DiagnosticVirtualTextWarn = { bg = cp.none },
-					DiagnosticVirtualTextInfo = { bg = cp.none },
-					DiagnosticVirtualTextHint = { fg = cp.rosewater, bg = cp.none },
-
-					DiagnosticHint = { fg = cp.rosewater },
-					LspDiagnosticsDefaultHint = { fg = cp.rosewater },
-					LspDiagnosticsHint = { fg = cp.rosewater },
-					LspDiagnosticsVirtualTextHint = { fg = cp.rosewater },
-					LspDiagnosticsUnderlineHint = { sp = cp.rosewater },
-
 					-- For fidget
 					FidgetTask = { bg = cp.none, fg = cp.surface2 },
 					FidgetTitle = { fg = cp.blue, style = { "bold" } },
@@ -167,155 +158,22 @@ return function()
 					-- For trouble.nvim
 					TroubleNormal = { bg = transparent_background and cp.none or cp.base },
 
-					-- For treesitter-context
-					TreesitterContext = { link = "NormalFloat" },
-
-					-- For telescope
-					TelescopeBorder = { link = "FloatBorder" },
-					TelescopePromptBorder = {
-						fg = transparent_background and cp.surface1 or cp.surface0,
-						bg = transparent_background and cp.none or cp.surface0,
-					},
-					TelescopePromptNormal = { fg = cp.text, bg = transparent_background and cp.none or cp.surface0 },
-					TelescopePromptPrefix = { fg = cp.flamingo, bg = transparent_background and cp.none or cp.surface0 },
-					TelescopeNormal = { link = "NormalFloat" },
+					-- For telescope.nvim
+					TelescopeBorder = { fg = cp.mantle, bg = cp.mantle },
+					TelescopePromptBorder = { fg = cp.surface0, bg = cp.surface0 },
+					TelescopePromptNormal = { fg = cp.text, bg = cp.surface0 },
+					TelescopePromptPrefix = { fg = cp.flamingo, bg = cp.surface0 },
+					TelescopeNormal = { bg = cp.mantle },
 					TelescopePreviewTitle = { fg = cp.base, bg = cp.green },
 					TelescopePromptTitle = { fg = cp.base, bg = cp.red },
-					TelescopeResultsTitle = {
-						fg = transparent_background and cp.none or cp.mantle,
-						bg = transparent_background and cp.none or cp.mantle,
-					},
+					TelescopeResultsTitle = { fg = cp.mantle, bg = cp.mantle },
 					TelescopeSelection = { fg = cp.text, bg = cp.surface0 },
 					TelescopeResultsDiffAdd = { fg = cp.green },
 					TelescopeResultsDiffChange = { fg = cp.yellow },
 					TelescopeResultsDiffDelete = { fg = cp.red },
 
-					-- For lsp semantic tokens
-					["@lsp.type.comment"] = { fg = cp.overlay0 },
-					["@lsp.type.enum"] = { link = "@type" },
-					["@lsp.type.type"] = { link = "@type" },
-					["@lsp.type.property"] = { link = "@property" },
-					["@lsp.type.property.c"] = { link = "@property.cpp" },
-					["@lsp.type.property.cpp"] = { link = "@property.cpp" },
-					["@lsp.type.macro"] = { link = "@constant" },
-					["@lsp.typemod.function.defaultLibrary"] = { fg = cp.blue, style = { "bold", "italic" } },
-					["@lsp.typemod.function.defaultLibrary.c"] = { fg = cp.blue, style = { "bold" } },
-					["@lsp.typemod.function.defaultLibrary.cpp"] = { fg = cp.blue, style = { "bold" } },
-					["@lsp.typemod.method.defaultLibrary"] = { link = "@lsp.typemod.function.defaultLibrary" },
-					["@lsp.typemod.variable.defaultLibrary"] = { fg = cp.flamingo },
-
 					-- For treesitter
-					-- Comment = { fg = cp.overlay0 },
-					-- Error = { fg = cp.red },
-					-- PreProc = { fg = cp.pink },
-					-- Operator = { fg = cp.sky },
-
-					["@punctuation.delimiter"] = { fg = cp.teal },
-					["@punctuation.bracket"] = { fg = cp.overlay2 },
-					["@punctuation.special"] = { fg = cp.maroon },
-
-					-- String = { fg = cp.green },
-					-- ["@string.regex"] = { fg = cp.peach },
-					-- ["@string.escape"] = { fg = cp.pink },
-					-- ["@string.special"] = { fg = cp.blue },
-
-					-- Character = { fg = cp.teal },
-					-- SpecialChar = { link = "Special" },
-
-					-- Boolean = { fg = cp.peach },
-					-- Number = { fg = cp.peach },
-
-					-- Function = { fg = cp.blue },
-					-- ["@function.builtin"] = { fg = cp.peach },
-					-- ["@function.call"] = { link = "@function" },
-					-- ["@function.macro"] = { fg = cp.teal },
-					["@method"] = { link = "Function" },
-					-- ["@method.call"] = { link = "@method" },
-
-					["@constructor"] = { fg = cp.lavender },
-					["@parameter"] = { fg = cp.rosewater },
-
-					Keyword = { fg = cp.red },
-					["@keyword.function"] = { fg = cp.maroon },
-					["@keyword.operator"] = { fg = cp.sky },
 					["@keyword.return"] = { fg = cp.pink, style = clear },
-					-- ["@keyword.export"] = { fg = cp.sky },
-
-					Conditional = { fg = cp.mauve },
-					Repeat = { fg = cp.mauve },
-					Label = { fg = cp.rosewater },
-					["@include"] = { fg = cp.teal },
-					["@exception"] = { fg = cp.peach },
-
-					-- Type = { fg = cp.yellow },
-					-- ["@type.builtin"] = { fg = cp.yellow },
-					-- ["@type.definition"] = { link = "@type" },
-					["@type.qualifier"] = { link = "@keyword" },
-
-					StorageClass = { link = "@keyword" },
-					-- Constant = { fg = cp.peach },
-					["@field"] = { fg = cp.rosewater },
-					["@property"] = { fg = cp.yellow },
-
-					-- ["@variable"] = { fg = cp.text },
-					["@variable.builtin"] = { fg = cp.flamingo, style = { "italic" } },
-
-					["@constant"] = { link = "Constant" },
-					["@constant.builtin"] = { fg = cp.lavender },
-					Macro = { fg = cp.mauve },
-
-					["@namespace"] = { fg = cp.rosewater, style = clear },
-					-- ["@symbol"] = { fg = cp.flamingo },
-
-					["@text"] = { fg = cp.text },
-					["@tag"] = { fg = cp.peach },
-					["@tag.attribute"] = { fg = cp.mauve },
-					["@tag.delimiter"] = { fg = cp.maroon },
-
-					-- TODO: support semantic tokens
-
-					-- ["@class"] = { fg = cp.blue },
-					-- ["@struct"] = { fg = cp.blue },
-					["@enum"] = { link = "@type" },
-					-- ["@enumMember"] = { fg = cp.flamingo },
-					-- ["@event"] = { fg = cp.flamingo },
-					["@interface"] = { fg = cp.yellow },
-					-- ["@modifier"] = { fg = cp.flamingo },
-					-- ["@regexp"] = { fg = cp.pink },
-					-- ["@typeParameter"] = { fg = cp.yellow },
-					-- ["@decorator"] = { fg = cp.flamingo },
-
-					-- ["@property.toml"] = { fg = cp.blue },
-					-- ["@field.yaml"] = { fg = cp.blue },
-
-					-- ["@label.json"] = { fg = cp.blue },
-
-					["@function.builtin.bash"] = { fg = cp.red, style = { "italic" } },
-					-- ["@parameter.bash"] = { fg = cp.yellow, style = { "italic" } },
-
-					["@constructor.lua"] = { fg = cp.flamingo },
-					["@field.lua"] = { fg = cp.lavender },
-
-					["@constant.java"] = { fg = cp.teal },
-
-					["@property.typescript"] = { fg = cp.lavender, style = { "italic" } },
-					-- ["@constructor.typescript"] = { fg = cp.lavender },
-
-					-- ["@constructor.tsx"] = { fg = cp.lavender },
-					-- ["@tag.attribute.tsx"] = { fg = cp.mauve },
-
-					["@type.css"] = { fg = cp.lavender },
-					["@property.css"] = { fg = cp.yellow, style = { "italic" } },
-
-					["@type.builtin.c"] = { style = clear },
-
-					["@property.cpp"] = { fg = cp.text },
-					["@type.builtin.cpp"] = { style = clear },
-
-					-- ["@symbol"] = { fg = cp.flamingo },
-
-					-- Misc
-					gitcommitSummary = { fg = cp.rosewater, style = { "italic" } },
 				}
 			end,
 		},

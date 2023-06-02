@@ -1,6 +1,5 @@
 return function()
 	local wilder = require("wilder")
-	local colors = require("modules.utils").get_palette()
 	local icons = { ui = require("modules.utils.icons").get("ui") }
 
 	wilder.setup({ modes = { ":", "/", "?" } })

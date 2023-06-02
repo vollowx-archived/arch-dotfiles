@@ -5,9 +5,10 @@ editor["rmagatti/auto-session"] = {
 	cmd = { "SessionSave", "SessionRestore", "SessionDelete" },
 	config = require("editor.auto-session"),
 }
-editor["echasnovski/mini.pairs"] = {
+editor["m4xshen/autoclose.nvim"] = {
+	lazy = true,
 	event = "InsertEnter",
-	config = require("editor.mini-pairs"),
+	config = require("editor.autoclose"),
 }
 editor["max397574/better-escape.nvim"] = {
 	lazy = true,
@@ -36,7 +37,6 @@ editor["numToStr/Comment.nvim"] = {
 editor["sindrets/diffview.nvim"] = {
 	lazy = true,
 	cmd = { "DiffviewOpen", "DiffviewClose" },
-	config = require("editor.diffview"),
 }
 editor["junegunn/vim-easy-align"] = {
 	lazy = true,
