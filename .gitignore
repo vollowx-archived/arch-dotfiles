@@ -40,6 +40,8 @@
 !.config/rofi/**/*
 !.config/systemd/
 !.config/systemd/**/*
+!.config/sway/
+!.config/sway/**/*
 !.config/swaylock/
 !.config/swaylock/**/*
 !.config/waybar/

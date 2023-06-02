@@ -39,7 +39,7 @@ tooltip {
 }
 
 /* left element */
-#submap {
+#workspaces {
   padding-left: 16px;
   padding-right: 16px;
 }
@@ -80,14 +80,6 @@ tooltip {
 
 /* special settings */
 
-#submap {
-  background-color: @green;
-  color: @base;
-}
-
-#workspaces {
-  padding-left: 14px;
-}
 #workspaces button {
   padding: 0;
   color: @subtext0;
