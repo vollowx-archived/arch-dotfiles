@@ -70,7 +70,7 @@ case "$choise" in
 	;;
 "sway_launch" | "s~")
 	# Wlroots
-	export WLR_RENDERER=vulkan
+	# export WLR_RENDERER=vulkan
 	export WLR_NO_HARDWARE_CURSORS=1
 
 	# Wayland
@@ -98,7 +98,7 @@ case "$choise" in
 	export IMSETTINGS_MODULE=fcitx
 	export QT_IM_MODULE=fcitx
 
-	sway
+	sway -V
 	;;
 "hyprland_reload" | "hr")
 	pkill mako
