@@ -43,5 +43,6 @@ return function()
 			"var",
 			"while",
 		},
+		space_char_blankline = " ",
 	})
 end

@@ -103,10 +103,6 @@ return function()
 					CursorLineNr = { fg = cp.green },
 
 					-- For native lsp configs
-					DiagnosticVirtualTextError = { bg = cp.none },
-					DiagnosticVirtualTextWarn = { bg = cp.none },
-					DiagnosticVirtualTextInfo = { bg = cp.none },
-					DiagnosticVirtualTextHint = { bg = cp.none },
 					LspInfoBorder = { link = "FloatBorder" },
 
 					-- For mason.nvim
