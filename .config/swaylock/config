@@ -1,29 +1,27 @@
 ignore-empty-password
 disable-caps-lock-text
 
-screenshots
-effect-blur=30x3
-clock
-indicator
-indicator-radius=80
+color=11111b
 
-inside-color=89b4fa
-inside-clear-color=f9e2af
-inside-ver-color=89dceb
-inside-wrong-color=f38ba8
+inside-color=11111b
+inside-clear-color=11111b
+inside-ver-color=11111b
+inside-wrong-color=11111b
 
-line-color=89b4fa
-line-clear-color=f9e2af
-line-ver-color=89dceb
+line-color=11111b
+line-clear-color=f5e0dc
+line-ver-color=a6e3a1
 line-wrong-color=f38ba8
 
-ring-color=89b4fa
-ring-clear-color=f9e2af
-ring-ver-color=89dceb
-ring-wrong-color=f38ba8
+ring-color=11111b
+ring-clear-color=11111b
+ring-ver-color=11111b
+ring-wrong-color=11111b
 
-separator-color=89b4fa
-text-color=1e1e2e
-key-hl-color=1e1e2e
+text-color=11111b
+text-clear-color=11111b
+text-ver-color=11111b
+text-wrong-color=11111b
 
-font=Roboto
+separator-color=11111b
+key-hl-color=f5c2e7

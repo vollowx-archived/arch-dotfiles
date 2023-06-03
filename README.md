@@ -11,8 +11,8 @@
 Core:
 
 ```sh
-paru -S hyprland-git hyprpaper-git rofi-lbonn-wayland-git rofi-calc rofi-emoji mako\
-        waybar-hyprland-git swayidle swaylock-effects grimblast hyprpicker\
+paru -S sway hyprland-git hyprpaper-git rofi-lbonn-wayland-git rofi-calc rofi-emoji\
+        mako waybar-hyprland-git swayidle swaylock grimblast hyprpicker\
         light pamixer wlsunset network-manager-applet blueman\
         zsh zoxide ripgrep fd duf exa bat dog foot libsixel\
         mpd mpc ncmpcpp cava mpdscribble ranger nemo fastfetch
@@ -37,6 +37,7 @@ paru -S fcitx5 fcitx5-chinese-addons fcitx5-anthy
 | ~          | name       | command                                               |
 | ---------- | ---------- | ----------------------------------------------------- |
 | desktop    | Hyprland   | `paru -S hyprland`                                    |
+|            | Seay       | `paru -S sway`                                        |
 | wallpaper  | hyprpaper  | `paru -S hyprpaper`                                   |
 | launcher   | rofi       | `paru -S rofi-lbonn-wayland-git rofi-calc rofi-emoji` |
 | notify     | mako       | `paru -S mako`                                        |
