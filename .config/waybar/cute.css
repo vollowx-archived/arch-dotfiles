@@ -17,7 +17,7 @@ tooltip {
   border-radius: 12px;
 }
 
-#submap,
+#mode,
 #workspaces,
 #mpd,
 #tray,
@@ -95,9 +95,6 @@ tooltip {
   font-style: italic;
 }
 
-#network {
-  color: @lavender;
-}
 #pulseaudio {
   color: @sapphire;
 }

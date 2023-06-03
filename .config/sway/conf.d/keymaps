@@ -1,10 +1,5 @@
 set $mod Mod4
 
-set $left h
-set $down j
-set $up k
-set $right l
-
 set $term foot
 set $menu wofi --show run
 
@@ -25,19 +20,19 @@ bindsym $mod+c exec hyprpicker -n -a
 bindsym $mod+delete exec ~/.bin/wm-do.sh mt
 
 bindsym $mod+a focus parent
-bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+minus scratchpad show
+bindsym $mod+minus move scratchpad
+bindsym $mod+equal scratchpad show
 floating_modifier $mod normal
 
-bindsym $mod+$left focus left
-bindsym $mod+$down focus down
-bindsym $mod+$up focus up
-bindsym $mod+$right focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
-bindsym $mod+Shift+$left move left
-bindsym $mod+Shift+$down move down
-bindsym $mod+Shift+$up move up
-bindsym $mod+Shift+$right move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
@@ -61,25 +56,40 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
-mode "resize" {
-  bindsym $left resize shrink width 10px
-  bindsym $down resize grow height 10px
-  bindsym $up resize shrink height 10px
-  bindsym $right resize grow width 10px
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
-}
-bindsym $mod+r mode "resize"
-
 bindsym XF86AudioRaiseVolume exec ~/.bin/wm-do.sh v+
 bindsym XF86AudioLowerVolume exec ~/.bin/wm-do.sh v-
 bindsym XF86AudioMute exec ~/.bin/wm-do.sh vm
-
 bindsym XF86MonBrightnessUp exec ~/.bin/wm-do.sh b+
 bindsym XF86MonBrightnessDown exec ~/.bin/wm-do.sh b-
-
 bindsym Print exec ~/.bin/wm-do.sh sca
 bindsym Ctrl+Print exec ~/.bin/wm-do.sh scss
 bindsym Shift+Print exec ~/.bin/wm-do.sh scsa
+
+mode "resize" {
+  bindsym h resize shrink width 10px
+  bindsym j resize grow height 10px
+  bindsym k resize shrink height 10px
+  bindsym l resize grow width 10px
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+
+mode "move" {
+  bindsym h move left 10px
+  bindsym j move down 10px
+  bindsym k move up 10px
+  bindsym l move right 10px
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym $mod+m mode "default"
+}
+bindsym $mod+m mode "move"
+
+mode "void" {
+  bindsym $mod+F2 mode "default"
+}
+bindsym $mod+F2 mode "void"
 
 # vim:ft=swayconfig
