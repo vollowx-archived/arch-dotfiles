@@ -1,3 +1,7 @@
+```
+Has been moved to huge-pancake/.arch since I want to make commit messages look nice.
+```
+
 # arch-dotfiles
 
 ## Showcase
