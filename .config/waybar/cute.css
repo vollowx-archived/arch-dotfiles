@@ -2,12 +2,12 @@
 
 * {
   font-family: JetBrainsMono Nerd Font;
-  font-size: 12pt;
+  font-size: 11pt;
   font-weight: 500;
 }
 
 window#waybar {
-  background-color: alpha(@base, 0.1);
+  background-color: @crust;
   color: @text;
   border-bottom: 2px solid @surface1;
 }
@@ -21,7 +21,6 @@ tooltip {
 #workspaces,
 #mpd,
 #tray,
-#network,
 #pulseaudio,
 #backlight,
 #cpu,
@@ -31,7 +30,7 @@ tooltip {
 #clock {
   padding: 0 10px;
   margin: 4px 2px 6px 2px;
-  background-color: @surface0;
+  background-color: @base;
   border-radius: 16px;
 }
 
@@ -56,7 +55,7 @@ tooltip {
   padding-left: 0;
 }
 
-#submap {
+#mode {
   margin-left: 14px;
   margin-right: -10px;
   background-color: @sky;
@@ -68,7 +67,7 @@ tooltip {
   margin-left: 14px;
 }
 #workspaces button {
-  margin: 0 -1px;
+  margin: 0 -8px;
   padding: 0;
   color: @subtext0;
   border-radius: 16px;

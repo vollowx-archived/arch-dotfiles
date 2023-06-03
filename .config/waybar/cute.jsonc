@@ -2,11 +2,10 @@
   "position": "top",
   "layer": "top",
   "height": 40,
-  "modules-left": ["hyprland/submap", "wlr/workspaces", "hyprland/window"],
+  "modules-left": ["sway/mode", "sway/workspaces", "sway/window"],
   "modules-center": ["mpd"],
   "modules-right": [
     "tray",
-    "network",
     "pulseaudio",
     "backlight",
     "cpu",
@@ -15,13 +14,9 @@
     "battery",
     "clock"
   ],
-  "wlr/workspaces": {
-    "sort-by-name": true,
-    "on-click": "activate",
-    "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1"
+  "sway/workspaces": {
+    "sort-by-name": true
   },
-  "hyprland/title": {},
   "mpd": {
     "format": "{stateIcon}{consumeIcon} {randomIcon}{repeatIcon}{singleIcon}{title}({elapsedTime:%M:%S}/{totalTime:%M:%S}) 󰝚 ",
     "format-disconnected": "󰝛 ",
@@ -58,14 +53,6 @@
   "tray": {
     "icon-size": 14,
     "spacing": 8
-  },
-  "network": {
-    "format-wifi": "{icon}",
-    "format-ethernet": "󰈀 ",
-    "format-disconnected": "󰤮 ",
-    "format-icons": ["󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "],
-    "tooltip-format-wifi": "󱚻 {essid} ~ {signalStrength}% 󰁅 {bandwidthDownBits} 󰁝 {bandwidthUpBits}",
-    "tooltip-format-ethernet": "󰈀 {essid} ~ {signalStrength}% 󰁅 {bandwidthDownBits} 󰁝 {bandwidthUpBits}"
   },
   "pulseaudio": {
     "on-click": "pamixer -t",

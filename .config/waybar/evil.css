@@ -18,7 +18,7 @@ tooltip {
 
 #custom-divider,
 /* /// */
-#submap,
+#mode,
 #workspaces,
 #window,
 /* /// */
@@ -39,7 +39,7 @@ tooltip {
 }
 
 /* left element */
-#workspaces {
+#mode {
   padding-left: 16px;
   padding-right: 16px;
 }
@@ -79,6 +79,11 @@ tooltip {
 }
 
 /* special settings */
+
+#mode {
+  background-color: @green;
+  color: @base;
+}
 
 #workspaces button {
   padding: 0;

@@ -1,8 +1,8 @@
 {
   "position": "top",
   "layer": "top",
-  "height": 36,
-  "modules-left": ["sway/workspaces", "sway/window"],
+  "height": 32,
+  "modules-left": ["sway/mode", "sway/workspaces", "sway/window"],
   "modules-center": ["mpd"],
   "modules-right": [
     "tray",
