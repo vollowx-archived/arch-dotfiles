@@ -69,6 +69,10 @@ case "$choise" in
 	fi
 	;;
 "sway_launch" | "s~")
+	# Wlroots
+	export WLR_RENDERER=vulkan
+	export WLR_NO_HARDWARE_CURSORS=1
+
 	# Wayland
 	export QT_QPA_PLATFORM=wayland
 	export SDL_VIDEODRIVER=wayland
@@ -77,9 +81,6 @@ case "$choise" in
 	# Firefox
 	export MOZ_ENABLE_WAYLAND=1
 	export MOZ_WEBRENDER=1
-
-	# Desktop
-	export WLR_NO_HARDWARE_CURSORS=1
 
 	# QT
 	export QT_AUTO_SCREEN_SCALE_FACTOR=1
