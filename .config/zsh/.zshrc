@@ -33,7 +33,6 @@ unset key
 # -------
 
 source ~/.config/zsh/modules/env.zsh
-
 source ~/.config/zsh/modules/aliases.zsh
 
 # Remove older command from the history if a duplicate is to be added.

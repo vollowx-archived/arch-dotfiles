@@ -11,7 +11,7 @@ zmodule utility
 # Prompt
 #
 
-zmodule reobin/typewritten
+zmodule sindresorhus/pure --source async.zsh --source pure.zsh
 
 #
 # Completion
