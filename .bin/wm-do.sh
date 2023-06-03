@@ -21,6 +21,7 @@ case "$choise" in
 	echo "  screenshot_copy_save_area, scsa:    Take a area screenshot, copy and save"
 	echo "  screenshot_copy_save_screen, scss:  Take a screen screenshot, copy and save"
 	echo "  mako_toggle, mt:                    Toggle Mako's do-not-disturb mode"
+	echo "  sway_launch, s~                     Launch Sway"
 	echo "  hyprland_reload, hr:                Reload Hyprland and components under it"
 	echo "  hyprland_low_toggle, hlt:           Toggle Hyprland's low graphics quality mode"
 	;;
@@ -66,6 +67,37 @@ case "$choise" in
 		sleep 2
 		makoctl set-mode do-not-disturb
 	fi
+	;;
+"sway_launch" | "s~")
+	# Wayland
+	export QT_QPA_PLATFORM=wayland
+	export SDL_VIDEODRIVER=wayland
+	export CLUTTER_BACKEND=wayland
+
+	# Firefox
+	export MOZ_ENABLE_WAYLAND=1
+	export MOZ_WEBRENDER=1
+
+	# Desktop
+	export WLR_NO_HARDWARE_CURSORS=1
+
+	# QT
+	export QT_AUTO_SCREEN_SCALE_FACTOR=1
+	export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+	export QT_QPA_PLATFORMTHEME=qt6ct
+
+	# Java
+	export _JAVA_AWT_WM_NONREPARENTING=1
+
+	# FCITX
+	export GLFW_IM_MODULE=fcitx
+	export GTK_IM_MODULE=fcitx
+	export INPUT_METHOD=fcitx
+	export XMODIFIERS=@im=fcitx
+	export IMSETTINGS_MODULE=fcitx
+	export QT_IM_MODULE=fcitx
+
+	sway
 	;;
 "hyprland_reload" | "hr")
 	pkill mako
